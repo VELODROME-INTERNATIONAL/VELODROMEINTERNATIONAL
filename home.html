@@ -1,1 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio audiovisual">
+  <title>Dori Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Inicio">DORI STUDIO</a>
+      <div class="header-actions">
+        <button class="sound-toggle" type="button" aria-pressed="false">UNMUTE</button>
+        <a href="archive.html">ARCHIVE</a>
+        <button class="info-toggle" type="button" aria-expanded="false">INFO</button>
+      </div>
+    </header>
 
+    <main class="showcase" aria-label="Proyectos destacados">
+      <div class="media-stage" aria-hidden="true">
+        <div class="media-item is-active" data-media="project-1">
+          <div class="placeholder placeholder-1"><span>01</span></div>
+        </div>
+        <div class="media-item" data-media="project-2">
+          <div class="placeholder placeholder-2"><span>02</span></div>
+        </div>
+        <div class="media-item" data-media="project-3">
+          <div class="placeholder placeholder-3"><span>03</span></div>
+        </div>
+        <div class="media-item" data-media="project-4">
+          <div class="placeholder placeholder-4"><span>04</span></div>
+        </div>
+        <div class="media-item" data-media="project-5">
+          <div class="placeholder placeholder-5"><span>05</span></div>
+        </div>
+      </div>
+
+      <div class="veil"></div>
+
+      <section class="project-index">
+        <p class="index-label">SELECTED WORK</p>
+        <ol class="project-list">
+          <li>
+            <a href="project.html" class="project-link is-active" data-target="project-1">
+              <span class="client">ARTISTA UNO</span>
+              <span class="project">Nombre del proyecto</span>
+              <span class="year">2026</span>
+            </a>
+          </li>
+          <li>
+            <a href="project.html" class="project-link" data-target="project-2">
+              <span class="client">MARCA DOS</span>
+              <span class="project">Campaña o instalación</span>
+              <span class="year">2025</span>
+            </a>
+          </li>
+          <li>
+            <a href="project.html" class="project-link" data-target="project-3">
+              <span class="client">ARTISTA TRES</span>
+              <span class="project">Tour y dirección creativa</span>
+              <span class="year">2025</span>
+            </a>
+          </li>
+          <li>
+            <a href="project.html" class="project-link" data-target="project-4">
+              <span class="client">ESTUDIO CUATRO</span>
+              <span class="project">Identidad visual</span>
+              <span class="year">2024</span>
+            </a>
+          </li>
+          <li>
+            <a href="project.html" class="project-link" data-target="project-5">
+              <span class="client">CLIENTE CINCO</span>
+              <span class="project">Espacio y experiencia</span>
+              <span class="year">2024</span>
+            </a>
+          </li>
+        </ol>
+      </section>
+
+      <aside class="info-panel" aria-hidden="true">
+        <button class="info-close" type="button">CLOSE</button>
+        <div class="info-copy">
+          <p>Dori Studio es un estudio creativo enfocado en dirección de arte, diseño y experiencias audiovisuales.</p>
+          <p>Madrid / Murcia<br><a href="mailto:hola@tudominio.com">hola@tudominio.com</a></p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>©2026 DORI STUDIO</span>
+      <span>ALL RIGHTS RESERVED</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
