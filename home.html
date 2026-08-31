@@ -11,15 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-  
-<script src="script.js"></script>
-</body>
-</html>
-  
+
 <body>
+
   <header class="site-header" id="site-header">
     <nav class="header-left" aria-label="Navegación principal">
-      <a href="live.html" class="header-link active" aria-current="page">Live</a>
+      <a href="live.html" class="header-link active">Live</a>
       <a href="releases.html" class="header-link">Releases</a>
     </nav>
 
@@ -27,62 +24,67 @@
 
     <nav class="header-right" aria-label="Navegación secundaria">
       <a href="archive.html" class="header-link">Archive</a>
-<button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false">Info</button>
+      <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false">Info</button>
     </nav>
   </header>
 
-<section class="info-panel" id="info-panel" aria-hidden="true">
-  <div class="info-block">
-    <p>Contact<br>For more information,<br>please contact</p>
-    <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
-  </div>
 
-  <div class="info-block">
-    <p>Connect</p>
-    <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">Instagram</a>
-  </div>
+  <!-- PANEL INFO -->
 
-  <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
-    <span></span>
-    <span></span>
-  </button>
-</section>
+  <section class="info-panel" id="info-panel" aria-hidden="true">
+    <div class="info-block">
+      <p>Contact<br>For more information,<br>please contact</p>
+      <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
+    </div>
 
-   <main class="home">
-  <button class="showreel-preview" id="open-showreel" type="button" aria-label="Ampliar showreel">
-    <video autoplay muted loop playsinline preload="metadata">
+    <div class="info-block info-connect">
+      <p>Connect</p>
+      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
+      <span></span>
+      <span></span>
+    </button>
+  </section>
+
+
+  <!-- SHOWREEL PEQUEÑO -->
+
+  <main class="home">
+    <button class="showreel-preview" id="open-showreel" type="button" aria-label="Ampliar showreel">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="videos/showreel.mp4" type="video/mp4">
+      </video>
+    </button>
+  </main>
+
+
+  <!-- SHOWREEL AMPLIADO -->
+
+  <div class="showreel-modal" id="showreel-modal" aria-hidden="true">
+    <video class="showreel-video" id="showreel-video" playsinline>
       <source src="videos/showreel.mp4" type="video/mp4">
     </video>
-  </button>
-</main>
 
-<div class="showreel-modal" id="showreel-modal" aria-hidden="true">
-  <video class="showreel-video" id="showreel-video" playsinline>
-    <source src="videos/showreel.mp4" type="video/mp4">
-  </video>
-
-  <div class="video-controls">
-    <button id="play-button" type="button">Play</button>
-    <button id="sound-button" type="button">Unmute</button>
-    <input id="video-progress" type="range" min="0" max="100" value="0" aria-label="Progreso del vídeo">
-    <button id="close-showreel" type="button">Close</button>
+    <div class="video-controls">
+      <button id="play-button" type="button">Play</button>
+      <button id="sound-button" type="button">Unmute</button>
+      <input id="video-progress" type="range" min="0" max="100" value="0" aria-label="Progreso del vídeo">
+      <button id="close-showreel" type="button">Close</button>
+    </div>
   </div>
-</div>
 
-    </main>
 
-<footer class="footer">
-  <p class="footer-copyright">
-    ©2026 VÉLODROME. ALL RIGHTS RESERVED
-  </p>
+  <!-- FOOTER -->
 
-  <img
-    class="footer-logo"
-    src="assets/brand/logo.png"
-    alt="LOGO"
-  >
-</footer>
-  </div>
+  <footer class="footer">
+    <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
+    <img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome">
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
 
   <script src="script.js"></script>
 </body>
