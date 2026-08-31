@@ -105,3 +105,28 @@ soundToggle.addEventListener('click', () => {
     if (event.key === "Escape") closeShowreel();
   });
 </script>
+const infoPanel = document.getElementById("info-panel");
+const openInfo = document.getElementById("open-info");
+const closeInfo = document.getElementById("close-info");
+
+function showInfo() {
+  infoPanel.classList.add("is-open");
+  infoPanel.setAttribute("aria-hidden", "false");
+  openInfo.setAttribute("aria-expanded", "true");
+}
+
+function hideInfo() {
+  infoPanel.classList.remove("is-open");
+  infoPanel.setAttribute("aria-hidden", "true");
+  openInfo.setAttribute("aria-expanded", "false");
+}
+
+openInfo.addEventListener("click", () => {
+  infoPanel.classList.contains("is-open") ? hideInfo() : showInfo();
+});
+
+closeInfo.addEventListener("click", hideInfo);
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") hideInfo();
+});
