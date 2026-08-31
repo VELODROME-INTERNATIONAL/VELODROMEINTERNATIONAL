@@ -452,3 +452,138 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+/* HOME Y SHOWREEL PEQUEÑO */
+
+.home {
+  min-height: calc(100svh - 74px);
+  display: grid;
+  place-items: center;
+  padding: 60px var(--pad);
+}
+
+.showreel-preview {
+  display: block;
+  width: min(50vw, 1024px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+  cursor: zoom-in;
+}
+
+.showreel-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.showreel-preview:hover video {
+  transform: scale(1.015);
+}
+
+
+/* SHOWREEL AMPLIADO */
+
+.showreel-modal {
+  position: fixed;
+  z-index: 900;
+  inset: 74px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--pad);
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.78);
+
+  transition:
+    opacity 350ms ease,
+    visibility 350ms ease;
+}
+
+.showreel-modal.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.showreel-video {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  object-fit: contain;
+  background: #000;
+}
+
+.video-controls {
+  width: 100%;
+  min-height: 66px;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+
+  color: #fff;
+  background: #000;
+  font-size: 16px;
+  text-transform: none;
+}
+
+.video-controls input[type="range"] {
+  width: 100%;
+  height: 3px;
+  margin: 0;
+
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+.video-controls input[type="range"]::-webkit-slider-thumb {
+  width: 0;
+  height: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.video-controls input[type="range"]::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border: 0;
+}
+
+body.showreel-open {
+  overflow: hidden;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+  .home {
+    min-height: calc(100svh - 58px);
+    padding: 30px 16px;
+  }
+
+  .showreel-preview {
+    width: 100%;
+  }
+
+  .showreel-modal {
+    inset: 58px 0 0;
+    padding: 0;
+  }
+
+  .video-controls {
+    min-height: 58px;
+    grid-template-columns: auto auto 1fr auto;
+    gap: 12px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}
