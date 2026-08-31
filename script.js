@@ -36,3 +36,72 @@ soundToggle.addEventListener('click', () => {
     video.muted = isOn;
   });
 });
+<script>
+  const modal = document.getElementById("showreel-modal");
+  const video = document.getElementById("showreel-video");
+  const openButton = document.getElementById("open-showreel");
+  const closeButton = document.getElementById("close-showreel");
+  const playButton = document.getElementById("play-button");
+  const soundButton = document.getElementById("sound-button");
+  const progress = document.getElementById("video-progress");
+
+  function openShowreel() {
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("showreel-open");
+
+    video.currentTime = 0;
+    video.muted = false;
+    video.play();
+
+    playButton.textContent = "Pause";
+    soundButton.textContent = "Mute";
+  }
+
+  function closeShowreel() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("showreel-open");
+
+    video.pause();
+    playButton.textContent = "Play";
+  }
+
+  openButton.addEventListener("click", openShowreel);
+  closeButton.addEventListener("click", closeShowreel);
+
+  playButton.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      playButton.textContent = "Pause";
+    } else {
+      video.pause();
+      playButton.textContent = "Play";
+    }
+  });
+
+  soundButton.addEventListener("click", () => {
+    video.muted = !video.muted;
+    soundButton.textContent = video.muted ? "Unmute" : "Mute";
+  });
+
+  video.addEventListener("timeupdate", () => {
+    if (video.duration) {
+      progress.value = (video.currentTime / video.duration) * 100;
+    }
+  });
+
+  progress.addEventListener("input", () => {
+    if (video.duration) {
+      video.currentTime = (progress.value / 100) * video.duration;
+    }
+  });
+
+  video.addEventListener("ended", () => {
+    playButton.textContent = "Play";
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeShowreel();
+  });
+</script>
