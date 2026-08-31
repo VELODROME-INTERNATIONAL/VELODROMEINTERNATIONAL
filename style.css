@@ -287,57 +287,124 @@ img {
 }
 
 
-/* PANEL DE INFORMACIÓN */
+/* PANEL INFO DESLIZABLE */
 
 .info-panel {
   position: fixed;
-  z-index: 2000;
-  inset: 0;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  min-height: 200px;
+  padding: 24px var(--pad);
 
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1.1fr 2.8fr auto auto 32px;
+  gap: clamp(30px, 3.5vw, 75px);
+  align-items: start;
 
-  padding: var(--pad);
   color: var(--black);
-  background-color: var(--white);
+  background: var(--white);
 
+  visibility: hidden;
   transform: translateY(-101%);
-  transition: transform 550ms cubic-bezier(.76, 0, .24, 1);
+
+  transition:
+    transform 550ms cubic-bezier(.76, 0, .24, 1),
+    visibility 550ms;
 }
 
 .info-panel.is-open {
+  visibility: visible;
   transform: translateY(0);
 }
 
+.info-block {
+  font-size: clamp(14px, 1.05vw, 21px);
+  line-height: 1.18;
+}
+
+.info-block p {
+  margin: 0 0 22px;
+}
+
+.info-block a {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.info-block a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+
+  height: 1px;
+  background: currentColor;
+}
+
+.info-connect {
+  margin-left: auto;
+}
+
 .info-close {
+  position: relative;
+  width: 28px;
+  height: 28px;
   justify-self: end;
 }
 
-.info-copy {
-  align-self: end;
+.info-close span {
+  position: absolute;
+  top: 50%;
+  left: 0;
 
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 8vw;
-
-  max-width: 1000px;
-
-  font-size: clamp(20px, 3vw, 52px);
-  letter-spacing: -0.045em;
-  text-transform: none;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
 }
 
-.info-copy p {
-  margin: 0;
+.info-close span:first-child {
+  transform: rotate(45deg);
 }
 
-.info-copy p:last-child {
-  font-size: 0.42em;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
+.info-close span:last-child {
+  transform: rotate(-45deg);
 }
 
+@media (max-width: 700px) {
+  .info-panel {
+    min-height: 100svh;
+    padding: 20px 16px 40px;
+
+    grid-template-columns: 1fr 32px;
+    grid-auto-rows: min-content;
+    gap: 38px 20px;
+
+    overflow-y: auto;
+  }
+
+  .info-block {
+    grid-column: 1;
+    font-size: 16px;
+  }
+
+  .info-block p {
+    margin-bottom: 14px;
+  }
+
+  .info-connect {
+    margin-left: 0;
+  }
+
+  .info-close {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
 
 /* FOOTER */
 
