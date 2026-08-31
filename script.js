@@ -104,7 +104,6 @@ soundToggle.addEventListener('click', () => {
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") closeShowreel();
   });
-</script>
 const infoPanel = document.getElementById("info-panel");
 const openInfo = document.getElementById("open-info");
 const closeInfo = document.getElementById("close-info");
@@ -130,3 +129,5 @@ closeInfo.addEventListener("click", hideInfo);
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") hideInfo();
 });
+
+</script>
