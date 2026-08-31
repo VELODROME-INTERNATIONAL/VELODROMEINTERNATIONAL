@@ -304,3 +304,30 @@ button {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+@media (max-width: 640px) {
+  .site-header {
+    height: 58px;
+    padding: 0 16px;
+  }
+
+  .header-left,
+  .header-right {
+    gap: 10px;
+    width: auto;
+  }
+
+  .header-link {
+    font-size: 12px;
+  }
+
+  .header-logo {
+    font-size: 18px;
+  }
+}
+@media (max-width: 640px) {
+  .header-left .header-link:nth-child(2),
+  .header-right .header-link:first-child {
+    display: none;
+  }
+}
