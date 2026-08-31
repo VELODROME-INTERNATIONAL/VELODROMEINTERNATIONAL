@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vélodrome — Dirección creativa, diseño y experiencias audiovisuales.">
+  <title>Vélodrome</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="archive-body">
+
+  <header class="site-header" id="site-header">
+    <nav class="header-left" aria-label="Navegación principal">
+      <a href="live.html" class="header-link">Live</a>
+      <a href="releases.html" class="header-link">Releases</a>
+    </nav>
+
+    <a href="index.html" class="header-logo" aria-label="Página de inicio">Vélodrome</a>
+
+    <nav class="header-right" aria-label="Navegación secundaria">
+      <a href="archive.html" class="header-link active" aria-current="page">Archive</a>
+      <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false">Info</button>
+    </nav>
+  </header>
+
+
+  <!-- PANEL INFO -->
+
+  <section class="info-panel" id="info-panel" aria-hidden="true">
+    <div class="info-block">
+      <p>Contact<br>For more information,<br>please contact</p>
+      <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
+    </div>
+
+    <div class="info-block info-connect">
+      <p>Connect</p>
+      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
+      <span></span>
+      <span></span>
+    </button>
+  </section>
+
+
+  <!-- ARCHIVE -->
+
+  <main class="archive-layout">
+
+    <!-- ÍNDICE IZQUIERDO -->
+
+    <aside class="archive-sidebar">
+      <p class="archive-title">Search archive</p>
+
+      <nav class="archive-filters" aria-label="Filtros del archivo">
+
+        <button class="archive-filter active" type="button" data-filter="all">
+          <span>All</span>
+          <span>147</span>
+        </button>
+
+        <div class="archive-filter-group">
+          <button class="archive-filter" type="button" data-filter="live">
+            <span>Live:</span>
+            <span>090</span>
+          </button>
+
+          <button class="archive-filter archive-subfilter" type="button" data-filter="shows">
+            <span>Shows</span>
+            <span>034</span>
+          </button>
+
+          <button class="archive-filter archive-subfilter" type="button" data-filter="broadcast">
+            <span>Broadcast</span>
+            <span>056</span>
+          </button>
+        </div>
+
+        <div class="archive-filter-group">
+          <button class="archive-filter" type="button" data-filter="releases">
+            <span>Releases:</span>
+            <span>057</span>
+          </button>
+
+          <button class="archive-filter archive-subfilter" type="button" data-filter="albums">
+            <span>Albums</span>
+            <span>021</span>
+          </button>
+
+          <button class="archive-filter archive-subfilter" type="button" data-filter="music-video">
+            <span>Music video</span>
+            <span>024</span>
+          </button>
+
+          <button class="archive-filter archive-subfilter" type="button" data-filter="cover">
+            <span>Cover</span>
+            <span>012</span>
+          </button>
+        </div>
+
+      </nav>
+    </aside>
+
+
+    <!-- PROYECTOS CON SCROLL -->
+
+    <section class="archive-projects">
+
+      <a class="archive-card" href="proyecto-uno.html" data-category="live shows">
+        <h2 class="archive-artist">Artista uno</h2>
+        <div class="archive-image">
+          <img src="assets/archive/proyecto-uno.jpg" alt="Artista uno — Proyecto uno">
+        </div>
+        <p class="archive-project-name">Nombre del proyecto (2026)</p>
+      </a>
+
+      <a class="archive-card" href="proyecto-dos.html" data-category="live broadcast">
+        <h2 class="archive-artist">Artista dos</h2>
+        <div class="archive-image">
+          <img src="assets/archive/proyecto-dos.jpg" alt="Artista dos — Proyecto dos">
+        </div>
+        <p class="archive-project-name">Nombre del proyecto (2026)</p>
+      </a>
+
+      <a class="archive-card" href="proyecto-tres.html" data-category="releases albums">
+        <h2 class="archive-artist">Artista tres</h2>
+        <div class="archive-image">
+          <img src="assets/archive/proyecto-tres.jpg" alt="Artista tres — Proyecto tres">
+        </div>
+        <p class="archive-project-name">Nombre del proyecto (2025)</p>
+      </a>
+
+      <a class="archive-card" href="proyecto-cuatro.html" data-category="releases music-video">
+        <h2 class="archive-artist">Artista cuatro</h2>
+        <div class="archive-image">
+          <img src="assets/archive/proyecto-cuatro.jpg" alt="Artista cuatro — Proyecto cuatro">
+        </div>
+        <p class="archive-project-name">Nombre del proyecto (2025)</p>
+      </a>
+
+      <a class="archive-card" href="proyecto-cinco.html" data-category="releases cover">
+        <h2 class="archive-artist">Artista cinco</h2>
+        <div class="archive-image">
+          <img src="assets/archive/proyecto-cinco.jpg" alt="Artista cinco — Proyecto cinco">
+        </div>
+        <p class="archive-project-name">Nombre del proyecto (2025)</p>
+      </a>
+
+      <a class="archive-card" href="proyecto-seis.html" data-category="live shows">
+        <h2 class="archive-artist">Artista seis</h2>
+        <div class="archive-image">
+          <img src="assets/archive/proyecto-seis.jpg" alt="Artista seis — Proyecto seis">
+        </div>
+        <p class="archive-project-name">Nombre del proyecto (2024)</p>
+      </a>
+
+      <a class="archive-card" href="proyecto-siete.html" data-category="live broadcast">
+        <h2 class="archive-artist">Artista siete</h2>
+        <div class="archive-image">
+          <img src="assets/archive/proyecto-siete.jpg" alt="Artista siete — Proyecto siete">
+        </div>
+        <p class="archive-project-name">Nombre del proyecto (2024)</p>
+      </a>
+
+      <a class="archive-card" href="proyecto-ocho.html" data-category="releases albums">
+        <h2 class="archive-artist">Artista ocho</h2>
+        <div class="archive-image">
+          <img src="assets/archive/proyecto-ocho.jpg" alt="Artista ocho — Proyecto ocho">
+        </div>
+        <p class="archive-project-name">Nombre del proyecto (2024)</p>
+      </a>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
+    <img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome">
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+</body>
+</html>
