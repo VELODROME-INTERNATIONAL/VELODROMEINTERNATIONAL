@@ -27,75 +27,27 @@
     </nav>
   </header>
 
-    <main class="showcase" aria-label="Proyectos destacados">
-      <div class="media-stage" aria-hidden="true">
-        <div class="media-item is-active" data-media="project-1">
-          <div class="placeholder placeholder-1"><span>01</span></div>
-        </div>
-        <div class="media-item" data-media="project-2">
-          <div class="placeholder placeholder-2"><span>02</span></div>
-        </div>
-        <div class="media-item" data-media="project-3">
-          <div class="placeholder placeholder-3"><span>03</span></div>
-        </div>
-        <div class="media-item" data-media="project-4">
-          <div class="placeholder placeholder-4"><span>04</span></div>
-        </div>
-        <div class="media-item" data-media="project-5">
-          <div class="placeholder placeholder-5"><span>05</span></div>
-        </div>
-      </div>
+   <main class="home">
+  <button class="showreel-preview" id="open-showreel" type="button" aria-label="Ampliar showreel">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="videos/showreel.mp4" type="video/mp4">
+    </video>
+  </button>
+</main>
 
-      <div class="veil"></div>
+<div class="showreel-modal" id="showreel-modal" aria-hidden="true">
+  <video class="showreel-video" id="showreel-video" playsinline>
+    <source src="videos/showreel.mp4" type="video/mp4">
+  </video>
 
-      <section class="project-index">
-        <p class="index-label">SELECTED WORK</p>
-        <ol class="project-list">
-          <li>
-            <a href="project.html" class="project-link is-active" data-target="project-1">
-              <span class="client">ARTISTA UNO</span>
-              <span class="project">Nombre del proyecto</span>
-              <span class="year">2026</span>
-            </a>
-          </li>
-          <li>
-            <a href="project.html" class="project-link" data-target="project-2">
-              <span class="client">MARCA DOS</span>
-              <span class="project">Campaña o instalación</span>
-              <span class="year">2025</span>
-            </a>
-          </li>
-          <li>
-            <a href="project.html" class="project-link" data-target="project-3">
-              <span class="client">ARTISTA TRES</span>
-              <span class="project">Tour y dirección creativa</span>
-              <span class="year">2025</span>
-            </a>
-          </li>
-          <li>
-            <a href="project.html" class="project-link" data-target="project-4">
-              <span class="client">ESTUDIO CUATRO</span>
-              <span class="project">Identidad visual</span>
-              <span class="year">2024</span>
-            </a>
-          </li>
-          <li>
-            <a href="project.html" class="project-link" data-target="project-5">
-              <span class="client">CLIENTE CINCO</span>
-              <span class="project">Espacio y experiencia</span>
-              <span class="year">2024</span>
-            </a>
-          </li>
-        </ol>
-      </section>
+  <div class="video-controls">
+    <button id="play-button" type="button">Play</button>
+    <button id="sound-button" type="button">Unmute</button>
+    <input id="video-progress" type="range" min="0" max="100" value="0" aria-label="Progreso del vídeo">
+    <button id="close-showreel" type="button">Close</button>
+  </div>
+</div>
 
-      <aside class="info-panel" aria-hidden="true">
-        <button class="info-close" type="button">CLOSE</button>
-        <div class="info-copy">
-          <p>Dori Studio es un estudio creativo enfocado en dirección de arte, diseño y experiencias audiovisuales.</p>
-          <p>Madrid / Murcia<br><a href="mailto:hola@tudominio.com">hola@tudominio.com</a></p>
-        </div>
-      </aside>
     </main>
 
 <footer class="footer">
