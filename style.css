@@ -155,3 +155,49 @@ button {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+.footer {
+  width: 100%;
+  min-height: 500px;
+  padding: 28px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.footer-copyright {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.footer-logo {
+  display: block;
+  width: 105px;
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 640px) {
+  .footer {
+    min-height: 300px;
+    padding: 20px;
+  }
+
+  .footer-copyright {
+    max-width: 210px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .footer-logo {
+    width: 70px;
+  }
+}
