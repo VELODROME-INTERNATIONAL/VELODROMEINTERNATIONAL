@@ -1,133 +1,196 @@
-const links = [...document.querySelectorAll('.project-link')];
-const mediaItems = [...document.querySelectorAll('.media-item')];
-const infoPanel = document.querySelector('.info-panel');
-const infoToggle = document.querySelector('.info-toggle');
-const infoClose = document.querySelector('.info-close');
-const soundToggle = document.querySelector('.sound-toggle');
+document.addEventListener("DOMContentLoaded", () => {
+  /* PROYECTOS */
 
-function activateProject(id) {
-  links.forEach(link => link.classList.toggle('is-active', link.dataset.target === id));
-  mediaItems.forEach(item => item.classList.toggle('is-active', item.dataset.media === id));
-}
+  const projectLinks = document.querySelectorAll(".project-link");
+  const mediaItems = document.querySelectorAll(".media-item");
 
-links.forEach(link => {
-  link.addEventListener('mouseenter', () => activateProject(link.dataset.target));
-  link.addEventListener('focus', () => activateProject(link.dataset.target));
-});
+  function activateProject(id) {
+    projectLinks.forEach(link => {
+      link.classList.toggle("is-active", link.dataset.target === id);
+    });
 
-function setInfo(open) {
-  infoPanel.classList.toggle('is-open', open);
-  infoPanel.setAttribute('aria-hidden', String(!open));
-  infoToggle.setAttribute('aria-expanded', String(open));
-}
+    mediaItems.forEach(item => {
+      item.classList.toggle("is-active", item.dataset.media === id);
+    });
+  }
 
-infoToggle.addEventListener('click', () => setInfo(true));
-infoClose.addEventListener('click', () => setInfo(false));
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') setInfo(false);
-});
+  projectLinks.forEach(link => {
+    link.addEventListener("mouseenter", () => {
+      activateProject(link.dataset.target);
+    });
 
-soundToggle.addEventListener('click', () => {
-  const isOn = soundToggle.getAttribute('aria-pressed') === 'true';
-  soundToggle.setAttribute('aria-pressed', String(!isOn));
-  soundToggle.textContent = isOn ? 'UNMUTE' : 'MUTE';
-
-  document.querySelectorAll('video').forEach(video => {
-    video.muted = isOn;
+    link.addEventListener("focus", () => {
+      activateProject(link.dataset.target);
+    });
   });
-});
-<script>
-  const modal = document.getElementById("showreel-modal");
-  const video = document.getElementById("showreel-video");
-  const openButton = document.getElementById("open-showreel");
-  const closeButton = document.getElementById("close-showreel");
+
+
+  /* HEADER TRANSPARENTE AL HACER SCROLL */
+
+  const siteHeader = document.getElementById("site-header");
+
+  function updateHeader() {
+    if (!siteHeader) return;
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 20);
+  }
+
+  window.addEventListener("scroll", updateHeader);
+  updateHeader();
+
+
+  /* PANEL INFO */
+
+  const infoPanel = document.getElementById("info-panel");
+  const infoOpen = document.getElementById("open-info");
+  const infoClose = document.getElementById("close-info");
+
+  function setInfo(open) {
+    if (!infoPanel || !infoOpen) return;
+
+    infoPanel.classList.toggle("is-open", open);
+    infoPanel.setAttribute("aria-hidden", String(!open));
+    infoOpen.setAttribute("aria-expanded", String(open));
+  }
+
+  if (infoOpen) {
+    infoOpen.addEventListener("click", () => {
+      const isOpen = infoPanel?.classList.contains("is-open");
+      setInfo(!isOpen);
+    });
+  }
+
+  if (infoClose) {
+    infoClose.addEventListener("click", () => setInfo(false));
+  }
+
+
+  /* CONTROL GENERAL DE SONIDO */
+
+  const soundToggle = document.querySelector(".sound-toggle");
+
+  if (soundToggle) {
+    soundToggle.addEventListener("click", () => {
+      const soundIsOn =
+        soundToggle.getAttribute("aria-pressed") === "true";
+
+      document.querySelectorAll("video").forEach(video => {
+        video.muted = soundIsOn;
+      });
+
+      soundToggle.setAttribute(
+        "aria-pressed",
+        String(!soundIsOn)
+      );
+
+      soundToggle.textContent = soundIsOn ? "UNMUTE" : "MUTE";
+    });
+  }
+
+
+  /* SHOWREEL AMPLIADO */
+
+  const showreelModal = document.getElementById("showreel-modal");
+  const showreelVideo = document.getElementById("showreel-video");
+  const showreelOpen = document.getElementById("open-showreel");
+  const showreelClose = document.getElementById("close-showreel");
   const playButton = document.getElementById("play-button");
   const soundButton = document.getElementById("sound-button");
   const progress = document.getElementById("video-progress");
 
   function openShowreel() {
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
+    if (!showreelModal || !showreelVideo) return;
+
+    setInfo(false);
+
+    showreelModal.classList.add("is-open");
+    showreelModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("showreel-open");
 
-    video.currentTime = 0;
-    video.muted = false;
-    video.play();
+    showreelVideo.currentTime = 0;
+    showreelVideo.muted = false;
 
-    playButton.textContent = "Pause";
-    soundButton.textContent = "Mute";
+    showreelVideo.play().catch(() => {
+      showreelVideo.muted = true;
+      showreelVideo.play();
+    });
+
+    if (playButton) playButton.textContent = "Pause";
+
+    if (soundButton) {
+      soundButton.textContent = showreelVideo.muted
+        ? "Unmute"
+        : "Mute";
+    }
   }
 
   function closeShowreel() {
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
+    if (!showreelModal || !showreelVideo) return;
+
+    showreelModal.classList.remove("is-open");
+    showreelModal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("showreel-open");
 
-    video.pause();
-    playButton.textContent = "Play";
+    showreelVideo.pause();
+
+    if (playButton) playButton.textContent = "Play";
   }
 
-  openButton.addEventListener("click", openShowreel);
-  closeButton.addEventListener("click", closeShowreel);
+  if (showreelOpen) {
+    showreelOpen.addEventListener("click", openShowreel);
+  }
 
-  playButton.addEventListener("click", () => {
-    if (video.paused) {
-      video.play();
-      playButton.textContent = "Pause";
-    } else {
-      video.pause();
-      playButton.textContent = "Play";
-    }
-  });
+  if (showreelClose) {
+    showreelClose.addEventListener("click", closeShowreel);
+  }
 
-  soundButton.addEventListener("click", () => {
-    video.muted = !video.muted;
-    soundButton.textContent = video.muted ? "Unmute" : "Mute";
-  });
+  if (playButton && showreelVideo) {
+    playButton.addEventListener("click", () => {
+      if (showreelVideo.paused) {
+        showreelVideo.play();
+        playButton.textContent = "Pause";
+      } else {
+        showreelVideo.pause();
+        playButton.textContent = "Play";
+      }
+    });
+  }
 
-  video.addEventListener("timeupdate", () => {
-    if (video.duration) {
-      progress.value = (video.currentTime / video.duration) * 100;
-    }
-  });
+  if (soundButton && showreelVideo) {
+    soundButton.addEventListener("click", () => {
+      showreelVideo.muted = !showreelVideo.muted;
+      soundButton.textContent = showreelVideo.muted
+        ? "Unmute"
+        : "Mute";
+    });
+  }
 
-  progress.addEventListener("input", () => {
-    if (video.duration) {
-      video.currentTime = (progress.value / 100) * video.duration;
-    }
-  });
+  if (progress && showreelVideo) {
+    showreelVideo.addEventListener("timeupdate", () => {
+      if (showreelVideo.duration) {
+        progress.value =
+          (showreelVideo.currentTime / showreelVideo.duration) * 100;
+      }
+    });
 
-  video.addEventListener("ended", () => {
-    playButton.textContent = "Play";
-  });
+    progress.addEventListener("input", () => {
+      if (showreelVideo.duration) {
+        showreelVideo.currentTime =
+          (progress.value / 100) * showreelVideo.duration;
+      }
+    });
+
+    showreelVideo.addEventListener("ended", () => {
+      if (playButton) playButton.textContent = "Play";
+    });
+  }
+
+
+  /* CERRAR CON ESCAPE */
 
   document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeShowreel();
+    if (event.key !== "Escape") return;
+
+    setInfo(false);
+    closeShowreel();
   });
-const infoPanel = document.getElementById("info-panel");
-const openInfo = document.getElementById("open-info");
-const closeInfo = document.getElementById("close-info");
-
-function showInfo() {
-  infoPanel.classList.add("is-open");
-  infoPanel.setAttribute("aria-hidden", "false");
-  openInfo.setAttribute("aria-expanded", "true");
-}
-
-function hideInfo() {
-  infoPanel.classList.remove("is-open");
-  infoPanel.setAttribute("aria-hidden", "true");
-  openInfo.setAttribute("aria-expanded", "false");
-}
-
-openInfo.addEventListener("click", () => {
-  infoPanel.classList.contains("is-open") ? hideInfo() : showInfo();
 });
-
-closeInfo.addEventListener("click", hideInfo);
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") hideInfo();
-});
-
-</script>
