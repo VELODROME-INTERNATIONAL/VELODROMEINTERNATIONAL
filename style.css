@@ -62,7 +62,7 @@ img {
   top: 0;
 
   width: 100%;
-  height: 50px;
+  height: 55px;
   padding: 0 var(--pad);
 
   display: flex;
@@ -97,8 +97,8 @@ img {
 
 .header-link {
   position: relative;
-  font-size: 11px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 400;
   line-height: 1;
 }
 
