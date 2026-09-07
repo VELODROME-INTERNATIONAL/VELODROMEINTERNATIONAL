@@ -1509,3 +1509,10 @@ body.showreel-open {
     margin-bottom: 16px;
   }
 }
+.category-projects {
+  padding-top: 0;
+}
+
+.category-projects .project-card:first-child {
+  margin-top: 0;
+}
