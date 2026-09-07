@@ -16,13 +16,76 @@
 
 <body class="project-page">
 
-  <!-- HEADER DEL PROYECTO -->
+<body class="project-page">
+
+  <!-- HEADER CUANDO SE ENTRA DESDE LIVE -->
+
+  <header class="site-header project-site-header" id="site-header">
+    <nav class="header-left" aria-label="Navegación principal">
+
+      <div class="header-dropdown">
+        <a href="../../live.html" class="header-link active">Live</a>
+
+        <div class="header-submenu">
+          <a href="../../live.html?filter=shows">Show</a>
+          <a href="../../live.html?filter=broadcast">Broadcast</a>
+        </div>
+      </div>
+
+      <div class="header-dropdown">
+        <a href="../../releases.html" class="header-link">Releases</a>
+
+        <div class="header-submenu">
+          <a href="../../releases.html?filter=albums">Album</a>
+          <a href="../../releases.html?filter=music-video">Music video</a>
+          <a href="../../releases.html?filter=cover">Cover</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <a href="../../index.html" class="header-logo" aria-label="Página de inicio">
+      Vélodrome
+    </a>
+
+    <nav class="header-right" aria-label="Navegación secundaria">
+      <a href="../../archive.html" class="header-link">Archive</a>
+      <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false">Info</button>
+    </nav>
+  </header>
+
+
+  <!-- PANEL INFO DEL HEADER -->
+
+  <section class="info-panel" id="info-panel" aria-hidden="true">
+    <div class="info-block">
+      <p>Contact<br>For more information,<br>please contact</p>
+      <a href="mailto:hola@velodromeinternational.com">
+        hola@velodromeinternational.com
+      </a>
+    </div>
+
+    <div class="info-block info-connect">
+      <p>Connect</p>
+      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">
+        Instagram
+      </a>
+    </div>
+
+    <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
+      <span></span>
+      <span></span>
+    </button>
+  </section>
+
+
+  <!-- CABECERA CUANDO SE ENTRA DESDE ARCHIVE -->
 
   <header class="project-header">
     <h1 class="project-page-artist">Delaossa</h1>
     <p class="project-page-title">La Madrugá Live Show (2026)</p>
 
-    <a class="project-page-close" id="project-close" href="archive.html" aria-label="Volver">
+    <a class="project-page-close" id="project-close" href="../../archive.html" aria-label="Volver al archivo">
       <span></span>
       <span></span>
     </a>
@@ -57,6 +120,7 @@
   </footer>
 
 
-  <script src="project.js"></script>
+<script src="../../script.js"></script>
+<script src="../../project.js"></script>
 </body>
 </html>
