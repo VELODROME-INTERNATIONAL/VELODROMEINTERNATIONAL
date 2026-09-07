@@ -223,3 +223,68 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".archive-filter");
+  const archiveCards = document.querySelectorAll(".archive-card");
+  const projectsContainer = document.querySelector(".archive-projects");
+
+  if (!filterButtons.length || !archiveCards.length) return;
+
+  function getCategories(card) {
+    return (card.dataset.category || "")
+      .trim()
+      .split(/\s+/);
+  }
+
+  function projectMatches(card, filter) {
+    if (filter === "all") return true;
+    return getCategories(card).includes(filter);
+  }
+
+  function updateCounters() {
+    filterButtons.forEach(button => {
+      const filter = button.dataset.filter;
+
+      const total = [...archiveCards].filter(card => {
+        return projectMatches(card, filter);
+      }).length;
+
+      const counter = button.querySelector("span:last-child");
+
+      if (counter) {
+        counter.textContent = String(total).padStart(3, "0");
+      }
+    });
+  }
+
+  function filterProjects(filter) {
+    archiveCards.forEach(card => {
+      const visible = projectMatches(card, filter);
+      card.hidden = !visible;
+    });
+
+    filterButtons.forEach(button => {
+      const active = button.dataset.filter === filter;
+
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+
+    if (projectsContainer) {
+      projectsContainer.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterProjects(button.dataset.filter);
+    });
+  });
+
+  updateCounters();
+  filterProjects("all");
+});
