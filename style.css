@@ -1516,3 +1516,29 @@ body.showreel-open {
 .category-projects .project-card:first-child {
   margin-top: 0;
 }
+
+/* QUÉ HEADER SE MUESTRA EN CADA MODO */
+
+.project-site-header,
+.project-header {
+  display: none;
+}
+
+.view-category .project-site-header {
+  display: flex;
+}
+
+.view-archive .project-header {
+  display: grid;
+}
+
+
+/* ESPACIO CORRECTO DE LAS IMÁGENES */
+
+.view-category .project-images {
+  padding-top: 0;
+}
+
+.view-archive .project-images {
+  padding-top: 0;
+}
