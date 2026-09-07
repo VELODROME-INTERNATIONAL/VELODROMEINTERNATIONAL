@@ -306,14 +306,14 @@ document.addEventListener("DOMContentLoaded", () => {
   /* DESTINO DE LA X */
 
   const returnPages = {
-    archive: "archive.html",
-    live: "archive.html?filter=live",
-    shows: "archive.html?filter=shows",
-    broadcast: "archive.html?filter=broadcast",
-    releases: "archive.html?filter=releases",
-    albums: "archive.html?filter=albums",
-    "music-video": "archive.html?filter=music-video",
-    cover: "archive.html?filter=cover"
+    archive: "../../archive.html",
+    live: "../../archive.html?filter=live",
+    shows: "../../archive.html?filter=shows",
+    broadcast: "../../archive.html?filter=broadcast",
+    releases: "../../archive.html?filter=releases",
+    albums: "../../archive.html?filter=albums",
+    "music-video": "../../archive.html?filter=music-video",
+    cover: "../../archive.html?filter=cover"
   };
 
   if (closeButton) {
