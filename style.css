@@ -160,6 +160,10 @@ video {
    DESPLEGABLES DEL HEADER
    ================================================== */
 
+.site-header {
+  overflow: visible;
+}
+
 .header-dropdown {
   position: relative;
   height: 100%;
@@ -169,11 +173,25 @@ video {
 }
 
 
+/* Puente invisible entre el enlace y el submenú */
+
+.header-dropdown::after {
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  height: 10px;
+}
+
+
 /* Segunda fila completa */
 
 .header-submenu {
   position: fixed;
-  z-index: 1001;
+  z-index: 2000;
   top: var(--header-height);
   left: 0;
 
@@ -200,26 +218,47 @@ video {
   transition:
     opacity 180ms ease,
     transform 180ms ease,
-    visibility 180ms ease;
+    visibility 0s linear 220ms;
 }
 
+
+/* Mantener abierto al pasar por el menú */
+
 .header-dropdown:hover .header-submenu,
-.header-dropdown:focus-within .header-submenu {
+.header-dropdown:focus-within .header-submenu,
+.header-submenu:hover {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
 
   transform: translateY(0);
+
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 0s;
 }
+
+
+/* Enlaces del submenú */
 
 .header-submenu a {
   position: relative;
+  z-index: 2001;
+
+  display: block;
 
   font-size: 13px;
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
+
+  cursor: pointer;
+  pointer-events: auto;
 }
+
+
+/* Subrayado */
 
 .header-submenu a::after {
   content: "";
@@ -245,7 +284,21 @@ video {
 }
 
 
-/* ==================================================
+/* MÓVIL */
+
+@media (max-width: 700px) {
+  .header-submenu {
+    top: var(--header-height);
+
+    height: 38px;
+    padding: 3px 16px 12px;
+    gap: 14px;
+  }
+
+  .header-submenu a {
+    font-size: 12px;
+  }
+}/* ==================================================
    PANEL INFO
    ================================================== */
 
