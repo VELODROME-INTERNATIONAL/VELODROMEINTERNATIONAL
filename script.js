@@ -194,3 +194,32 @@ document.addEventListener("DOMContentLoaded", () => {
     closeShowreel();
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const mainProjectImage = document.getElementById("project-main-image");
+  const projectThumbnails = document.querySelectorAll(".project-thumbnail");
+
+  if (!mainProjectImage || !projectThumbnails.length) return;
+
+  projectThumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener("click", () => {
+      const newImage = thumbnail.dataset.image;
+
+      if (!newImage || mainProjectImage.src.endsWith(newImage)) return;
+
+      projectThumbnails.forEach(item => {
+        item.classList.remove("is-active");
+      });
+
+      thumbnail.classList.add("is-active");
+      mainProjectImage.classList.add("is-changing");
+
+      const preloadImage = new Image();
+      preloadImage.src = newImage;
+
+      preloadImage.onload = () => {
+        mainProjectImage.src = newImage;
+        mainProjectImage.classList.remove("is-changing");
+      };
+    });
+  });
+});
