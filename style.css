@@ -1256,3 +1256,256 @@ body.showreel-open {
     font-size: 12px;
   }
 }
+/* VARIABLES */
+
+:root {
+  --project-pad: clamp(16px, 1.4vw, 28px);
+  --project-header-height: 78px;
+}
+
+
+/* ESTRUCTURA GENERAL */
+
+.project-page {
+  width: 100%;
+  min-height: 100svh;
+  margin: 0;
+  overflow-x: hidden;
+
+  color: #000;
+  background: #fff;
+
+  font-family: "Google Sans Flex", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+
+/* HEADER DEL PROYECTO */
+
+.project-header {
+  position: relative;
+  z-index: 100;
+
+  width: 100%;
+  min-height: var(--project-header-height);
+  padding: 20px var(--project-pad);
+
+  display: grid;
+  grid-template-columns: clamp(220px, 21vw, 430px) 1fr 32px;
+  align-items: start;
+}
+
+.project-page-artist,
+.project-page-title {
+  margin: 0;
+
+  font-size: clamp(15px, 1.15vw, 23px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.project-page-artist {
+  font-weight: 500;
+}
+
+.project-page-title {
+  font-weight: 400;
+}
+
+
+/* X DE CIERRE */
+
+.project-page-close {
+  position: relative;
+  justify-self: end;
+
+  width: 28px;
+  height: 28px;
+}
+
+.project-page-close span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: currentColor;
+  transition: transform 250ms ease;
+}
+
+.project-page-close span:first-child {
+  transform: rotate(45deg);
+}
+
+.project-page-close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.project-page-close:hover span:first-child {
+  transform: rotate(135deg);
+}
+
+.project-page-close:hover span:last-child {
+  transform: rotate(45deg);
+}
+
+
+/* BASE DE LAS IMÁGENES */
+
+.project-media {
+  display: block;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+
+  text-align: left;
+  background: #ededed;
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+}
+
+
+/* =========================================
+   MODO ARCHIVE
+   Imagen principal + miniaturas
+   ========================================= */
+
+.view-archive .project-images {
+  width: 66%;
+  padding: 0 0 var(--project-pad) var(--project-pad);
+
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.view-archive .project-media {
+  aspect-ratio: 16 / 9;
+  opacity: 0.45;
+  cursor: pointer;
+
+  transition:
+    opacity 200ms ease,
+    transform 300ms ease;
+}
+
+.view-archive .project-media:hover {
+  opacity: 1;
+}
+
+.view-archive .project-media.is-selected {
+  order: -1;
+  grid-column: 1 / -1;
+
+  aspect-ratio: 3 / 2;
+  opacity: 1;
+  cursor: default;
+}
+
+.view-archive .project-media img {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* =========================================
+   MODO CATEGORÍA
+   Todas las imágenes grandes con scroll
+   ========================================= */
+
+.view-category .project-images {
+  width: 100%;
+  padding: 0 var(--project-pad) clamp(100px, 10vw, 180px);
+}
+
+.view-category .project-media {
+  width: 100%;
+  margin-bottom: var(--project-pad);
+
+  opacity: 1;
+  cursor: default;
+  background: transparent;
+}
+
+.view-category .project-media:last-child {
+  margin-bottom: 0;
+}
+
+.view-category .project-media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* FOOTER */
+
+.project-footer {
+  margin-top: clamp(80px, 10vw, 180px);
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+  :root {
+    --project-header-height: 76px;
+  }
+
+  .project-header {
+    min-height: var(--project-header-height);
+    padding: 18px 16px;
+
+    grid-template-columns: 1fr 28px;
+    gap: 7px 16px;
+  }
+
+  .project-page-artist {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .project-page-title {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .project-page-close {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+
+    width: 24px;
+    height: 24px;
+  }
+
+  .project-page-artist,
+  .project-page-title {
+    font-size: 13px;
+  }
+
+  .view-archive .project-images {
+    width: 100%;
+    padding: 0 16px 50px;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .view-archive .project-media.is-selected {
+    aspect-ratio: 4 / 3;
+  }
+
+  .view-category .project-images {
+    padding: 0 16px 80px;
+  }
+
+  .view-category .project-media {
+    margin-bottom: 16px;
+  }
+}
