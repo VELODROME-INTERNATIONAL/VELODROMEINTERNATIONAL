@@ -3,79 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vélodrome — Dirección creativa, diseño y experiencias audiovisuales.">
-  <title>Vélodrome</title>
+  <meta name="description" content="Delaossa — La Madrugá Live Show 2026">
+  <title>Delaossa — La Madrugá Live Show 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project.css">
 </head>
 
-<body>
+<body class="project-page">
 
-  <header class="site-header" id="site-header">
-<nav class="header-left" aria-label="Navegación principal">
+  <!-- HEADER DEL PROYECTO -->
 
-  <div class="header-dropdown">
-    <a href="live.html" class="header-link">Live</a>
+  <header class="project-header">
+    <h1 class="project-page-artist">Delaossa</h1>
+    <p class="project-page-title">La Madrugá Live Show (2026)</p>
 
-    <div class="header-submenu">
-      <a href="shows.html">Show</a>
-      <a href="broadcast.html">Broadcast</a>
-    </div>
-  </div>
-
-  <div class="header-dropdown">
-    <a href="releases.html" class="header-link">Releases</a>
-
-    <div class="header-submenu">
-      <a href="albums.html">Album</a>
-      <a href="music-videos.html">Music video</a>
-      <a href="covers.html">Cover</a>
-    </div>
-  </div>
-
-</nav>
-
-    <a href="home.html" class="header-logo" aria-label="Página de inicio">Vélodrome</a>
-
-    <nav class="header-right" aria-label="Navegación secundaria">
-      <a href="archive.html" class="header-link">Archive</a>
-      <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false">Info</button>
-    </nav>
+    <a class="project-page-close" id="project-close" href="archive.html" aria-label="Volver">
+      <span></span>
+      <span></span>
+    </a>
   </header>
 
 
-  <!-- PANEL INFO -->
+  <!-- IMÁGENES DEL PROYECTO -->
 
-  <section class="info-panel" id="info-panel" aria-hidden="true">
-    <div class="info-block">
-      <p>Contact</p>
-      <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
-    </div>
+  <main class="project-images">
 
-    <div class="info-block info-connect">
-      <p>Connect</p>
-      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">Instagram</a>
-    </div>
-
-    <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
-      <span></span>
-      <span></span>
+    <button class="project-media is-selected" type="button" aria-label="Ver imagen 1">
+      <img src="assets/projects/delaossa/delaossa-01.jpg" alt="La Madrugá — Imagen 1">
     </button>
-  </section>
+
+    <button class="project-media" type="button" aria-label="Ver imagen 2">
+      <img src="assets/projects/delaossa/delaossa-02.jpg" alt="La Madrugá — Imagen 2">
+    </button>
+
+    <button class="project-media" type="button" aria-label="Ver imagen 3">
+      <img src="assets/projects/delaossa/delaossa-03.jpg" alt="La Madrugá — Imagen 3">
+    </button>
+
+    <button class="project-media" type="button" aria-label="Ver imagen 4">
+      <img src="assets/projects/delaossa/delaossa-04.jpg" alt="La Madrugá — Imagen 4">
+    </button>
+
+    <button class="project-media" type="button" aria-label="Ver imagen 5">
+      <img src="assets/projects/delaossa/delaossa-05.jpg" alt="La Madrugá — Imagen 5">
+    </button>
+
+    <button class="project-media" type="button" aria-label="Ver imagen 6">
+      <img src="assets/projects/delaossa/delaossa-06.jpg" alt="La Madrugá — Imagen 6">
+    </button>
+
+  </main>
+
 
   <!-- FOOTER -->
 
-  <footer class="footer">
+  <footer class="footer project-footer">
     <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
     <img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome">
   </footer>
 
 
-  <!-- JAVASCRIPT -->
-
-  <script src="script.js"></script>
+  <script src="project.js"></script>
 </body>
 </html>
