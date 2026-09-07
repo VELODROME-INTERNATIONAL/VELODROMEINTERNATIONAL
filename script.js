@@ -288,3 +288,61 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCounters();
   filterProjects("all");
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const page = document.body;
+  const closeButton = document.getElementById("project-close");
+  const projectImages = document.querySelectorAll(".project-media");
+  const params = new URLSearchParams(window.location.search);
+
+  const view = params.get("view") === "archive"
+    ? "archive"
+    : "category";
+
+  const from = params.get("from") || "";
+
+  page.classList.add(`view-${view}`);
+
+
+  /* DESTINO DE LA X */
+
+  const returnPages = {
+    archive: "archive.html",
+    live: "archive.html?filter=live",
+    shows: "archive.html?filter=shows",
+    broadcast: "archive.html?filter=broadcast",
+    releases: "archive.html?filter=releases",
+    albums: "archive.html?filter=albums",
+    "music-video": "archive.html?filter=music-video",
+    cover: "archive.html?filter=cover"
+  };
+
+  if (closeButton) {
+    if (view === "archive") {
+      closeButton.href = returnPages.archive;
+    } else {
+      closeButton.href = returnPages[from] || returnPages.archive;
+    }
+  }
+
+
+  /* GALERÍA DEL MODO ARCHIVE */
+
+  if (view === "archive") {
+    projectImages.forEach(image => {
+      image.addEventListener("click", () => {
+        if (image.classList.contains("is-selected")) return;
+
+        projectImages.forEach(item => {
+          item.classList.remove("is-selected");
+        });
+
+        image.classList.add("is-selected");
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    });
+  }
+});
