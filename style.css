@@ -1275,3 +1275,17 @@ body.showreel-open {
     transition-duration: 0.01ms !important;
   }
 }
+/* FONDO BLANCO CUANDO EL MENÚ ESTÁ DESPLEGADO */
+
+.site-header:has(.header-dropdown:hover),
+.site-header:has(.header-dropdown:focus-within) {
+  background-color: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.header-submenu {
+  background-color: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
