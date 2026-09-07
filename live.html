@@ -1,1 +1,154 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vélodrome — Live projects">
+  <title>Live — Vélodrome</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header" id="site-header">
+
+    <nav class="header-left" aria-label="Navegación principal">
+
+      <div class="header-dropdown">
+        <a href="live.html" class="header-link active" aria-current="page">Live</a>
+
+        <div class="header-submenu">
+          <a href="live.html?filter=shows">Show</a>
+          <a href="live.html?filter=broadcast">Broadcast</a>
+        </div>
+      </div>
+
+      <div class="header-dropdown">
+        <a href="releases.html" class="header-link">Releases</a>
+
+        <div class="header-submenu">
+          <a href="releases.html?filter=albums">Album</a>
+          <a href="releases.html?filter=music-video">Music video</a>
+          <a href="releases.html?filter=cover">Cover</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <a href="index.html" class="header-logo" aria-label="Página de inicio">Vélodrome</a>
+
+    <nav class="header-right" aria-label="Navegación secundaria">
+      <a href="archive.html" class="header-link">Archive</a>
+      <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false">Info</button>
+    </nav>
+
+  </header>
+
+
+  <!-- PANEL INFO -->
+
+  <section class="info-panel" id="info-panel" aria-hidden="true">
+
+    <div class="info-block">
+      <p>Contact<br>For more information,<br>please contact</p>
+      <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
+    </div>
+
+    <div class="info-block info-connect">
+      <p>Connect</p>
+      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
+      <span></span>
+      <span></span>
+    </button>
+
+  </section>
+
+
+  <!-- PROYECTOS LIVE -->
+
+  <main class="projects-grid category-projects">
+
+    <!-- PROYECTO 1: SHOW -->
+
+<a
+  class="project-card category-project-card"
+  href="LIVE/SHOW/delaossa-la-madrugá-2026.html?view=category&from=live"
+  data-category="shows"
+>
+  <div class="project-image">
+    <img
+      src="assets/projects/delaossa/cover.jpg"
+      alt="Delaossa — La Madrugá Live Show 2026"
+    >
+  </div>
+
+  <div class="project-details">
+    <h2 class="project-artist">Delaossa</h2>
+    <p class="project-name">La Madrugá Live Show (2026)</p>
+  </div>
+</a>
+
+
+    <!-- PROYECTO 2: BROADCAST -->
+
+    <a
+      class="project-card category-project-card"
+      href="proyecto-dos.html?view=category&from=live"
+      data-category="broadcast"
+    >
+      <div class="project-image">
+        <img
+          src="assets/projects/proyecto-dos/cover.jpg"
+          alt="Artista dos — Nombre del proyecto"
+        >
+      </div>
+
+      <div class="project-details">
+        <h2 class="project-artist">Artista dos</h2>
+        <p class="project-name">Nombre del proyecto (2026)</p>
+      </div>
+    </a>
+
+
+    <!-- PROYECTO 3: SHOW -->
+
+    <a
+      class="project-card category-project-card"
+      href="proyecto-tres.html?view=category&from=live"
+      data-category="shows"
+    >
+      <div class="project-image">
+        <img
+          src="assets/projects/proyecto-tres/cover.jpg"
+          alt="Artista tres — Nombre del proyecto"
+        >
+      </div>
+
+      <div class="project-details">
+        <h2 class="project-artist">Artista tres</h2>
+        <p class="project-name">Nombre del proyecto (2025)</p>
+      </div>
+    </a>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
+    <img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome">
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
