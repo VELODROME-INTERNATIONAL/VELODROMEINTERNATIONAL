@@ -9,11 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
 
-  <!-- Estilos generales: archivo situado dos carpetas por encima -->
-  <link rel="stylesheet" href="../../style.css">
-
-  <!-- Detectar la vista antes de mostrar el contenido -->
+  <!-- Elegir vista antes de mostrar la página -->
   <script>
     document.documentElement.dataset.projectView =
       new URLSearchParams(location.search).get("view") === "archive"
@@ -21,8 +19,9 @@
         : "category";
   </script>
 
-  <!-- Estilos específicos de esta página -->
   <style>
+    /* BASE DEL PROYECTO */
+
     .project-page {
       margin: 0;
       color: #000;
@@ -42,6 +41,12 @@
     html[data-project-view="archive"] .project-header {
       display: grid;
     }
+
+    html[data-project-view="archive"] #info-panel {
+      display: none;
+    }
+
+    /* CABECERA ARCHIVE */
 
     .project-page .project-header {
       position: relative;
@@ -63,6 +68,8 @@
 
     .project-page-artist { font-weight: 500; }
     .project-page-title { font-weight: 400; }
+
+    /* X DE CIERRE */
 
     .project-page-close {
       position: relative;
@@ -87,7 +94,7 @@
     .project-page-close::before { transform: rotate(45deg); }
     .project-page-close::after { transform: rotate(-45deg); }
 
-    /* Colección de imágenes en modo categoría */
+    /* MODO CATEGORÍA: IMÁGENES VERTICALES */
 
     .project-page .project-images {
       display: block;
@@ -110,9 +117,11 @@
       height: auto;
     }
 
-    .project-media:last-child { margin-bottom: 0; }
+    .project-page .project-media:last-of-type {
+      margin-bottom: 0;
+    }
 
-    /* Galería Archive: imagen principal y miniaturas estables */
+    /* MODO ARCHIVE: GALERÍA */
 
     .archive-viewer[hidden],
     .archive-thumbnails[hidden] {
@@ -178,7 +187,7 @@
       outline-offset: 4px;
     }
 
-    /* Sin footer en Archive, como en la referencia */
+    /* FOOTER SOLO EN MODO CATEGORÍA */
 
     html[data-project-view="archive"] .project-footer {
       display: none;
@@ -188,6 +197,8 @@
       margin-top: 80px;
     }
 
+    /* MÓVIL */
+
     @media (max-width: 700px) {
       .project-page .project-header {
         min-height: 76px;
@@ -196,8 +207,15 @@
         gap: 8px 16px;
       }
 
-      .project-page-artist { grid-column: 1; grid-row: 1; }
-      .project-page-title { grid-column: 1; grid-row: 2; }
+      .project-page-artist {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .project-page-title {
+        grid-column: 1;
+        grid-row: 2;
+      }
 
       .project-page-close {
         grid-column: 2;
@@ -229,28 +247,30 @@
 
   <header class="site-header project-site-header" id="site-header">
     <nav class="header-left" aria-label="Navegación principal">
+
       <div class="header-dropdown">
-        <a href="../../live.html" class="header-link active">Live</a>
+        <a href="../live.html" class="header-link active">Live</a>
         <div class="header-submenu">
-          <a href="../../show.html">Show</a>
-          <a href="../../broadcast.html">Broadcast</a>
+          <a href="../show.html">Show</a>
+          <a href="../broadcast.html">Broadcast</a>
         </div>
       </div>
 
       <div class="header-dropdown">
-        <a href="../../releases.html" class="header-link">Releases</a>
+        <a href="../releases.html" class="header-link">Releases</a>
         <div class="header-submenu">
-          <a href="../../album.html">Album</a>
-          <a href="../../music-video.html">Music video</a>
-          <a href="../../cover.html">Cover</a>
+          <a href="../album.html">Album</a>
+          <a href="../music-video.html">Music video</a>
+          <a href="../cover.html">Cover</a>
         </div>
       </div>
+
     </nav>
 
-    <a href="../../index.html" class="header-logo" aria-label="Página de inicio">Vélodrome</a>
+    <a href="../home.html" class="header-logo" aria-label="Página de inicio">Vélodrome</a>
 
     <nav class="header-right" aria-label="Navegación secundaria">
-      <a href="../../archive.html" class="header-link">Archive</a>
+      <a href="../archive.html" class="header-link">Archive</a>
       <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false" aria-controls="info-panel">Info</button>
     </nav>
   </header>
@@ -269,7 +289,8 @@
     </div>
 
     <button class="info-close" id="close-info" type="button" aria-label="Cerrar información">
-      <span></span><span></span>
+      <span></span>
+      <span></span>
     </button>
   </section>
 
@@ -278,40 +299,47 @@
   <header class="project-header">
     <h1 class="project-page-artist">Delaossa</h1>
     <p class="project-page-title">La Madrugá Live Show (2026)</p>
-    <a class="project-page-close" href="../../archive.html" aria-label="Volver al archivo"></a>
+    <a class="project-page-close" href="../archive.html" aria-label="Volver al archivo"></a>
   </header>
 
-  <!-- IMÁGENES: AÑADE AQUÍ LAS FOTOS UNA SOLA VEZ -->
+  <!-- IMÁGENES DEL PROYECTO -->
 
   <main class="project-images" aria-label="Imágenes de La Madrugá">
+
     <figure class="project-media">
-      <img src="../../assets/projects/delaossa/DELAOSSA_GLORIANM_DSC_9550.jpg" alt="La Madrugá — Imagen 1">
+      <img src="../assets/projects/delaossa/DELAOSSA_GLORIANM_DSC_9550.jpg" alt="La Madrugá — Imagen 1">
     </figure>
 
     <figure class="project-media">
-      <img src="../../assets/projects/delaossa/NUEVA%20SEASON%20COVER.jpg" alt="La Madrugá — Imagen 2" loading="lazy">
+      <img src="../assets/projects/delaossa/NUEVA%20SEASON%20COVER.jpg" alt="La Madrugá — Imagen 2" loading="lazy">
     </figure>
 
     <figure class="project-media">
-      <img src="../../assets/projects/delaossa/_DSF1305.jpg" alt="La Madrugá — Imagen 3" loading="lazy">
+      <img src="../assets/projects/delaossa/_DSF1305.jpg" alt="La Madrugá — Imagen 3" loading="lazy">
     </figure>
 
-    <!-- JavaScript genera aquí la galería de Archive -->
+    <!-- Galería generada automáticamente para Archive -->
     <div class="archive-viewer" hidden>
       <img id="archive-main-photo" alt="">
     </div>
+
     <div class="archive-thumbnails" aria-label="Seleccionar imagen" hidden></div>
+
   </main>
+
+  <!-- FOOTER -->
 
   <footer class="footer project-footer">
     <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
-    <img class="footer-logo" src="../../assets/brand/logo.png" alt="Vélodrome">
+    <img class="footer-logo" src="../assets/brand/logo.png" alt="Vélodrome">
   </footer>
 
-  <!-- Header, transparencia e Info -->
-  <script src="../../script.js"></script>
+  <!-- FUNCIONES GENERALES: HEADER E INFO -->
 
-  <!-- Cambio de vista y galería: sustituye a project.js -->
+  <script src="../script.js"></script>
+
+  <!-- DOBLE VISTA Y GALERÍA -->
+
   <script>
     (() => {
       const view = document.documentElement.dataset.projectView;
@@ -360,5 +388,6 @@
       thumbnails.hidden = false;
     })();
   </script>
+
 </body>
 </html>
