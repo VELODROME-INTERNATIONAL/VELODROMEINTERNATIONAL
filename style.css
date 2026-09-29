@@ -1289,3 +1289,93 @@ body.showreel-open {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
+
+/* ARCHIVE: GALERÍA A TODO EL ANCHO */
+
+html[data-project-view="archive"] .project-page .project-images {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 var(--pad, 28px) 28px;
+  background: #fff;
+}
+
+/* IMAGEN PRINCIPAL: FONDO BLANCO Y ALINEACIÓN IZQUIERDA */
+
+html[data-project-view="archive"] .project-page .archive-viewer {
+  width: 66%;
+  max-width: 100%;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  background: #fff;
+}
+
+html[data-project-view="archive"] .project-page .archive-viewer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  background: #fff;
+}
+
+/* MINIATURAS: UNA SOLA FILA CON SCROLL HORIZONTAL */
+
+html[data-project-view="archive"] .project-page .archive-thumbnails {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 12px;
+  padding: 4px 0 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  background: #fff;
+}
+
+html[data-project-view="archive"] .project-page .archive-thumb {
+  flex: 0 0 clamp(120px, 14vw, 220px);
+  width: clamp(120px, 14vw, 220px);
+  aspect-ratio: 3 / 2;
+  background: #fff;
+  scroll-snap-align: start;
+}
+
+html[data-project-view="archive"] .project-page .archive-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  background: #fff;
+}
+
+html[data-project-view="archive"] .project-page .archive-thumb:focus-visible {
+  outline-offset: -2px;
+}
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+  html[data-project-view="archive"] .project-page .project-images {
+    padding: 0 16px 28px;
+  }
+
+  html[data-project-view="archive"] .project-page .archive-viewer {
+    width: 100%;
+  }
+
+  html[data-project-view="archive"] .project-page .archive-thumbnails {
+    gap: 8px;
+  }
+
+  html[data-project-view="archive"] .project-page .archive-thumb {
+    flex-basis: 120px;
+    width: 120px;
+  }
+}
