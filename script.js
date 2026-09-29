@@ -1,3 +1,17 @@
+(() => {
+  const favicon = document.createElement("link");
+
+  favicon.rel = "icon";
+  favicon.type = "image/png";
+  favicon.href = new URL(
+    "assets/brand/favicon.png?v=2",
+    document.currentScript.src
+  ).href;
+
+  document.querySelectorAll('link[rel~="icon"]').forEach(icon => icon.remove());
+  document.head.appendChild(favicon);
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   /* PROYECTOS */
 
