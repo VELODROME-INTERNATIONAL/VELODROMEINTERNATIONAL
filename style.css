@@ -1379,3 +1379,20 @@ html[data-project-view="archive"] .project-page .archive-thumb:focus-visible {
     width: 120px;
   }
 }
+
+/* MINIATURAS CON ANCHO ADAPTADO A CADA FOTO */
+
+html[data-project-view="archive"] .project-page .archive-thumb {
+  flex: 0 0 auto;
+  width: auto;
+  height: clamp(80px, 9.33vw, 147px);
+  aspect-ratio: auto;
+}
+
+html[data-project-view="archive"] .project-page .archive-thumb img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+}
