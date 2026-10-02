@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Quevedo — Comeback Live Show 2024">
+  <title>Quevedo — Comeback Live Show 2024</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Elegir vista antes de mostrar la página -->
+  <script>
+    document.documentElement.dataset.projectView =
+      new URLSearchParams(location.search).get("view") === "archive"
+        ? "archive"
+        : "category";
+  </script>
+
+  <style>
+    /* BASE DEL PROYECTO */
+
+    .project-page {
+      margin: 0;
+      color: #000;
+      background: #fff;
+      font-family: "Google Sans Flex", Arial, sans-serif;
+    }
+
+    .project-page .project-header,
+    .project-page .project-site-header {
+      display: none;
+    }
+
+    html[data-project-view="category"] .project-site-header {
+      display: flex;
+    }
+
+    html[data-project-view="archive"] .project-header {
+      display: grid;
+    }
+
+    html[data-project-view="archive"] #info-panel {
+      display: none;
+    }
+
+    /* CABECERA ARCHIVE */
+
+    .project-page .project-header {
+      position: relative;
+      width: 100%;
+      min-height: 78px;
+      padding: 20px var(--pad, 28px);
+      grid-template-columns: minmax(0, 21%) minmax(0, 1fr) 28px;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .project-page-artist,
+    .project-page-title {
+      margin: 0;
+      font-size: clamp(15px, 1.15vw, 23px);
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .project-page-artist { font-weight: 500; }
+    .project-page-title { font-weight: 400; }
+
+    /* X DE CIERRE */
+
+    .project-page-close {
+      position: relative;
+      display: block;
+      width: 28px;
+      height: 28px;
+      color: #000;
+      justify-self: end;
+    }
+
+    .project-page-close::before,
+    .project-page-close::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .project-page-close::before { transform: rotate(45deg); }
+    .project-page-close::after { transform: rotate(-45deg); }
+
+    /* MODO CATEGORÍA: IMÁGENES VERTICALES */
+
+    .project-page .project-images {
+      display: block;
+      width: 100%;
+      padding: 0 var(--pad, 28px);
+    }
+
+    .project-page .project-media {
+      display: block;
+      width: 100%;
+      margin: 0 0 var(--pad, 28px);
+      padding: 0;
+      background: transparent;
+    }
+
+    .project-page .project-media img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .project-page .project-media:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* MODO ARCHIVE: GALERÍA */
+
+    .archive-viewer[hidden],
+    .archive-thumbnails[hidden] {
+      display: none !important;
+    }
+
+    html[data-project-view="archive"] .project-images {
+      width: 66%;
+      padding: 0 0 28px var(--pad, 28px);
+    }
+
+    html[data-project-view="archive"] .project-media {
+      display: none;
+    }
+
+    .archive-viewer {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      background: #f3f3f3;
+    }
+
+    .archive-viewer img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .archive-thumbnails {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .archive-thumb {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      background: #eee;
+      opacity: 0.45;
+      cursor: pointer;
+    }
+
+    .archive-thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .archive-thumb:hover,
+    .archive-thumb[aria-pressed="true"] {
+      opacity: 1;
+    }
+
+    .archive-thumb:focus-visible,
+    .project-page-close:focus-visible {
+      outline: 2px solid #000;
+      outline-offset: 4px;
+    }
+
+    /* FOOTER SOLO EN MODO CATEGORÍA */
+
+    html[data-project-view="archive"] .project-footer {
+      display: none;
+    }
+
+    .project-page .project-footer {
+      margin-top: 80px;
+    }
+
+    /* MÓVIL */
+
+    @media (max-width: 700px) {
+      .project-page .project-header {
+        min-height: 76px;
+        padding: 18px 16px;
+        grid-template-columns: minmax(0, 1fr) 28px;
+        gap: 8px 16px;
+      }
+
+      .project-page-artist {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .project-page-title {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .project-page-close {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      }
+
+      .project-page-artist,
+      .project-page-title {
+        font-size: 13px;
+      }
+
+      .project-page .project-images,
+      html[data-project-view="archive"] .project-images {
+        width: 100%;
+        padding: 0 16px 30px;
+      }
+
+      .archive-thumbnails {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body class="project-page">
+
+  <!-- HEADER DEL MODO CATEGORÍA -->
+
+  <header class="site-header project-site-header" id="site-header">
+    <nav class="header-left" aria-label="Navegación principal">
+
+      <div class="header-dropdown">
+        <a href="../live.html" class="header-link active">Live</a>
+        <div class="header-submenu">
+          <a href="../show.html">Show</a>
+          <a href="../broadcast.html">Broadcast</a>
+        </div>
+      </div>
+
+      <div class="header-dropdown">
+        <a href="../releases.html" class="header-link">Releases</a>
+        <div class="header-submenu">
+          <a href="../album.html">Album</a>
+          <a href="../music-video.html">Music video</a>
+          <a href="../cover.html">Cover</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <a href="../home.html" class="header-logo" aria-label="Página de inicio">Vélodrome</a>
+
+    <nav class="header-right" aria-label="Navegación secundaria">
+      <a href="../archive.html" class="header-link">Archive</a>
+      <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false" aria-controls="info-panel">Info</button>
+    </nav>
+  </header>
+
+  <!-- PANEL INFO -->
+
+  <section class="info-panel" id="info-panel" aria-hidden="true">
+    <div class="info-block">
+      <p>Contact<br>For more information,<br>please contact</p>
+      <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
+    </div>
+
+    <div class="info-block info-connect">
+      <p>Connect</p>
+      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <button class="info-close" id="close-info" type="button" aria-label="Cerrar información">
+      <span></span>
+      <span></span>
+    </button>
+  </section>
+
+  <!-- CABECERA DEL MODO ARCHIVE -->
+
+  <header class="project-header">
+    <h1 class="project-page-artist">Quevedo</h1>
+    <p class="project-page-title">Comeback Live Show (2024)</p>
+    <a class="project-page-close" href="../archive.html" aria-label="Volver al archivo"></a>
+  </header>
+
+  <!-- IMÁGENES DEL PROYECTO -->
+
+  <main class="project-images" aria-label="Imágenes de Quevedo — Comeback Live Show 2024">
+
+    <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-1.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+    
+    <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-2.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+        <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-3.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+        <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-4.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+        <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-5.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+        <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-6.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+        <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-7.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+        <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-8.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+        <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-9.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+        <figure class="project-media">
+      <img src="../assets/projects/quevedo/shows/show-comeback-2024-10.jpg" alt="Quevedo — Comeback Live Show 2024">
+    </figure>
+
+    <!-- Galería generada automáticamente para Archive -->
+    <div class="archive-viewer" hidden>
+      <img id="archive-main-photo" alt="">
+    </div>
+
+    <div class="archive-thumbnails" aria-label="Seleccionar imagen" hidden></div>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer project-footer">
+    <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
+    <img class="footer-logo" src="../assets/brand/logo.png" alt="Vélodrome">
+  </footer>
+
+  <!-- FUNCIONES GENERALES: HEADER E INFO -->
+
+  <script src="../script.js"></script>
+
+  <!-- DOBLE VISTA Y GALERÍA -->
+
+  <script>
+    (() => {
+      const view = document.documentElement.dataset.projectView;
+      document.body.classList.add(`view-${view}`);
+
+      if (view !== "archive") return;
+
+      const photos = [...document.querySelectorAll(".project-media img")];
+      const viewer = document.querySelector(".archive-viewer");
+      const mainPhoto = document.getElementById("archive-main-photo");
+      const thumbnails = document.querySelector(".archive-thumbnails");
+      const buttons = [];
+
+      if (!photos.length) return;
+
+      function selectPhoto(index) {
+        mainPhoto.src = photos[index].src;
+        mainPhoto.alt = photos[index].alt;
+
+        buttons.forEach((button, position) => {
+          button.setAttribute("aria-pressed", String(position === index));
+        });
+      }
+
+      photos.forEach((photo, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "archive-thumb";
+        button.setAttribute("aria-label", `Ver imagen ${index + 1}`);
+        button.setAttribute("aria-pressed", "false");
+
+        const thumbnail = document.createElement("img");
+        thumbnail.src = photo.src;
+        thumbnail.alt = "";
+        thumbnail.loading = "lazy";
+
+        button.append(thumbnail);
+        button.addEventListener("click", () => selectPhoto(index));
+
+        buttons.push(button);
+        thumbnails.append(button);
+      });
+
+      selectPhoto(0);
+      viewer.hidden = false;
+      thumbnails.hidden = false;
+    })();
+  </script>
+
+</body>
+</html>
