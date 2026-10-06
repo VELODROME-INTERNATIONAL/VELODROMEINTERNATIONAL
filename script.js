@@ -603,30 +603,74 @@
       foto.alt = "";
       foto.decoding = "async";
 
-      foto.onload = () => {
-        cargando = false;
+foto.onload = () => {
+  cargando = false;
 
-        if (!document.hidden && visible) {
-          const primera = collage.childElementCount === 0;
+  if (!document.hidden && visible) {
+    const ancho = collage.clientWidth;
+    const alto = collage.clientHeight;
 
-          foto.style.setProperty("--image-width", `${aleatorio(48, 78)}%`);
-          foto.style.setProperty("--image-x", `${primera ? 50 : aleatorio(25, 75)}%`);
-          foto.style.setProperty("--image-y", `${primera ? 50 : aleatorio(25, 75)}%`);
-          foto.style.setProperty("--image-angle", `${aleatorio(-9, 9)}deg`);
+    if (!ancho || !alto) {
+      programar();
+      return;
+    }
 
-          collage.append(foto);
+    const primera = collage.childElementCount === 0;
+    const margen = Math.min(ancho, alto) * 0.04;
+    const angulo = aleatorio(-9, 9);
+    const radianes = angulo * Math.PI / 180;
+    const coseno = Math.abs(Math.cos(radianes));
+    const seno = Math.abs(Math.sin(radianes));
+    const proporcion = foto.naturalWidth / foto.naturalHeight;
 
-          while (collage.childElementCount > maxImagenes) {
-            collage.firstElementChild.remove();
-          }
+    // Tamaño inicial, respetando las proporciones originales.
+    let anchoFoto = ancho * aleatorio(0.55, 0.78);
+    let altoFoto = anchoFoto / proporcion;
 
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => foto.classList.add("is-visible"));
-          });
-        }
+    // Espacio que ocupa la fotografía al girarla.
+    let anchoGirado = anchoFoto * coseno + altoFoto * seno;
+    let altoGirado = anchoFoto * seno + altoFoto * coseno;
 
-        programar();
-      };
+    const ajuste = Math.min(
+      1,
+      (ancho - margen * 2) / anchoGirado,
+      (alto - margen * 2) / altoGirado
+    );
+
+    anchoFoto *= ajuste;
+    anchoGirado *= ajuste;
+    altoGirado *= ajuste;
+
+    // Posición aleatoria dentro de los límites seguros.
+    const x = primera ? ancho / 2 : aleatorio(
+      margen + anchoGirado / 2,
+      ancho - margen - anchoGirado / 2
+    );
+
+    const y = primera ? alto / 2 : aleatorio(
+      margen + altoGirado / 2,
+      alto - margen - altoGirado / 2
+    );
+
+    // Porcentajes para que las capas se adapten al cambiar la ventana.
+    foto.style.setProperty("--image-width", `${anchoFoto / ancho * 100}%`);
+    foto.style.setProperty("--image-x", `${x / ancho * 100}%`);
+    foto.style.setProperty("--image-y", `${y / alto * 100}%`);
+    foto.style.setProperty("--image-angle", `${angulo}deg`);
+
+    collage.append(foto);
+
+    while (collage.childElementCount > maxImagenes) {
+      collage.firstElementChild.remove();
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => foto.classList.add("is-visible"));
+    });
+  }
+
+  programar();
+};
 
       foto.onerror = () => {
         cargando = false;
