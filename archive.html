@@ -74,8 +74,15 @@
     <!-- ÍNDICE IZQUIERDO -->
 
     <aside class="archive-sidebar">
-      <p class="archive-title">Search archive</p>
-
+<input
+  class="archive-search"
+  id="archive-search"
+  type="search"
+  placeholder="SEARCH ARCHIVE"
+  aria-label="Buscar por artista o proyecto"
+  aria-controls="archive-projects"
+  autocomplete="off"
+>
       <nav class="archive-filters" aria-label="Filtros del archivo">
 
         <button class="archive-filter active" type="button" data-filter="all">
@@ -128,8 +135,8 @@
 
     <!-- PROYECTOS CON SCROLL -->
 
-    <section class="archive-projects">
-
+<section class="archive-projects" id="archive-projects">
+  
             <a class="archive-card" href="LIVE/abhir-elefantes-cabalgando-2023.html?view=archive&from=archive" data-category="live shows">
         <h2 class="archive-artist">ABHIR</h2>
         <div class="archive-image">
