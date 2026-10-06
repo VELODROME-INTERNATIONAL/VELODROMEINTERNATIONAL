@@ -1290,3 +1290,65 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
 @media (prefers-reduced-motion: reduce) {
   .home-collage img { transition: none; }
 }
+
+/* RECUADRO CENTRADO DEL COLLAGE */
+.home {
+  min-height: calc(100svh - var(--header-height, 55px));
+  display: grid;
+  place-items: center;
+  padding: 40px var(--pad);
+}
+
+.showreel-preview.collage-preview {
+  position: relative;
+  display: block;
+  width: min(60vw, 1120px);
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.home-collage {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  background: #000;
+}
+
+.home-collage img {
+  position: absolute;
+  display: block;
+  width: var(--image-width);
+  height: auto;
+  max-width: none;
+  max-height: none;
+  left: var(--image-x);
+  top: var(--image-y);
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(.96);
+  transition: opacity 250ms ease, transform 400ms ease;
+}
+
+.home-collage img.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(1);
+}
+
+@media (max-width: 700px) {
+  .home {
+    min-height: calc(100svh - 58px);
+    padding: 30px 16px;
+  }
+
+  .showreel-preview.collage-preview {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-collage img { transition: none; }
+}
