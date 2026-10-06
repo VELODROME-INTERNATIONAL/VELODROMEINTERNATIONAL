@@ -486,3 +486,45 @@
   if (document.readyState === "complete") actualizarCierre();
   else window.addEventListener("load", actualizarCierre, { once: true });
 })();
+
+/* BUSCADOR DEL ARCHIVO */
+.archive-search {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 60px;
+  padding: 0 0 6px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: #000;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.archive-search::placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+.archive-search:focus {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+.archive-card[hidden] {
+  display: none !important;
+}
+
+.archive-search-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  font: inherit;
+}
+
+.archive-search-empty[hidden] {
+  display: none !important;
+}
