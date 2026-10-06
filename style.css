@@ -1102,3 +1102,26 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
     transition-duration: 0.01ms !important;
   }
 }
+
+/* DESPLEGABLE MÁS COMPACTO */
+.site-header .header-submenu {
+  top: calc(100% - 16px);
+  padding: 0 var(--pad) 12px;
+  min-height: 0;
+  height: auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.site-header .header-submenu a {
+  padding: 3px 0;
+  line-height: 1;
+}
+
+@media (max-width: 700px) {
+  .site-header .header-submenu {
+    top: calc(100% - 12px);
+    padding: 0 16px 10px;
+    gap: 12px;
+  }
+}
