@@ -1,57 +1,51 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vélodrome — Live projects">
+  <meta name="description" content="Vélodrome — Proyectos live, shows y broadcast.">
   <title>Live — Vélodrome</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
   <!-- HEADER -->
-
- <header class="site-header" id="site-header">
-  <nav class="header-left" aria-label="Navegación principal">
-    <div class="header-dropdown">
-      <a href="live.html" class="header-link">Live</a>
-      <div class="header-submenu">
-        <a href="show.html">Show</a>
-        <a href="broadcast.html">Broadcast</a>
+  <header class="site-header" id="site-header">
+    <nav class="header-left" aria-label="Navegación principal">
+      <div class="header-dropdown">
+        <a href="live.html" class="header-link active" aria-current="page">Live</a>
+        <div class="header-submenu">
+          <a href="show.html">Show</a>
+          <a href="broadcast.html">Broadcast</a>
+        </div>
       </div>
-    </div>
 
-    <div class="header-dropdown">
-      <a href="releases.html" class="header-link">Releases</a>
-      <div class="header-submenu">
-        <a href="album.html">Album</a>
-        <a href="music-video.html">Music video</a>
-        <a href="cover.html">Cover</a>
+      <div class="header-dropdown">
+        <a href="releases.html" class="header-link">Releases</a>
+        <div class="header-submenu">
+          <a href="album.html">Album</a>
+          <a href="music-video.html">Music video</a>
+          <a href="cover.html">Cover</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <a href="home.html" class="header-logo" aria-label="Página de inicio" aria-current="page">
-    Vélodrome
-  </a>
+    <a href="home.html" class="header-logo" aria-label="Página de inicio">Vélodrome</a>
 
-  <nav class="header-right" aria-label="Navegación secundaria">
-    <a href="archive.html" class="header-link">Archive</a>
-    <button class="header-link info-toggle" id="open-info" type="button"
-      aria-expanded="false" aria-controls="info-panel">Info</button>
-  </nav>
-</header>
-
+    <nav class="header-right" aria-label="Navegación secundaria">
+      <a href="archive.html" class="header-link">Archive</a>
+      <button class="header-link info-toggle" id="open-info" type="button"
+        aria-expanded="false" aria-controls="info-panel">Info</button>
+    </nav>
+  </header>
 
   <!-- PANEL INFO -->
-
-  <section class="info-panel" id="info-panel" aria-hidden="true">
-
+  <section class="info-panel" id="info-panel" aria-label="Información y contacto" aria-hidden="true">
     <div class="info-block">
       <p>Contact<br>For more information,<br>please contact</p>
       <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
@@ -59,97 +53,100 @@
 
     <div class="info-block info-connect">
       <p>Connect</p>
-      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
 
-    <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
-      <span></span>
-      <span></span>
+    <button class="info-close" id="close-info" type="button" aria-label="Cerrar información">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
-
   </section>
 
-<div class="category-intro">
-  <h1 class="category-title">LIVE</h1>
-</div>
- 
-  <!-- PROYECTOS LIVE -->
-
-  <main class="projects-grid category-projects">
-
-    <!-- PROYECTO SHOW -->
-
-<a class="project-card category-project-card"
-  href="LIVE/delaossa-la-madrugá-2026.html?view=category&from=live"
-  data-category="shows">
-  <div class="project-image">
-    <img src="assets/projects/delaossa/show-madruga-cover.jpg" alt="DELAOSSA — LA MADRUGÁ LIVE SHOW 2026">
+  <!-- TÍTULO -->
+  <div class="category-intro">
+    <h1 class="category-title" id="live-title">Live</h1>
   </div>
-  <div class="project-details">
-    <h2 class="project-artist">DELAOSSA</h2>
-    <p class="project-name">LA MADRUGÁ LIVE SHOW (2026)</p>
-  </div>
-</a>
 
-    <!-- PROYECTO: BROADCAST -->
+  <!-- PROYECTOS: SHOWS Y BROADCAST -->
+  <main class="projects-grid category-projects" aria-labelledby="live-title">
 
+    <!-- DELAOSSA -->
     <a class="project-card category-project-card"
-      href="LIVE/morat-latin-grammys-2025.html?view=category&from=live"
-      data-category="broadcast">
+      href="LIVE/delaossa-la-madrugá-2026.html?view=category&amp;from=live"
+      data-category="live shows">
       <div class="project-image">
-        <img src="assets/projects/morat/latin-grammys-2025-1.jpg" alt="Morat — Faltas Tú Latin Grammys 2025">
+        <img src="assets/projects/delaossa/show-madruga-cover.jpg"
+          alt="Delaossa — La Madrugá Live Show 2026" fetchpriority="high">
       </div>
       <div class="project-details">
-        <h2 class="project-artist">MORAT</h2>
-        <p class="project-name">FALTAS TÚ LATIN GRAMMYS (2025)</p>
+        <h2 class="project-artist">Delaossa</h2>
+        <p class="project-name">La Madrugá Live Show (2026)</p>
       </div>
     </a>
 
+    <!-- MORAT -->
     <a class="project-card category-project-card"
-      href="LIVE/yung-beef-eddlb-2024.html?view=category&from=live"
-      data-category="shows">
+      href="LIVE/morat-latin-grammys-2025.html?view=category&amp;from=live"
+      data-category="live broadcast">
       <div class="project-image">
-        <img src="assets/projects/eddlb/show_eddlb_1.jpg" alt="YUNG BEEF — EL DÍA DE LA BESTIA LIVE SHOW 2024" >
+        <img src="assets/projects/morat/latin-grammys-2025-1.jpg"
+          alt="Morat — Faltas Tú Latin Grammys 2025" loading="lazy" decoding="async">
       </div>
       <div class="project-details">
-        <h2 class="project-artist">YUNG BEEF</h2>
-        <p class="project-name">EL DÍA DE LA BESTIA LIVE SHOW (2024)</p>
+        <h2 class="project-artist">Morat</h2>
+        <p class="project-name">Faltas Tú Latin Grammys (2025)</p>
       </div>
     </a>
 
+    <!-- YUNG BEEF -->
     <a class="project-card category-project-card"
-      href="LIVE/manuel-turizo-201-2025.html?view=category&from=live"
-      data-category="shows">
+      href="LIVE/yung-beef-eddlb-2024.html?view=category&amp;from=live"
+      data-category="live shows">
       <div class="project-image">
-      <img src="assets/projects/turizo/show-apt-201-8.avif" alt="manuel turizo apt 201 tour">
+        <img src="assets/projects/eddlb/show_eddlb_1.jpg"
+          alt="Yung Beef — El Día de la Bestia Live Show 2024" loading="lazy" decoding="async">
       </div>
       <div class="project-details">
-        <h2 class="project-artist">MANUEL TURIZO</h2>
-        <p class="project-name">201 LIVE SHOW (2025)</p>
+        <h2 class="project-artist">Yung Beef</h2>
+        <p class="project-name">El Día de la Bestia Live Show (2024)</p>
       </div>
     </a>
 
+    <!-- MANUEL TURIZO -->
     <a class="project-card category-project-card"
-      href="LIVE/quevedo-buenas-noches-2024.html?view=category&from=live"
-      data-category="shows">
+      href="LIVE/manuel-turizo-201-2025.html?view=category&amp;from=live"
+      data-category="live shows">
       <div class="project-image">
-      <img src="assets/projects/quevedo/shows/show-bn-2025-1.jpg" alt="Quevedo — Buenas Noches Live Show 2024">
+        <img src="assets/projects/turizo/show-apt-201-8.avif"
+          alt="Manuel Turizo — 201 Live Show 2025" loading="lazy" decoding="async">
       </div>
       <div class="project-details">
-        <h2 class="project-artist">QUEVEDO</h2>
-        <p class="project-name">BUENAS NOCHES LIVE SHOW (2024)</p>
+        <h2 class="project-artist">Manuel Turizo</h2>
+        <p class="project-name">201 Live Show (2025)</p>
+      </div>
+    </a>
+
+    <!-- QUEVEDO -->
+    <a class="project-card category-project-card"
+      href="LIVE/quevedo-buenas-noches-2024.html?view=category&amp;from=live"
+      data-category="live shows">
+      <div class="project-image">
+        <img src="assets/projects/quevedo/shows/show-bn-2025-1.jpg"
+          alt="Quevedo — Buenas Noches Live Show 2024" loading="lazy" decoding="async">
+      </div>
+      <div class="project-details">
+        <h2 class="project-artist">Quevedo</h2>
+        <p class="project-name">Buenas Noches Live Show (2024)</p>
       </div>
     </a>
 
   </main>
 
   <!-- FOOTER -->
-
   <footer class="footer">
     <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
-    <img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome">
+    <img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome" loading="lazy">
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
