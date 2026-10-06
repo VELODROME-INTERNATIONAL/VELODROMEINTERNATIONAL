@@ -560,3 +560,122 @@
     iniciarBuscadorArchivo();
   }
 })();
+
+
+// Collage de imágenes recogidas automáticamente de Archive.
+(() => {
+  function iniciarCollage() {
+    const collage = document.getElementById("home-collage");
+    if (!collage || collage.dataset.ready) return;
+    collage.dataset.ready = "true";
+
+    const intervalo = 850; // Tiempo entre imágenes, en milisegundos.
+    const maxImagenes = 12; // Capas que permanecen en el collage.
+    const movimientoReducido = matchMedia("(prefers-reduced-motion: reduce)");
+    let imagenes = [], pendientes = [], temporizador;
+    let cargando = false, visible = true;
+
+    const aleatorio = (min, max) => Math.random() * (max - min) + min;
+
+    function barajar(lista) {
+      const copia = [...lista];
+      for (let i = copia.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copia[i], copia[j]] = [copia[j], copia[i]];
+      }
+      return copia;
+    }
+
+    function programar() {
+      clearTimeout(temporizador);
+      if (!imagenes.length || document.hidden || !visible) return;
+      if (movimientoReducido.matches && collage.childElementCount) return;
+      temporizador = setTimeout(mostrarImagen, intervalo);
+    }
+
+    function mostrarImagen() {
+      if (cargando || document.hidden || !visible || !imagenes.length) return;
+      if (!pendientes.length) pendientes = barajar(imagenes);
+
+      const src = pendientes.pop();
+      const foto = new Image();
+      cargando = true;
+      foto.alt = "";
+      foto.decoding = "async";
+
+      foto.onload = () => {
+        cargando = false;
+
+        if (!document.hidden && visible) {
+          const primera = collage.childElementCount === 0;
+
+          foto.style.setProperty("--image-width", `${aleatorio(48, 78)}%`);
+          foto.style.setProperty("--image-x", `${primera ? 50 : aleatorio(25, 75)}%`);
+          foto.style.setProperty("--image-y", `${primera ? 50 : aleatorio(25, 75)}%`);
+          foto.style.setProperty("--image-angle", `${aleatorio(-9, 9)}deg`);
+
+          collage.append(foto);
+
+          while (collage.childElementCount > maxImagenes) {
+            collage.firstElementChild.remove();
+          }
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => foto.classList.add("is-visible"));
+          });
+        }
+
+        programar();
+      };
+
+      foto.onerror = () => {
+        cargando = false;
+        imagenes = imagenes.filter(url => url !== src);
+        programar();
+      };
+
+      foto.src = src;
+    }
+
+    document.addEventListener("visibilitychange", programar);
+    movimientoReducido.addEventListener("change", programar);
+
+    if ("IntersectionObserver" in window) {
+      const observador = new IntersectionObserver(([entrada]) => {
+        visible = entrada.isIntersecting;
+        programar();
+      });
+      observador.observe(collage);
+    }
+
+    async function cargarImagenes() {
+      try {
+        const respuesta = await fetch(new URL("archive.html", document.baseURI));
+        if (!respuesta.ok) throw new Error(`Archive: ${respuesta.status}`);
+
+        const documento = new DOMParser().parseFromString(
+          await respuesta.text(), "text/html"
+        );
+
+        imagenes = [...new Set(
+          [...documento.querySelectorAll(".archive-card .archive-image img")]
+            .map(img => img.getAttribute("src"))
+            .filter(Boolean)
+            .map(src => new URL(src, respuesta.url).href)
+        )];
+
+        mostrarImagen();
+      } catch (error) {
+        console.error("No se pudieron cargar las imágenes del collage:", error);
+      }
+    }
+
+    cargarImagenes();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciarCollage, { once: true });
+  } else {
+    iniciarCollage();
+  }
+})();
