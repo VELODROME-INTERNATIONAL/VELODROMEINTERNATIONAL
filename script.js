@@ -465,3 +465,40 @@
     init();
   }
 })();
+
+/* DESTINO DE LA X EN LAS GALERÍAS */
+(() => {
+  function setProjectReturn() {
+    const params = new URLSearchParams(location.search);
+    if (params.get("view") !== "archive") return;
+
+    const close = document.querySelector(".project-page-close");
+    if (!close) return;
+
+    // Rutas desde proyectos guardados en LIVE/ o RELEASES/.
+    const destinations = {
+      "archive": {
+        href: "../archive.html",
+        label: "Volver al archivo"
+      },
+      "album-ejemplo": {
+        href: "../RELEASES/album-ejemplo.html",
+        label: "Volver al álbum"
+      }
+    };
+
+    const from = params.get("from");
+    const destination = Object.hasOwn(destinations, from)
+      ? destinations[from]
+      : destinations.archive;
+
+    close.href = destination.href;
+    close.setAttribute("aria-label", destination.label);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setProjectReturn);
+  } else {
+    setProjectReturn();
+  }
+})();
