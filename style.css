@@ -1249,3 +1249,44 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
 .archive-search-empty[hidden] {
   display: none !important;
 }
+
+/* COLLAGE ANIMADO DE LA HOME */
+.collage-preview {
+  position: relative;
+  padding: 0;
+  isolation: isolate;
+  overflow: hidden;
+  background: #000;
+}
+
+.home-collage {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home-collage img {
+  position: absolute;
+  display: block;
+  width: var(--image-width);
+  max-width: none;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+  left: var(--image-x);
+  top: var(--image-y);
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(.96);
+  transition: opacity 250ms ease, transform 400ms ease;
+}
+
+.home-collage img.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-collage img { transition: none; }
+}
