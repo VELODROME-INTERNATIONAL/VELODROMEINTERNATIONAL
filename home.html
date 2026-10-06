@@ -14,41 +14,40 @@
 
 <body>
 
-<header class="site-header" id="site-header">
-  <nav class="header-left" aria-label="Navegación principal">
-    <div class="header-dropdown">
-      <a href="live.html" class="header-link">Live</a>
-      <div class="header-submenu">
-        <a href="show.html">Show</a>
-        <a href="broadcast.html">Broadcast</a>
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <nav class="header-left" aria-label="Navegación principal">
+      <div class="header-dropdown">
+        <a href="live.html" class="header-link">Live</a>
+        <div class="header-submenu">
+          <a href="show.html">Show</a>
+          <a href="broadcast.html">Broadcast</a>
+        </div>
       </div>
-    </div>
 
-    <div class="header-dropdown">
-      <a href="releases.html" class="header-link">Releases</a>
-      <div class="header-submenu">
-        <a href="album.html">Album</a>
-        <a href="music-video.html">Music video</a>
-        <a href="cover.html">Cover</a>
+      <div class="header-dropdown">
+        <a href="releases.html" class="header-link">Releases</a>
+        <div class="header-submenu">
+          <a href="album.html">Album</a>
+          <a href="music-video.html">Music video</a>
+          <a href="cover.html">Cover</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <a href="home.html" class="header-logo" aria-label="Página de inicio" aria-current="page">
-    Vélodrome
-  </a>
+    <a href="home.html" class="header-logo" aria-label="Página de inicio" aria-current="page">
+      Vélodrome
+    </a>
 
-  <nav class="header-right" aria-label="Navegación secundaria">
-    <a href="archive.html" class="header-link">Archive</a>
-    <button class="header-link info-toggle" id="open-info" type="button"
-      aria-expanded="false" aria-controls="info-panel">Info</button>
-  </nav>
-</header>
-
+    <nav class="header-right" aria-label="Navegación secundaria">
+      <a href="archive.html" class="header-link">Archive</a>
+      <button class="header-link info-toggle" id="open-info" type="button"
+        aria-expanded="false" aria-controls="info-panel">Info</button>
+    </nav>
+  </header>
 
   <!-- PANEL INFO -->
-
-  <section class="info-panel" id="info-panel" aria-hidden="true">
+  <section class="info-panel" id="info-panel" aria-label="Información y contacto" aria-hidden="true">
     <div class="info-block">
       <p>Contact</p>
       <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
@@ -56,78 +55,59 @@
 
     <div class="info-block info-connect">
       <p>Connect</p>
-      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es"
+        target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
 
-    <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
-      <span></span>
-      <span></span>
+    <button class="info-close" id="close-info" type="button" aria-label="Cerrar información">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
   </section>
 
+  <main>
+    <!-- ANIMACIÓN: LAS IMÁGENES SE CARGAN DESDE ARCHIVE.HTML -->
+    <section class="home" id="home-intro" aria-label="Collage de proyectos">
+      <div class="showreel-preview collage-preview" aria-hidden="true">
+        <div class="home-collage" id="home-collage"></div>
+      </div>
+    </section>
 
-  <!-- ANIMACIÓN -->
+    <!-- PROYECTOS -->
+    <section class="projects-grid" aria-label="Proyectos destacados">
 
-<section class="home" id="home-intro" aria-label="Showreel">
-  <button class="showreel-preview collage-preview" id="open-showreel"
-    type="button" aria-label="Abrir showreel">
-    <span class="home-collage" id="home-collage" aria-hidden="true"></span>
-  </button>
-</section>
+      <a class="project-card"
+        href="LIVE/delaossa-la-madrugá-2026.html?view=category&amp;from=live">
+        <div class="project-image">
+          <img src="assets/projects/delaossa/show-madruga-cover.jpg"
+            alt="Delaossa — La Madrugá Live Show 2026">
+        </div>
+        <div class="project-details">
+          <h2 class="project-artist">Delaossa</h2>
+          <p class="project-name">La Madrugá Live Show (2026)</p>
+        </div>
+      </a>
 
-    <!-- GRIDS PROYECTOS -->
-  
-  <section class="projects-grid">
+      <a class="project-card"
+        href="LIVE/yung-beef-eddlb-2024.html?view=category&amp;from=live">
+        <div class="project-image">
+          <img src="assets/projects/eddlb/show_eddlb_1.jpg"
+            alt="Yung Beef — El Día de la Bestia Live Show" loading="lazy">
+        </div>
+        <div class="project-details">
+          <h2 class="project-artist">Yung Beef</h2>
+          <p class="project-name">El Día de la Bestia Live Show (2024)</p>
+        </div>
+      </a>
 
-  <a class="project-card" href="LIVE/delaossa-la-madrugá-2026.html">
-    <div class="project-image">
-      <img src="assets/projects/la-madruga.jpg" alt="LA MADRUGÁ - DELAOSSA">
-    </div>
-
-    <div class="project-details">
-      <h2 class="project-artist">DELAOSSA</h2>
-      <p class="project-name">LA MADRUGÁ (2026)</p>
-    </div>
-  </a>
-
-  <a class="project-card" href="proyecto-dos.html">
-    <div class="project-image">
-      <img src="../../assets/projects/yung-beef-eddlb.jpg" alt="EL DÍA DE LA BESTIA- YUNG BEEF">
-    </div>
-
-    <div class="project-details">
-      <h2 class="project-artist">YUNG BEEF</h2>
-      <p class="project-name">EL DÍA DE LA BESTIA (2025)</p>
-    </div>
-  </a>
-
-</section>
-
-  <!-- SHOWREEL AMPLIADO -->
-
-  <div class="showreel-modal" id="showreel-modal" aria-hidden="true">
-    <video class="showreel-video" id="showreel-video" playsinline>
-      <source src="videos/showreel.mp4" type="video/mp4">
-    </video>
-
-    <div class="video-controls">
-      <button id="play-button" type="button">Play</button>
-      <button id="sound-button" type="button">Unmute</button>
-      <input id="video-progress" type="range" min="0" max="100" value="0" aria-label="Progreso del vídeo">
-      <button id="close-showreel" type="button">Close</button>
-    </div>
-  </div>
-
+    </section>
+  </main>
 
   <!-- FOOTER -->
-
   <footer class="footer">
     <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
-    <img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome">
+    <img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome" loading="lazy">
   </footer>
-
-
-  <!-- JAVASCRIPT -->
 
   <script src="script.js"></script>
 </body>
