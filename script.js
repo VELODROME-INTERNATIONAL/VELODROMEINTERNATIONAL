@@ -466,39 +466,23 @@
   }
 })();
 
-/* DESTINO DE LA X EN LAS GALERÍAS */
+// La X vuelve a la página del álbum indicada en el enlace.
 (() => {
-  function setProjectReturn() {
-    const params = new URLSearchParams(location.search);
-    if (params.get("view") !== "archive") return;
+  const raiz = new URL("./", document.currentScript.src);
 
-    const close = document.querySelector(".project-page-close");
-    if (!close) return;
+  function actualizarCierre() {
+    const parametros = new URLSearchParams(location.search);
+    if (parametros.get("from") !== "album") return;
 
-    // Rutas desde proyectos guardados en LIVE/ o RELEASES/.
-    const destinations = {
-      "archive": {
-        href: "../archive.html",
-        label: "Volver al archivo"
-      },
-      "album-ejemplo": {
-        href: "../RELEASES/album-ejemplo.html",
-        label: "Volver al álbum"
-      }
-    };
+    const destino = new URL(parametros.get("return") || "album.html", raiz);
+    if (destino.origin !== raiz.origin || !destino.pathname.startsWith(raiz.pathname)) return;
 
-    const from = params.get("from");
-    const destination = Object.hasOwn(destinations, from)
-      ? destinations[from]
-      : destinations.archive;
-
-    close.href = destination.href;
-    close.setAttribute("aria-label", destination.label);
+    document.querySelectorAll(".project-page-close, #project-close").forEach(enlace => {
+      enlace.href = destino.href;
+      enlace.setAttribute("aria-label", "Volver al álbum");
+    });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setProjectReturn);
-  } else {
-    setProjectReturn();
-  }
+  if (document.readyState === "complete") actualizarCierre();
+  else window.addEventListener("load", actualizarCierre, { once: true });
 })();
