@@ -487,44 +487,76 @@
   else window.addEventListener("load", actualizarCierre, { once: true });
 })();
 
-/* BUSCADOR DEL ARCHIVO */
-.archive-search {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  margin: 0 0 60px;
-  padding: 0 0 6px;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  border-radius: 0;
-  background: transparent;
-  color: #000;
-  font: inherit;
-  letter-spacing: inherit;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
+// Buscar proyectos dentro del archivo.
+(() => {
+  function iniciarBuscadorArchivo() {
+    const buscador = document.getElementById("archive-search");
+    const listado = document.getElementById("archive-projects");
+    if (!buscador || !listado || buscador.dataset.ready) return;
+    buscador.dataset.ready = "true";
 
-.archive-search::placeholder {
-  color: #000;
-  opacity: 1;
-}
+    const tarjetas = [...listado.querySelectorAll(".archive-card")];
+    const filtros = [...document.querySelectorAll(".archive-filter")];
 
-.archive-search:focus {
-  outline: none;
-  border-bottom-color: #000;
-}
+    const normalizar = texto => texto
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
 
-.archive-card[hidden] {
-  display: none !important;
-}
+    const proyectos = tarjetas.map(tarjeta => ({
+      tarjeta,
+      texto: normalizar([
+        tarjeta.querySelector(".archive-artist")?.textContent || "",
+        tarjeta.querySelector(".archive-project-name")?.textContent || ""
+      ].join(" ")),
+      categorias: (tarjeta.dataset.category || "").split(/\s+/)
+    }));
 
-.archive-search-empty {
-  grid-column: 1 / -1;
-  margin: 0;
-  font: inherit;
-}
+    const mensaje = document.createElement("p");
+    mensaje.className = "archive-search-empty";
+    mensaje.setAttribute("role", "status");
+    mensaje.hidden = true;
+    listado.append(mensaje);
 
-.archive-search-empty[hidden] {
-  display: none !important;
-}
+    let categoria = filtros.find(filtro =>
+      filtro.classList.contains("active")
+    )?.dataset.filter || "all";
+
+    function filtrar() {
+      const palabras = normalizar(buscador.value).split(/\s+/).filter(Boolean);
+      let visibles = 0;
+
+      proyectos.forEach(({ tarjeta, texto, categorias }) => {
+        const coincideCategoria = categoria === "all" || categorias.includes(categoria);
+        const coincideBusqueda = palabras.every(palabra => texto.includes(palabra));
+        const mostrar = coincideCategoria && coincideBusqueda;
+
+        tarjeta.hidden = !mostrar;
+        if (mostrar) visibles++;
+      });
+
+      mensaje.textContent = visibles ? "" : "No se han encontrado proyectos.";
+      mensaje.hidden = visibles > 0;
+      listado.scrollTop = 0;
+    }
+
+    buscador.addEventListener("input", filtrar);
+
+    filtros.forEach(filtro => {
+      filtro.addEventListener("click", () => {
+        categoria = filtro.dataset.filter || "all";
+        // Aplicar la búsqueda después del filtro de categoría existente.
+        queueMicrotask(filtrar);
+      });
+    });
+
+    filtrar();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciarBuscadorArchivo, { once: true });
+  } else {
+    iniciarBuscadorArchivo();
+  }
+})();
