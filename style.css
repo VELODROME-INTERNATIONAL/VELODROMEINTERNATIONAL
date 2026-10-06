@@ -1290,3 +1290,10 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
 
   #home-collage img { transition: none; }
 }
+
+.showreel-preview.collage-preview,
+#home-intro #open-showreel,
+.home-collage,
+#home-collage {
+  background: #fff;
+}
