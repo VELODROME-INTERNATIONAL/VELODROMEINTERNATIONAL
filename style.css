@@ -1297,3 +1297,20 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
 #home-collage {
   background: #fff;
 }
+
+/* El collage ya no es un botón */
+#home-intro .collage-preview {
+  cursor: default;
+  pointer-events: none;
+  background: #fff;
+}
+
+#home-intro #home-collage {
+  background: #fff;
+}
+
+#home-collage img.is-removing {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(.88);
+  transition: opacity 80ms linear, transform 80ms linear;
+}
