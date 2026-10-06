@@ -1125,3 +1125,85 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
     gap: 12px;
   }
 }
+
+/* PÁGINA INDIVIDUAL DE UN ÁLBUM */
+.album-overview {
+  padding: clamp(100px, 11vw, 225px) var(--pad) 100px;
+}
+
+.album-heading {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.album-artist,
+.album-name {
+  margin: 0;
+  font: inherit;
+  font-size: clamp(18px, 1.45vw, 30px);
+  line-height: 1.1;
+}
+
+.album-artist { font-weight: 500; }
+
+.album-name {
+  grid-column: 2 / -1;
+  font-weight: 400;
+}
+
+.album-projects {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 60px 14px;
+}
+
+.album-project {
+  display: block;
+  min-width: 0;
+}
+
+.album-project img {
+  width: 100%;
+  aspect-ratio: 10 / 7;
+  object-fit: cover;
+}
+
+.album-project h3 {
+  margin: 10px 0 0;
+  font: inherit;
+  font-size: clamp(13px, 1.05vw, 21px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.album-project:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .album-heading,
+  .album-projects {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .album-overview { padding: 90px 16px 60px; }
+
+  .album-heading {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .album-name { grid-column: 1; }
+
+  .album-projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 12px;
+  }
+}
