@@ -562,18 +562,28 @@
 })();
 
 
-// Collage de imágenes recogidas automáticamente de Archive.
+// Collage de Archive: aparecen todas, se retiran rápido y vuelve a empezar.
 (() => {
   function iniciarCollage() {
     const collage = document.getElementById("home-collage");
     if (!collage || collage.dataset.ready) return;
     collage.dataset.ready = "true";
 
-    const intervalo = 850; // Tiempo entre imágenes, en milisegundos.
-    const maxImagenes = 12; // Capas que permanecen en el collage.
+    const tiempoEntrada = 650; // Tiempo entre una foto y la siguiente.
+    const tiempoSalida = 90;   // Tiempo entre fotos al retirarlas.
+    const pausaFinal = 600;    // Pausa antes de empezar a retirar.
     const movimientoReducido = matchMedia("(prefers-reduced-motion: reduce)");
-    let imagenes = [], pendientes = [], temporizador;
-    let cargando = false, visible = true;
+
+    let imagenes = [];
+    let ronda = [];
+    let indice = 0;
+    let temporizador;
+    let activo = true;
+
+    const esperar = (ms, accion) => {
+      clearTimeout(temporizador);
+      temporizador = setTimeout(accion, ms);
+    };
 
     const aleatorio = (min, max) => Math.random() * (max - min) + min;
 
@@ -586,111 +596,106 @@
       return copia;
     }
 
-    function programar() {
-      clearTimeout(temporizador);
-      if (!imagenes.length || document.hidden || !visible) return;
-      if (movimientoReducido.matches && collage.childElementCount) return;
-      temporizador = setTimeout(mostrarImagen, intervalo);
+    function colocar(foto) {
+      const ancho = collage.clientWidth;
+      const alto = collage.clientHeight;
+      if (!ancho || !alto) return false;
+
+      const margen = Math.min(ancho, alto) * .04;
+      const angulo = aleatorio(-9, 9);
+      const radianes = angulo * Math.PI / 180;
+      const coseno = Math.abs(Math.cos(radianes));
+      const seno = Math.abs(Math.sin(radianes));
+      const proporcion = foto.naturalWidth / foto.naturalHeight;
+
+      let anchoFoto = ancho * aleatorio(.48, .72);
+      let altoFoto = anchoFoto / proporcion;
+      let anchoGirado = anchoFoto * coseno + altoFoto * seno;
+      let altoGirado = anchoFoto * seno + altoFoto * coseno;
+
+      const ajuste = Math.min(
+        1,
+        (ancho - margen * 2) / anchoGirado,
+        (alto - margen * 2) / altoGirado
+      );
+
+      anchoFoto *= ajuste;
+      anchoGirado *= ajuste;
+      altoGirado *= ajuste;
+
+      const primera = collage.childElementCount === 0;
+      const x = primera ? ancho / 2 : aleatorio(
+        margen + anchoGirado / 2,
+        ancho - margen - anchoGirado / 2
+      );
+      const y = primera ? alto / 2 : aleatorio(
+        margen + altoGirado / 2,
+        alto - margen - altoGirado / 2
+      );
+
+      foto.style.setProperty("--image-width", `${anchoFoto / ancho * 100}%`);
+      foto.style.setProperty("--image-x", `${x / ancho * 100}%`);
+      foto.style.setProperty("--image-y", `${y / alto * 100}%`);
+      foto.style.setProperty("--image-angle", `${angulo}deg`);
+
+      collage.append(foto);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => foto.classList.add("is-visible"));
+      });
+      return true;
     }
 
-    function mostrarImagen() {
-      if (cargando || document.hidden || !visible || !imagenes.length) return;
-      if (!pendientes.length) pendientes = barajar(imagenes);
+    function siguiente() {
+      if (!activo || document.hidden) return;
 
-      const src = pendientes.pop();
+      if (indice >= ronda.length) {
+        esperar(pausaFinal, retirar);
+        return;
+      }
+
       const foto = new Image();
-      cargando = true;
       foto.alt = "";
       foto.decoding = "async";
-
-foto.onload = () => {
-  cargando = false;
-
-  if (!document.hidden && visible) {
-    const ancho = collage.clientWidth;
-    const alto = collage.clientHeight;
-
-    if (!ancho || !alto) {
-      programar();
-      return;
-    }
-
-    const primera = collage.childElementCount === 0;
-    const margen = Math.min(ancho, alto) * 0.04;
-    const angulo = aleatorio(-9, 9);
-    const radianes = angulo * Math.PI / 180;
-    const coseno = Math.abs(Math.cos(radianes));
-    const seno = Math.abs(Math.sin(radianes));
-    const proporcion = foto.naturalWidth / foto.naturalHeight;
-
-    // Tamaño inicial, respetando las proporciones originales.
-    let anchoFoto = ancho * aleatorio(0.55, 0.78);
-    let altoFoto = anchoFoto / proporcion;
-
-    // Espacio que ocupa la fotografía al girarla.
-    let anchoGirado = anchoFoto * coseno + altoFoto * seno;
-    let altoGirado = anchoFoto * seno + altoFoto * coseno;
-
-    const ajuste = Math.min(
-      1,
-      (ancho - margen * 2) / anchoGirado,
-      (alto - margen * 2) / altoGirado
-    );
-
-    anchoFoto *= ajuste;
-    anchoGirado *= ajuste;
-    altoGirado *= ajuste;
-
-    // Posición aleatoria dentro de los límites seguros.
-    const x = primera ? ancho / 2 : aleatorio(
-      margen + anchoGirado / 2,
-      ancho - margen - anchoGirado / 2
-    );
-
-    const y = primera ? alto / 2 : aleatorio(
-      margen + altoGirado / 2,
-      alto - margen - altoGirado / 2
-    );
-
-    // Porcentajes para que las capas se adapten al cambiar la ventana.
-    foto.style.setProperty("--image-width", `${anchoFoto / ancho * 100}%`);
-    foto.style.setProperty("--image-x", `${x / ancho * 100}%`);
-    foto.style.setProperty("--image-y", `${y / alto * 100}%`);
-    foto.style.setProperty("--image-angle", `${angulo}deg`);
-
-    collage.append(foto);
-
-    while (collage.childElementCount > maxImagenes) {
-      collage.firstElementChild.remove();
-    }
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => foto.classList.add("is-visible"));
-    });
-  }
-
-  programar();
-};
-
-      foto.onerror = () => {
-        cargando = false;
-        imagenes = imagenes.filter(url => url !== src);
-        programar();
+      foto.onload = () => {
+        if (!activo) return;
+        if (colocar(foto)) {
+          esperar(tiempoEntrada, siguiente);
+        } else {
+          esperar(300, siguiente);
+        }
       };
-
-      foto.src = src;
+      foto.onerror = () => esperar(0, siguiente);
+      foto.src = ronda[indice++];
     }
 
-    document.addEventListener("visibilitychange", programar);
-    movimientoReducido.addEventListener("change", programar);
+    function retirar() {
+      if (!activo || document.hidden) return;
 
-    if ("IntersectionObserver" in window) {
-      const observador = new IntersectionObserver(([entrada]) => {
-        visible = entrada.isIntersecting;
-        programar();
+      const foto = collage.lastElementChild;
+      if (!foto) {
+        ronda = barajar(imagenes);
+        indice = 0;
+        esperar(250, siguiente);
+        return;
+      }
+
+      foto.classList.add("is-removing");
+      esperar(tiempoSalida, () => {
+        foto.remove();
+        retirar();
       });
-      observador.observe(collage);
     }
+
+    document.addEventListener("visibilitychange", () => {
+      activo = !document.hidden;
+      clearTimeout(temporizador);
+      if (activo && imagenes.length) {
+        collage.replaceChildren();
+        ronda = barajar(imagenes);
+        indice = 0;
+        siguiente();
+      }
+    });
 
     async function cargarImagenes() {
       try {
@@ -708,7 +713,19 @@ foto.onload = () => {
             .map(src => new URL(src, respuesta.url).href)
         )];
 
-        mostrarImagen();
+        if (!imagenes.length) return;
+        ronda = barajar(imagenes);
+
+        // Si el usuario prefiere menos movimiento, mostrar una sola imagen.
+        if (movimientoReducido.matches) {
+          const foto = new Image();
+          foto.alt = "";
+          foto.onload = () => colocar(foto);
+          foto.src = ronda[0];
+          return;
+        }
+
+        siguiente();
       } catch (error) {
         console.error("No se pudieron cargar las imágenes del collage:", error);
       }
