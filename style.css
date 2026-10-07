@@ -1365,27 +1365,9 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
   }
 }
 
-/* Vista Archive: créditos alineados con la galería */
-html[data-project-view="archive"] .project-credits {
-  width: min(100% - 32px, 560px);
-  margin: 48px 0 80px var(--pad, 28px);
-}
-
-/* Vista categoría: créditos centrados */
-html[data-project-view="category"] .project-credits {
-  width: min(100% - 32px, 560px);
-  margin: 100px auto 120px;
-}
-
-@media (max-width: 700px) {
-  html[data-project-view="archive"] .project-credits {
-    margin: 40px auto 72px;
-  }
-}
-
+/* ARCHIVE: imagen con su proporción original */
 html[data-project-view="archive"] .archive-viewer {
-  width: min(72vw, 1400px);
-  max-width: calc(100vw - 2 * var(--pad, 28px));
+  width: 100%;
   aspect-ratio: auto;
   background: #fff;
 }
@@ -1394,19 +1376,11 @@ html[data-project-view="archive"] .archive-viewer img {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: initial;
 }
 
+/* Créditos después de la galería, visibles al bajar */
 html[data-project-view="archive"] .project-credits {
   width: min(560px, calc(100% - 32px));
-  margin: 24px auto 32px;
-}
-
-@media (max-width: 700px) {
-  html[data-project-view="archive"] .archive-viewer {
-    width: 100%;
-  }
-
-  html[data-project-view="archive"] .project-credits {
-    margin: 20px auto 28px;
-  }
+  margin: 48px auto 80px;
 }
