@@ -1383,3 +1383,30 @@ html[data-project-view="category"] .project-credits {
   }
 }
 
+html[data-project-view="archive"] .archive-viewer {
+  width: min(72vw, 1400px);
+  max-width: calc(100vw - 2 * var(--pad, 28px));
+  aspect-ratio: auto;
+  background: #fff;
+}
+
+html[data-project-view="archive"] .archive-viewer img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html[data-project-view="archive"] .project-credits {
+  width: min(560px, calc(100% - 32px));
+  margin: 24px auto 32px;
+}
+
+@media (max-width: 700px) {
+  html[data-project-view="archive"] .archive-viewer {
+    width: 100%;
+  }
+
+  html[data-project-view="archive"] .project-credits {
+    margin: 20px auto 28px;
+  }
+}
