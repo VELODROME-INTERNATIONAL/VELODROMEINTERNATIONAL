@@ -1365,3 +1365,21 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
   }
 }
 
+/* Vista Archive: créditos alineados con la galería */
+html[data-project-view="archive"] .project-credits {
+  width: min(100% - 32px, 560px);
+  margin: 48px 0 80px var(--pad, 28px);
+}
+
+/* Vista categoría: créditos centrados */
+html[data-project-view="category"] .project-credits {
+  width: min(100% - 32px, 560px);
+  margin: 100px auto 120px;
+}
+
+@media (max-width: 700px) {
+  html[data-project-view="archive"] .project-credits {
+    margin: 40px auto 72px;
+  }
+}
+
