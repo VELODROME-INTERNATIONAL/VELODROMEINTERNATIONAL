@@ -1314,3 +1314,15 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
   transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(.88);
   transition: opacity 80ms linear, transform 80ms linear;
 }
+
+@media (min-width: 701px) {
+  .archive-body {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+  }
+
+  .archive-projects {
+    overscroll-behavior-y: auto;
+  }
+}
