@@ -1384,3 +1384,18 @@ html[data-project-view="archive"] .project-credits {
   width: min(560px, calc(100% - 32px));
   margin: 48px auto 80px;
 }
+
+html[data-project-view="archive"] .project-images {
+  min-height: calc(100svh - 78px); /* 78px: altura de la cabecera Archive */
+}
+
+html[data-project-view="archive"] .project-credits {
+  width: min(560px, calc(100% - 32px));
+  margin: 32px auto 80px;
+}
+
+@media (max-width: 700px) {
+  html[data-project-view="archive"] .project-images {
+    min-height: calc(100svh - 76px);
+  }
+}
