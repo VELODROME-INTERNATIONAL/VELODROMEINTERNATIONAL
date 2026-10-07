@@ -1326,33 +1326,28 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
     overscroll-behavior-y: auto;
   }
 }
-
 .project-credits {
-  width: min(100%, 900px);
-  margin: 100px 0 120px;
-  padding: 0 var(--pad, 28px);
+  width: min(100% - 32px, 560px);
+  margin: 100px auto 120px;
+  padding: 0;
 }
 
-.project-credits h2 {
-  margin: 0 0 30px;
-  font-size: 13px;
-  font-weight: 400;
+.credits-list {
+  margin: 0;
 }
-
-.credits-list { margin: 0; }
 
 .credits-list > div {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
-  padding: 5px 0;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 4px 0;
+  border: 0;
 }
 
 .credits-list dt,
 .credits-list dd {
   margin: 0;
-  font-size: clamp(13px, 1.05vw, 18px);
+  font-size: clamp(12px, 0.9vw, 15px);
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -1361,7 +1356,12 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
 .credits-list dd { font-weight: 600; text-align: right; }
 
 @media (max-width: 700px) {
-  .project-credits { margin: 64px 0 80px; padding: 0 16px; }
-  .credits-list > div { gap: 16px; }
+  .project-credits {
+    margin: 64px auto 80px;
+  }
+
+  .credits-list > div {
+    gap: 12px;
+  }
 }
 
