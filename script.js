@@ -616,7 +616,7 @@
     function schedule() {
       clearTimeout(timer);
       if (!reducedMotion.matches && !document.hidden) {
-        timer = setTimeout(step, 1800);
+        timer = setTimeout(step, 1250);
       }
     }
 
