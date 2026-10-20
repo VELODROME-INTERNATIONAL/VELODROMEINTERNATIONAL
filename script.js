@@ -562,181 +562,122 @@
 })();
 
 
-// Collage de Archive: aparecen todas, se retiran rápido y vuelve a empezar.
+// Portada: fotos del archivo en dos mitades que cambian de forma alternada.
 (() => {
-  function iniciarCollage() {
-    const collage = document.getElementById("home-collage");
-    if (!collage || collage.dataset.ready) return;
-    collage.dataset.ready = "true";
+  function iniciarPortada() {
+    const left = document.getElementById("home-left");
+    const right = document.getElementById("home-right");
+    if (!left || !right) return;
 
-    const tiempoEntrada = 650; // Tiempo entre una foto y la siguiente.
-    const tiempoSalida = 90;   // Tiempo entre fotos al retirarlas.
-    const pausaFinal = 600;    // Pausa antes de empezar a retirar.
-    const movimientoReducido = matchMedia("(prefers-reduced-motion: reduce)");
+    const panels = [left, right];
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+    let images = [];
+    let remaining = [];
+    let last = "";
+    let side = 0;
+    let timer;
+    let generation = 0;
 
-    let imagenes = [];
-    let ronda = [];
-    let indice = 0;
-    let temporizador;
-    let activo = true;
-
-    const esperar = (ms, accion) => {
-      clearTimeout(temporizador);
-      temporizador = setTimeout(accion, ms);
-    };
-
-    const aleatorio = (min, max) => Math.random() * (max - min) + min;
-
-    function barajar(lista) {
-      const copia = [...lista];
-      for (let i = copia.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [copia[i], copia[j]] = [copia[j], copia[i]];
-      }
-      return copia;
-    }
-
-    function colocar(foto) {
-      const ancho = collage.clientWidth;
-      const alto = collage.clientHeight;
-      if (!ancho || !alto) return false;
-
-      const margen = Math.min(ancho, alto) * .04;
-      const angulo = aleatorio(-9, 9);
-      const radianes = angulo * Math.PI / 180;
-      const coseno = Math.abs(Math.cos(radianes));
-      const seno = Math.abs(Math.sin(radianes));
-      const proporcion = foto.naturalWidth / foto.naturalHeight;
-
-      let anchoFoto = ancho * aleatorio(.48, .72);
-      let altoFoto = anchoFoto / proporcion;
-      let anchoGirado = anchoFoto * coseno + altoFoto * seno;
-      let altoGirado = anchoFoto * seno + altoFoto * coseno;
-
-      const ajuste = Math.min(
-        1,
-        (ancho - margen * 2) / anchoGirado,
-        (alto - margen * 2) / altoGirado
-      );
-
-      anchoFoto *= ajuste;
-      anchoGirado *= ajuste;
-      altoGirado *= ajuste;
-
-      const primera = collage.childElementCount === 0;
-      const x = primera ? ancho / 2 : aleatorio(
-        margen + anchoGirado / 2,
-        ancho - margen - anchoGirado / 2
-      );
-      const y = primera ? alto / 2 : aleatorio(
-        margen + altoGirado / 2,
-        alto - margen - altoGirado / 2
-      );
-
-      foto.style.setProperty("--image-width", `${anchoFoto / ancho * 100}%`);
-      foto.style.setProperty("--image-x", `${x / ancho * 100}%`);
-      foto.style.setProperty("--image-y", `${y / alto * 100}%`);
-      foto.style.setProperty("--image-angle", `${angulo}deg`);
-
-      collage.append(foto);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => foto.classList.add("is-visible"));
-      });
-      return true;
-    }
-
-    function siguiente() {
-      if (!activo || document.hidden) return;
-
-      if (indice >= ronda.length) {
-        esperar(pausaFinal, retirar);
-        return;
-      }
-
-      const foto = new Image();
-      foto.alt = "";
-      foto.decoding = "async";
-      foto.onload = () => {
-        if (!activo) return;
-        if (colocar(foto)) {
-          esperar(tiempoEntrada, siguiente);
-        } else {
-          esperar(300, siguiente);
+    function nextSource() {
+      if (!remaining.length) {
+        remaining = [...images];
+        for (let i = remaining.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
         }
-      };
-      foto.onerror = () => esperar(0, siguiente);
-      foto.src = ronda[indice++];
+        if (remaining.length > 1 && remaining[remaining.length - 1] === last) {
+          [remaining[0], remaining[remaining.length - 1]] =
+            [remaining[remaining.length - 1], remaining[0]];
+        }
+      }
+      last = remaining.pop();
+      return last;
     }
 
-    function retirar() {
-      if (!activo || document.hidden) return;
+    function show(panel, source, done) {
+      const photo = new Image();
+      photo.alt = "";
+      photo.decoding = "async";
+      photo.onload = () => {
+        panel.append(photo);
+        requestAnimationFrame(() => photo.classList.add("is-visible"));
+        const previous = [...panel.querySelectorAll("img")].filter(img => img !== photo);
+        previous.forEach(img => {
+          img.classList.remove("is-visible");
+          img.addEventListener("transitionend", () => img.remove(), { once: true });
+          setTimeout(() => img.remove(), 750);
+        });
+        done(true);
+      };
+      photo.onerror = () => done(false);
+      photo.src = source;
+    }
 
-      const foto = collage.lastElementChild;
-      if (!foto) {
-        ronda = barajar(imagenes);
-        indice = 0;
-        esperar(250, siguiente);
-        return;
+    function schedule() {
+      clearTimeout(timer);
+      if (!reducedMotion.matches && !document.hidden) {
+        timer = setTimeout(step, 1800);
       }
+    }
 
-      foto.classList.add("is-removing");
-      esperar(tiempoSalida, () => {
-        foto.remove();
-        retirar();
-      });
+    function step() {
+      if (document.hidden || reducedMotion.matches) return;
+      const target = panels[side];
+      side = 1 - side;
+      let retries = 0;
+      const tryPhoto = () => {
+        if (retries++ >= images.length) return schedule();
+        show(target, nextSource(), loaded => loaded ? schedule() : tryPhoto());
+      };
+      tryPhoto();
+    }
+
+    async function loadImages() {
+      const ticket = ++generation;
+      try {
+        const response = await fetch(new URL("archive.html", document.baseURI));
+        if (!response.ok) throw new Error(`Archive: ${response.status}`);
+        const documentArchive = new DOMParser().parseFromString(
+          await response.text(), "text/html"
+        );
+        const candidates = [...new Set(
+          [...documentArchive.querySelectorAll(".archive-card .archive-image img")]
+            .map(img => img.getAttribute("src"))
+            .filter(Boolean)
+            .map(src => new URL(src, response.url).href)
+        )];
+        if (ticket !== generation || !candidates.length) return;
+        images = candidates;
+
+        let initial = 0;
+        const fill = () => {
+          if (initial === panels.length) return schedule();
+          let retries = 0;
+          const tryPhoto = () => {
+            if (retries++ >= images.length) return;
+            show(panels[initial], nextSource(), loaded => {
+              if (loaded) { initial++; fill(); }
+              else tryPhoto();
+            });
+          };
+          tryPhoto();
+        };
+        fill();
+      } catch (error) {
+        console.error("No se pudieron cargar las imágenes de la portada:", error);
+      }
     }
 
     document.addEventListener("visibilitychange", () => {
-      activo = !document.hidden;
-      clearTimeout(temporizador);
-      if (activo && imagenes.length) {
-        collage.replaceChildren();
-        ronda = barajar(imagenes);
-        indice = 0;
-        siguiente();
-      }
+      clearTimeout(timer);
+      if (!document.hidden && panels.every(panel => panel.querySelector("img"))) schedule();
     });
-
-    async function cargarImagenes() {
-      try {
-        const respuesta = await fetch(new URL("archive.html", document.baseURI));
-        if (!respuesta.ok) throw new Error(`Archive: ${respuesta.status}`);
-
-        const documento = new DOMParser().parseFromString(
-          await respuesta.text(), "text/html"
-        );
-
-        imagenes = [...new Set(
-          [...documento.querySelectorAll(".archive-card .archive-image img")]
-            .map(img => img.getAttribute("src"))
-            .filter(Boolean)
-            .map(src => new URL(src, respuesta.url).href)
-        )];
-
-        if (!imagenes.length) return;
-        ronda = barajar(imagenes);
-
-        // Si el usuario prefiere menos movimiento, mostrar una sola imagen.
-        if (movimientoReducido.matches) {
-          const foto = new Image();
-          foto.alt = "";
-          foto.onload = () => colocar(foto);
-          foto.src = ronda[0];
-          return;
-        }
-
-        siguiente();
-      } catch (error) {
-        console.error("No se pudieron cargar las imágenes del collage:", error);
-      }
-    }
-
-    cargarImagenes();
+    loadImages();
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", iniciarCollage, { once: true });
+    document.addEventListener("DOMContentLoaded", iniciarPortada, { once: true });
   } else {
-    iniciarCollage();
+    iniciarPortada();
   }
 })();
