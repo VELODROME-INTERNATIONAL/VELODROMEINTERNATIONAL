@@ -303,60 +303,40 @@ video {
 
 .showreel-preview:hover video { transform: scale(1.015); }
 
-/* COLLAGE ANIMADO */
+/* HOME DIVIDIDA */
 
-.showreel-preview.collage-preview,
-#home-intro #open-showreel {
-  position: relative;
-  inset: auto;
-  display: block;
-  flex: 0 0 auto;
-  width: min(60vw, 1120px);
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
+#home-intro.home-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  height: calc(100svh - var(--header-height));
+  min-height: 0;
   margin: 0;
   padding: 0;
-  border: 0;
-  border-radius: 0;
-  isolation: isolate;
-  transform: none;
   overflow: hidden;
-  background: #000;
+  background: var(--white);
 }
 
-.home-collage,
-#home-collage {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
+.home-half {
+  position: relative;
+  min-width: 0;
   height: 100%;
   overflow: hidden;
-  pointer-events: none;
-  background: #000;
+  background: var(--white);
 }
 
-#home-collage img {
+.home-half img {
   position: absolute;
-  display: block;
-  width: var(--image-width);
-  height: auto;
+  inset: 0;
+  width: 100%;
   max-width: none;
-  max-height: none;
-  margin: 0;
-  left: var(--image-x);
-  top: var(--image-y);
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   opacity: 0;
-  transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(.96);
-  transition: opacity 250ms ease, transform 400ms ease;
+  transition: opacity 650ms ease;
 }
 
-#home-collage img.is-visible {
-  opacity: 1;
-  transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(1);
-}
+.home-half img.is-visible { opacity: 1; }
 
 /* SHOWREEL AMPLIADO */
 
@@ -1108,6 +1088,12 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
     padding: 30px 16px;
   }
 
+  #home-intro.home-split {
+    height: calc(100svh - var(--header-height));
+    min-height: 0;
+    padding: 0;
+  }
+
   .showreel-preview,
   .showreel-preview.collage-preview,
   #home-intro #open-showreel {
@@ -1288,31 +1274,6 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
     transition-duration: .01ms !important;
   }
 
-  #home-collage img { transition: none; }
-}
-
-.showreel-preview.collage-preview,
-#home-intro #open-showreel,
-.home-collage,
-#home-collage {
-  background: #fff;
-}
-
-/* El collage ya no es un botón */
-#home-intro .collage-preview {
-  cursor: default;
-  pointer-events: none;
-  background: #fff;
-}
-
-#home-intro #home-collage {
-  background: #fff;
-}
-
-#home-collage img.is-removing {
-  opacity: 0;
-  transform: translate(-50%, -50%) rotate(var(--image-angle)) scale(.88);
-  transition: opacity 80ms linear, transform 80ms linear;
 }
 
 @media (min-width: 701px) {
