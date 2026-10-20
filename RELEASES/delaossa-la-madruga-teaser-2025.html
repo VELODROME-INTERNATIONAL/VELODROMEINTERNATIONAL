@@ -33,7 +33,7 @@
     .project-page .project-site-header { display: none; }
     html[data-project-view="category"] .project-site-header { display: flex; }
     html[data-project-view="archive"] .project-header { display: grid; }
-    html[data-project-view="archive"] #info-panel { display: none; }
+
 
     /* CABECERA ARCHIVE */
     .project-page .project-header {
@@ -187,70 +187,42 @@
 
   <!-- HEADER: RELEASES SELECCIONADO -->
   <header class="site-header project-site-header" id="site-header">
-    <nav class="header-left" aria-label="Navegación principal">
-
-      <div class="header-dropdown">
-        <a href="../live.html" class="header-link">Live</a>
-        <div class="header-submenu">
-          <a href="../show.html">Show</a>
-          <a href="../broadcast.html">Broadcast</a>
-        </div>
+  <nav class="header-left" aria-label="Navegación principal">
+    <div class="header-dropdown">
+      <a href="../work.html" class="header-link active">Work</a>
+      <div class="header-submenu">
+        <a href="../live.html">Live</a><a href="../releases.html">Releases</a>
       </div>
-
-      <div class="header-dropdown">
-        <a href="../releases.html" class="header-link active">Releases</a>
-        <div class="header-submenu">
-          <a href="../album.html">Album</a>
-          <a href="../music-video.html">Music video</a>
-          <a href="../cover.html">Cover</a>
-        </div>
-      </div>
-
-    </nav>
-
-    <a href="../home.html" class="header-logo" aria-label="Página de inicio">
-      Vélodrome
-    </a>
-
-    <nav class="header-right" aria-label="Navegación secundaria">
-      <a href="../archive.html" class="header-link">Archive</a>
-      <button class="header-link info-toggle" id="open-info" type="button"
-        aria-expanded="false" aria-controls="info-panel">Info</button>
-    </nav>
-  </header>
+    </div>
+    <a href="../about.html" class="header-link">About</a>
+  </nav>
+  <a href="../home.html" class="header-logo" aria-label="Vélodrome — inicio">Vélodrome</a>
+  <nav class="header-right" aria-label="Archivo y contacto">
+    <a href="../archive.html" class="header-link">Archive</a>
+    <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false" aria-controls="info-panel">Contact</button>
+  </nav>
+</header>
 
   <!-- PANEL INFO -->
-  <section class="info-panel" id="info-panel" aria-hidden="true">
-    <div class="info-block">
-      <p>Contact<br>For more information,<br>please contact</p>
-      <a href="mailto:hola@velodromeinternational.com">
-        hola@velodromeinternational.com
-      </a>
-    </div>
-
-    <div class="info-block info-connect">
-      <p>Connect</p>
-      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/"
-        target="_blank" rel="noopener">Instagram</a>
-    </div>
-
-    <button class="info-close" id="close-info" type="button"
-      aria-label="Cerrar información">
-      <span></span><span></span>
-    </button>
-  </section>
+  <section class="info-panel" id="info-panel" aria-label="Contacto" aria-hidden="true">
+  <div class="info-block"><p>Hablemos de tu próximo proyecto.</p><a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a></div>
+  <div class="info-block info-connect"><p>Connect</p><a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+  <button class="info-close" id="close-info" type="button" aria-label="Cerrar contacto"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+</section>
 
   <!-- CABECERA ARCHIVE: CAMBIA ESTOS TEXTOS -->
   <header class="project-header">
     <h1 class="project-page-artist">DELAOSSA</h1>
     <p class="project-page-title">YO, QUE NACÍ EN MÁLAGA (2025)</p>
 
-    <a class="project-page-close" href="../archive.html"
+    <button class="project-contact-access" type="button" data-contact aria-controls="info-panel" aria-expanded="false">Contact</button>
+<a class="project-page-close" href="../archive.html"
       aria-label="Volver al archivo"></a>
   </header>
 
   <!-- IMÁGENES: CAMBIA LAS RUTAS POR LAS DE TUS ARCHIVOS -->
-  <main class="project-images" aria-label="Imágenes del proyecto">
+  <section class="project-story" aria-label="Sobre el proyecto"><div class="project-story-heading"><h1>DELAOSSA</h1><p>YO, QUE NACÍ EN MÁLAGA (2025)</p></div><p class="project-description" hidden></p><p class="project-role" hidden></p></section>
+<main class="project-images" aria-label="Imágenes del proyecto">
 
             <figure class="project-media">
       <img src="../assets/projects/delaossa/madruga/teaser-1.jpg" alt="DELAOSSA — YO, QUE NACÍ EN MÁLAGA 2025">
@@ -279,7 +251,7 @@
         <figure class="project-media">
       <img src="../assets/projects/delaossa/madruga/teaser-7.jpg" alt="DELAOSSA — YO, QUE NACÍ EN MÁLAGA 2025">
     </figure>
-    
+
             <figure class="project-media">
       <img src="../assets/projects/delaossa/madruga/teaser-8.jpg" alt="DELAOSSA — YO, QUE NACÍ EN MÁLAGA 2025">
     </figure>
@@ -354,5 +326,6 @@
     })();
   </script>
 
+  <script src="../project-context.js"></script>
 </body>
 </html>

@@ -1,0 +1,1506 @@
+{
+  "projects": {
+    "LIVE/abhir-elefantes-cabalgando-2023.html": {
+      "artist": "ABHIR",
+      "title": "ELEFANTES CABALGANDO (2023)",
+      "image": "assets/projects/abhir/show-abhir-1.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/abhir-brown-boy-album-2023.html",
+        "RELEASES/abhir-brown-boy-cover-2023.html",
+        "RELEASES/abhir-brown-boy-bounce-2023.html",
+        "RELEASES/abhir-brown-boy-visualizers-2023.html"
+      ]
+    },
+    "LIVE/delaossa-la-madrugá-2026.html": {
+      "artist": "Delaossa",
+      "title": "La Madrugá Live Show (2026)",
+      "image": "assets/projects/delaossa/show-madruga-cover.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/delaossa-la-madruga-album-2025.html",
+        "RELEASES/delaossa-la-madruga-cover-2025.html",
+        "RELEASES/delaossa-la-madruga-teaser-2025.html",
+        "RELEASES/delaossa-nueva-season-2025.html",
+        "RELEASES/delaossa-quevedo-still-luvin-2025.html"
+      ]
+    },
+    "LIVE/yung-beef-eddlb-2024.html": {
+      "artist": "YUNG BEEF",
+      "title": "EL DÍA DE LA BESTIA LIVE SHOW 2024",
+      "image": "assets/projects/eddlb/show_eddlb_3.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "LIVE/pxxr-gvng-live-show-2026.html": {
+      "artist": "PXXR GVNG",
+      "title": "COMBECAK LIVE SHOW (2026)",
+      "image": "assets/projects/lmda/pxxr-gvng-1.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "LIVE/manuel-turizo-201-2025.html": {
+      "artist": "Manuel Turizo",
+      "title": "201 Live Show (2025)",
+      "image": "assets/projects/turizo/show-apt-201-8.avif",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "LIVE/la-mafia-del-amor-live-show-2024.html": {
+      "artist": "LA MAFIA DEL AMOR",
+      "title": "INFIERNO COMEBACK Live Show (2024)",
+      "image": "assets/projects/lmda/lmda-show-4.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "LIVE/morat-yem-listening-party-2025.html": {
+      "artist": "MORAT",
+      "title": "YA ES MAÑANA LISTENING PARTY (2025)",
+      "image": "assets/projects/morat/morat_listening_6.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/morat-ya-es-mañana-album-2025.html",
+        "RELEASES/morat-ya-es-mañana-cover-2025.html",
+        "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+        "RELEASES/morat-camilo-me-toca-a-mi-2025.html",
+        "RELEASES/morat-vuelvo-a-ti-2025.html",
+        "RELEASES/morat-faltas-tu-2024.html",
+        "LIVE/morat-latin-grammys-2025.html"
+      ]
+    },
+    "LIVE/quevedo-buenas-noches-2024.html": {
+      "artist": "QUEVEDO",
+      "title": "BUENAS NOCHES LIVE SHOW (2024)",
+      "image": "assets/projects/quevedo/shows/show-bn-2025-4.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-album-2024.html",
+        "RELEASES/quevedo-buenas-noches-cover-2024.html",
+        "RELEASES/quevedo-duro-2024.html",
+        "RELEASES/quevedo-kassandra-2024.html",
+        "RELEASES/quevedo-aitana-gran-via-2025.html",
+        "RELEASES/quevedo-la-pantera-halo-2025.html",
+        "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+        "LIVE/quevedo-latin-grammys-2024.html"
+      ]
+    },
+    "LIVE/quevedo-comeback-2024.html": {
+      "artist": "Quevedo",
+      "title": "Comeback Live Show (2024)",
+      "image": "assets/projects/quevedo/shows/show-comeback-2024-1.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "LIVE/israel-b-live-show-2025.html": {
+      "artist": "ISRAEL B",
+      "title": "STAIRS TO GLORY LIVE SHOW (2025)",
+      "image": "assets/projects/israel-b/escalera-1.jpg",
+      "categories": [
+        "live",
+        "shows"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "LIVE/quevedo-la-velada-2023.html": {
+      "artist": "QUEVEDO",
+      "title": "LA VELADA DEL AÑO (2023)",
+      "image": "assets/projects/quevedo/shows/show-la-velada-5.jpg",
+      "categories": [
+        "live",
+        "broadcast"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "LIVE/grupo-frontera-latin-grammys-2024.html": {
+      "artist": "GRUPO FRONTERA",
+      "title": "LATIN GRAMMYS (2024)",
+      "image": "assets/projects/grupo-frontera/grupo-frontera-grammys-1.jpg",
+      "categories": [
+        "live",
+        "broadcast"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "LIVE/quevedo-latin-grammys-2024.html": {
+      "artist": "QUEVEDO",
+      "title": "LATIN GRAMMYS (2024)",
+      "image": "assets/projects/quevedo/shows/latin-grammys-2.avif",
+      "categories": [
+        "live",
+        "broadcast"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-album-2024.html",
+        "RELEASES/quevedo-buenas-noches-cover-2024.html",
+        "RELEASES/quevedo-duro-2024.html",
+        "RELEASES/quevedo-kassandra-2024.html",
+        "RELEASES/quevedo-aitana-gran-via-2025.html",
+        "RELEASES/quevedo-la-pantera-halo-2025.html",
+        "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+        "LIVE/quevedo-buenas-noches-2024.html"
+      ]
+    },
+    "LIVE/morat-latin-grammys-2025.html": {
+      "artist": "MORAT",
+      "title": "FALTAS TÚ LATIN GRAMMYS (2025)",
+      "image": "assets/projects/morat/latin-grammys-2025-1.jpg",
+      "categories": [
+        "live",
+        "broadcast"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/morat-ya-es-mañana-album-2025.html",
+        "RELEASES/morat-ya-es-mañana-cover-2025.html",
+        "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+        "RELEASES/morat-camilo-me-toca-a-mi-2025.html",
+        "RELEASES/morat-vuelvo-a-ti-2025.html",
+        "RELEASES/morat-faltas-tu-2024.html",
+        "LIVE/morat-yem-listening-party-2025.html"
+      ]
+    },
+    "LIVE/kapo-los-40-2025.html": {
+      "artist": "KAPO",
+      "title": "X TI Los40 Music Awards (2025)",
+      "image": "assets/projects/kapo/kapo-los-40-1.jpg",
+      "categories": [
+        "live",
+        "broadcast"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+        "RELEASES/kapo-feid-x-ti-2024.html",
+        "RELEASES/kapo-korazong-2025.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-visualizers-2025.html"
+      ]
+    },
+    "RELEASES/abhir-brown-boy-bounce-2023.html": {
+      "artist": "ABHIR",
+      "title": "BROWN BOY BOUNCE (2023)",
+      "image": "assets/projects/abhir/bbb-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/abhir-brown-boy-album-2023.html",
+        "RELEASES/abhir-brown-boy-cover-2023.html",
+        "RELEASES/abhir-brown-boy-visualizers-2023.html",
+        "LIVE/abhir-elefantes-cabalgando-2023.html"
+      ]
+    },
+    "RELEASES/abhir-brown-boy-visualizers-2023.html": {
+      "artist": "ABHIR",
+      "title": "BROWN BOY VISUALIZERS (2023)",
+      "image": "assets/projects/abhir/bbb-visuals-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/abhir-brown-boy-album-2023.html",
+        "RELEASES/abhir-brown-boy-cover-2023.html",
+        "RELEASES/abhir-brown-boy-bounce-2023.html",
+        "LIVE/abhir-elefantes-cabalgando-2023.html"
+      ]
+    },
+    "RELEASES/abhir-nené-2024.html": {
+      "artist": "ABHIR",
+      "title": "NENÉ (2024)",
+      "image": "assets/projects/abhir/nené-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/alvaro-de-luna-dime-donde-estas-2026.html": {
+      "artist": "ÁLVARO DE LUNA",
+      "title": "DIME DONDE ESTÁS (2026)",
+      "image": "assets/projects/alvaro-de-luna/dime-donde-estas-2026-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/alvaro-de-luna-hasta-el-amanecer-2026.html": {
+      "artist": "ÁLVARO DE LUNA",
+      "title": "HASTA EL AMANECER (2026)",
+      "image": "assets/projects/alvaro-de-luna/hasta-el-amanecer-2026-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "CREATIVE DIRECTION",
+      "credits": [
+        {
+          "role": "CREATIVE DIRECTION",
+          "name": "VÉLODROME"
+        },
+        {
+          "role": "DIRECTED BY",
+          "name": "PAULA RUBIO"
+        },
+        {
+          "role": "DOP",
+          "name": "HUGO PISÓN"
+        },
+        {
+          "role": "PRODUCED BY",
+          "name": "TOPO COLECTIVE"
+        }
+      ],
+      "related": []
+    },
+    "RELEASES/delaossa-la-madruga-teaser-2025.html": {
+      "artist": "DELAOSSA",
+      "title": "YO, QUE NACÍ EN MÁLAGA (2025)",
+      "image": "assets/projects/delaossa/madruga/teaser-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/delaossa-la-madruga-album-2025.html",
+        "RELEASES/delaossa-la-madruga-cover-2025.html",
+        "RELEASES/delaossa-nueva-season-2025.html",
+        "RELEASES/delaossa-quevedo-still-luvin-2025.html",
+        "LIVE/delaossa-la-madrugá-2026.html"
+      ]
+    },
+    "RELEASES/delaossa-nueva-season-2025.html": {
+      "artist": "DELAOSSA",
+      "title": "NUEVA SEASON (2025)",
+      "image": "assets/projects/delaossa/madruga/nueva-season-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/delaossa-la-madruga-album-2025.html",
+        "RELEASES/delaossa-la-madruga-cover-2025.html",
+        "RELEASES/delaossa-la-madruga-teaser-2025.html",
+        "RELEASES/delaossa-quevedo-still-luvin-2025.html",
+        "LIVE/delaossa-la-madrugá-2026.html"
+      ]
+    },
+    "RELEASES/delaossa-quevedo-still-luvin-2025.html": {
+      "artist": "DELAOSSA, QUEVEDO",
+      "title": "STILL LUVIN (2025)",
+      "image": "assets/projects/delaossa/madruga/still-luvin-16.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/delaossa-la-madruga-album-2025.html",
+        "RELEASES/delaossa-la-madruga-cover-2025.html",
+        "RELEASES/delaossa-la-madruga-teaser-2025.html",
+        "RELEASES/delaossa-nueva-season-2025.html",
+        "LIVE/delaossa-la-madrugá-2026.html"
+      ]
+    },
+    "RELEASES/delaossa-patos-en-la-piscina-2023.html": {
+      "artist": "DELAOSSA",
+      "title": "PATOS EN LA PISCINA (2023)",
+      "image": "assets/projects/delaossa/patos/patos-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/delaossa-1000-motivos-2023.html": {
+      "artist": "DELAOSSA",
+      "title": "1000 MOTIVOS (2023)",
+      "image": "assets/projects/delaossa/1000-motivos/1000-motivos-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/eazyboi-quattroporte-2023.html": {
+      "artist": "EAZYBOI",
+      "title": "QUATTROPORTE (2023)",
+      "image": "assets/projects/eazyboy/quattroporte-2023-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/eazyboi-suerte-2025.html": {
+      "artist": "EAZYBOI",
+      "title": "SUERTE (2025)",
+      "image": "assets/projects/eazyboy/suerte-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/eazyboi-ascari-album-2025.html",
+        "RELEASES/eazyboi-ascari-cover-2025.html",
+        "RELEASES/eazyboi-all-night-2025.html",
+        "RELEASES/eazyboi-bruce-wayne-2025.html"
+      ]
+    },
+    "RELEASES/eazyboi-all-night-2025.html": {
+      "artist": "EAZYBOI",
+      "title": "ALL NIGHT (2025)",
+      "image": "assets/projects/eazyboy/all-night-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/eazyboi-ascari-album-2025.html",
+        "RELEASES/eazyboi-ascari-cover-2025.html",
+        "RELEASES/eazyboi-suerte-2025.html",
+        "RELEASES/eazyboi-bruce-wayne-2025.html"
+      ]
+    },
+    "RELEASES/eazyboi-bruce-wayne-2025.html": {
+      "artist": "EAZYBOI",
+      "title": "BRUCE WAYNE (2025)",
+      "image": "assets/projects/eazyboy/bruce-wayne-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/eazyboi-ascari-album-2025.html",
+        "RELEASES/eazyboi-ascari-cover-2025.html",
+        "RELEASES/eazyboi-suerte-2025.html",
+        "RELEASES/eazyboi-all-night-2025.html"
+      ]
+    },
+    "RELEASES/kapo-bombon-2026.html": {
+      "artist": "KAPO",
+      "title": "BOMBÓN (2026)",
+      "image": "assets/projects/kapo/bombon-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/kapo-feid-x-ti-2024.html": {
+      "artist": "KAPO, FEID",
+      "title": "X TI (2025)",
+      "image": "assets/projects/kapo/x-ti-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+        "RELEASES/kapo-korazong-2025.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-visualizers-2025.html",
+        "LIVE/kapo-los-40-2025.html"
+      ]
+    },
+    "RELEASES/kapo-por-si-alguien-nos-escucha-visualizers-2025.html": {
+      "artist": "KAPO",
+      "title": "POR SI ALGUIEN NOS ESCUCHA VISUALIZERS (2025)",
+      "image": "assets/projects/kapo/psane-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+        "RELEASES/kapo-feid-x-ti-2024.html",
+        "RELEASES/kapo-korazong-2025.html",
+        "LIVE/kapo-los-40-2025.html"
+      ]
+    },
+    "RELEASES/kapo-kriminal-2026.html": {
+      "artist": "KAPO",
+      "title": "REINA (KRIMINAL) (2026)",
+      "image": "assets/projects/kapo/kriminal-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/kapo-playa-fria-2026.html": {
+      "artist": "KAPO",
+      "title": "PLAYA FRÍA (2026)",
+      "image": "assets/projects/kapo/playa-fria-2026-2.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/lucho-rk-la-pantera-pinky-promise-2-2025.html": {
+      "artist": "LUCHO RK, LA PANTERA",
+      "title": "PINKY PROMISE 2 (2025)",
+      "image": "assets/projects/lucho-rk/pinky-promise-2-2024-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/lucho-rk-acelera-2025.html": {
+      "artist": "LUCHO RK",
+      "title": "ACELERÁ (2025)",
+      "image": "assets/projects/lucho-rk/acelera-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/lucho-rk-preña-2025.html": {
+      "artist": "LUCHO RK",
+      "title": "PREÑÁ (2025)",
+      "image": "assets/projects/lucho-rk/preña-2025-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/lucho-rk-quevedo-guaya-2025.html": {
+      "artist": "LUCHO RK, QUEVEDO",
+      "title": "GUAYA (2025)",
+      "image": "assets/projects/lucho-rk/guaya-2025-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/manuel-turizo-apambichao-visualizers-2026.html": {
+      "artist": "MANUEL TURIZO",
+      "title": "APAMBICHAO VISUALIZERS (2026)",
+      "image": "assets/projects/turizo/apambichao/apambichao-visualizer-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/manuel-turizo-apambichao-album-2026.html",
+        "RELEASES/manuel-turizo-apambichao-cover-2026.html",
+        "RELEASES/manuel-turizo-maluma-apambichao-2026.html",
+        "RELEASES/manuel-turizo-cosas-de-enamorao-2025.html",
+        "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html"
+      ]
+    },
+    "RELEASES/manuel-turizo-maluma-apambichao-2026.html": {
+      "artist": "MANUEL TURIZO, MALUMA",
+      "title": "APAMBICHAO (2026)",
+      "image": "assets/projects/turizo/apambichao/apambichao-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/manuel-turizo-apambichao-album-2026.html",
+        "RELEASES/manuel-turizo-apambichao-cover-2026.html",
+        "RELEASES/manuel-turizo-cosas-de-enamorao-2025.html",
+        "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html",
+        "RELEASES/manuel-turizo-apambichao-visualizers-2026.html"
+      ]
+    },
+    "RELEASES/manuel-turizo-cosas-de-enamorao-2025.html": {
+      "artist": "MANUEL TURIZO",
+      "title": "COSAS DE ENAMORAO (2025)",
+      "image": "assets/projects/turizo/cosas-de-enamorao/cosas-de-enamorao-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/manuel-turizo-apambichao-album-2026.html",
+        "RELEASES/manuel-turizo-apambichao-cover-2026.html",
+        "RELEASES/manuel-turizo-maluma-apambichao-2026.html",
+        "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html",
+        "RELEASES/manuel-turizo-apambichao-visualizers-2026.html"
+      ]
+    },
+    "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html": {
+      "artist": "MANUEL TURIZO",
+      "title": "POR UN PENDEJO NO SE LLORA (2026)",
+      "image": "assets/projects/turizo/pupnsl/por-un-pendejo-no-se-llora-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/manuel-turizo-apambichao-album-2026.html",
+        "RELEASES/manuel-turizo-apambichao-cover-2026.html",
+        "RELEASES/manuel-turizo-maluma-apambichao-2026.html",
+        "RELEASES/manuel-turizo-cosas-de-enamorao-2025.html",
+        "RELEASES/manuel-turizo-apambichao-visualizers-2026.html"
+      ]
+    },
+    "RELEASES/manuel-turizo-kapo-que-pecao-2024.html": {
+      "artist": "MANUEL TURIZO, KAPO",
+      "title": "QUÉ PECAO (2024)",
+      "image": "assets/projects/turizo/que-pecao/que-pecao-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/pepe-y-vizio-de-los-mios-2023.html": {
+      "artist": "PEPE Y VIZIO",
+      "title": "DE LOS MÍOS (2023)",
+      "image": "assets/projects/pepe-y-vizio/de-los-mios-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/quevedo-duro-2024.html": {
+      "artist": "QUEVEDO",
+      "title": "DURO (2024)",
+      "image": "assets/projects/quevedo/bn/duro-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-album-2024.html",
+        "RELEASES/quevedo-buenas-noches-cover-2024.html",
+        "RELEASES/quevedo-kassandra-2024.html",
+        "RELEASES/quevedo-aitana-gran-via-2025.html",
+        "RELEASES/quevedo-la-pantera-halo-2025.html",
+        "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+        "LIVE/quevedo-buenas-noches-2024.html",
+        "LIVE/quevedo-latin-grammys-2024.html"
+      ]
+    },
+    "RELEASES/quevedo-kassandra-2024.html": {
+      "artist": "QUEVEDO",
+      "title": "KASSANDRA (2024)",
+      "image": "assets/projects/quevedo/bn/kassandra-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-album-2024.html",
+        "RELEASES/quevedo-buenas-noches-cover-2024.html",
+        "RELEASES/quevedo-duro-2024.html",
+        "RELEASES/quevedo-aitana-gran-via-2025.html",
+        "RELEASES/quevedo-la-pantera-halo-2025.html",
+        "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+        "LIVE/quevedo-buenas-noches-2024.html",
+        "LIVE/quevedo-latin-grammys-2024.html"
+      ]
+    },
+    "RELEASES/quevedo-aitana-gran-via-2025.html": {
+      "artist": "QUEVEDO, AITANA",
+      "title": "GRAN VIA (2025)",
+      "image": "assets/projects/quevedo/bn/gran-via-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-album-2024.html",
+        "RELEASES/quevedo-buenas-noches-cover-2024.html",
+        "RELEASES/quevedo-duro-2024.html",
+        "RELEASES/quevedo-kassandra-2024.html",
+        "RELEASES/quevedo-la-pantera-halo-2025.html",
+        "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+        "LIVE/quevedo-buenas-noches-2024.html",
+        "LIVE/quevedo-latin-grammys-2024.html"
+      ]
+    },
+    "RELEASES/quevedo-la-pantera-halo-2025.html": {
+      "artist": "QUEVEDO, LA PANTERA",
+      "title": "HALO (2025)",
+      "image": "assets/projects/quevedo/bn/halo-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-album-2024.html",
+        "RELEASES/quevedo-buenas-noches-cover-2024.html",
+        "RELEASES/quevedo-duro-2024.html",
+        "RELEASES/quevedo-kassandra-2024.html",
+        "RELEASES/quevedo-aitana-gran-via-2025.html",
+        "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+        "LIVE/quevedo-buenas-noches-2024.html",
+        "LIVE/quevedo-latin-grammys-2024.html"
+      ]
+    },
+    "RELEASES/quevedo-buenas-noches-visualizers-2024.html": {
+      "artist": "QUEVEDO",
+      "title": "BUENAS NOCHES VISUALIZERS (2024)",
+      "image": "assets/projects/quevedo/bn/bn-visualizer-2.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-album-2024.html",
+        "RELEASES/quevedo-buenas-noches-cover-2024.html",
+        "RELEASES/quevedo-duro-2024.html",
+        "RELEASES/quevedo-kassandra-2024.html",
+        "RELEASES/quevedo-aitana-gran-via-2025.html",
+        "RELEASES/quevedo-la-pantera-halo-2025.html",
+        "LIVE/quevedo-buenas-noches-2024.html",
+        "LIVE/quevedo-latin-grammys-2024.html"
+      ]
+    },
+    "RELEASES/quevedo-columbia-2023.html": {
+      "artist": "QUEVEDO",
+      "title": "COLUMBIA (2023)",
+      "image": "assets/projects/quevedo/columbia/columbia-2023-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/quevedo-la-ultima-2024.html": {
+      "artist": "QUEVEDO",
+      "title": "LA ÚLTIMA (2024)",
+      "image": "assets/projects/quevedo/ultima/quevedo-la-ultima-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/quevedo-saiko-buenas-2023.html": {
+      "artist": "QUEVEDO, SAIKO",
+      "title": "BUENAS (2023)",
+      "image": "assets/projects/quevedo/buenas/buenas-quevedo-saiko-2023-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/space-hammu-odiosos-ocho-2025.html": {
+      "artist": "SPACE HAMMU",
+      "title": "ODIOSOS OCHO (2025)",
+      "image": "assets/projects/spacehammu/odiosos-ocho-2025-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/morat-jay-wheeler-sin-ti-2025.html": {
+      "artist": "MORAT",
+      "title": "SIN TI (2025)",
+      "image": "assets/projects/morat/sin-ti-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/morat-ya-es-mañana-album-2025.html",
+        "RELEASES/morat-ya-es-mañana-cover-2025.html",
+        "RELEASES/morat-camilo-me-toca-a-mi-2025.html",
+        "RELEASES/morat-vuelvo-a-ti-2025.html",
+        "RELEASES/morat-faltas-tu-2024.html",
+        "LIVE/morat-yem-listening-party-2025.html",
+        "LIVE/morat-latin-grammys-2025.html"
+      ]
+    },
+    "RELEASES/morat-camilo-me-toca-a-mi-2025.html": {
+      "artist": "MORAT, CAMILO",
+      "title": "ME TOCA A MI (2025)",
+      "image": "assets/projects/morat/me-toca-a-mi-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/morat-ya-es-mañana-album-2025.html",
+        "RELEASES/morat-ya-es-mañana-cover-2025.html",
+        "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+        "RELEASES/morat-vuelvo-a-ti-2025.html",
+        "RELEASES/morat-faltas-tu-2024.html",
+        "LIVE/morat-yem-listening-party-2025.html",
+        "LIVE/morat-latin-grammys-2025.html"
+      ]
+    },
+    "RELEASES/morat-vuelvo-a-ti-2025.html": {
+      "artist": "MORAT",
+      "title": "VUELVO A TI (2025)",
+      "image": "assets/projects/morat/vuelvo-a-ti-1.png",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/morat-ya-es-mañana-album-2025.html",
+        "RELEASES/morat-ya-es-mañana-cover-2025.html",
+        "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+        "RELEASES/morat-camilo-me-toca-a-mi-2025.html",
+        "RELEASES/morat-faltas-tu-2024.html",
+        "LIVE/morat-yem-listening-party-2025.html",
+        "LIVE/morat-latin-grammys-2025.html"
+      ]
+    },
+    "RELEASES/morat-sobreviviste-2023.html": {
+      "artist": "MORAT",
+      "title": "SOBREVIVISTE (2023)",
+      "image": "assets/projects/morat/sobreviviste-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/morat-tarde-2023.html": {
+      "artist": "MORAT",
+      "title": "TARDE (2023)",
+      "image": "assets/projects/morat/tarde-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/morat-faltas-tu-2024.html": {
+      "artist": "MORAT",
+      "title": "FALTAS TÚ (2024)",
+      "image": "assets/projects/morat/faltas-tu-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/morat-ya-es-mañana-album-2025.html",
+        "RELEASES/morat-ya-es-mañana-cover-2025.html",
+        "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+        "RELEASES/morat-camilo-me-toca-a-mi-2025.html",
+        "RELEASES/morat-vuelvo-a-ti-2025.html",
+        "LIVE/morat-yem-listening-party-2025.html",
+        "LIVE/morat-latin-grammys-2025.html"
+      ]
+    },
+    "RELEASES/morat-por-si-no-te-vuelvo-a-ver-2024.html": {
+      "artist": "MORAT",
+      "title": "POR SI NO TE VUELVO A VER (2024)",
+      "image": "assets/projects/morat/psntvv-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/morat-la-policia-2024.html": {
+      "artist": "MORAT",
+      "title": "LA POLICÍA (2024)",
+      "image": "assets/projects/morat/la-policia-1.jpg",
+      "categories": [
+        "releases",
+        "music-video"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/abhir-brown-boy-cover-2023.html": {
+      "artist": "ABHIR",
+      "title": "BROWN BOY COVER (2023)",
+      "image": "assets/projects/abhir/brown-boy-cover.jpg",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/abhir-brown-boy-album-2023.html",
+        "RELEASES/abhir-brown-boy-bounce-2023.html",
+        "RELEASES/abhir-brown-boy-visualizers-2023.html",
+        "LIVE/abhir-elefantes-cabalgando-2023.html"
+      ]
+    },
+    "RELEASES/cultura-profetica-en-bucle-cover-2026.html": {
+      "artist": "CULTURA PROFÉTICA",
+      "title": "EN BUCLE COVER (2026)",
+      "image": "assets/projects/cultura-profética/en-bucle-cover.jpeg",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/delaossa-la-madruga-cover-2025.html": {
+      "artist": "DELAOSSA",
+      "title": "LA MADRUGÁ COVER (2025)",
+      "image": "assets/projects/delaossa/madruga/la_madruga-cover.jpg",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/delaossa-la-madruga-album-2025.html",
+        "RELEASES/delaossa-la-madruga-teaser-2025.html",
+        "RELEASES/delaossa-nueva-season-2025.html",
+        "RELEASES/delaossa-quevedo-still-luvin-2025.html",
+        "LIVE/delaossa-la-madrugá-2026.html"
+      ]
+    },
+    "RELEASES/delaossa-playa-virginia-cover-2022.html": {
+      "artist": "DELAOSSA",
+      "title": "PLAYA VIRGINIA COVER (2022)",
+      "image": "assets/projects/delaossa/playa-virginia-cover.jpg",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html": {
+      "artist": "KAPO",
+      "title": "POR SI ALGUIEN NOS ESCUCHA COVER (2025)",
+      "image": "assets/projects/kapo/psane-cover.jpeg",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html",
+        "RELEASES/kapo-feid-x-ti-2024.html",
+        "RELEASES/kapo-korazong-2025.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-visualizers-2025.html",
+        "LIVE/kapo-los-40-2025.html"
+      ]
+    },
+    "RELEASES/manuel-turizo-apambichao-cover-2026.html": {
+      "artist": "MANUEL TURIZO",
+      "title": "APAMABICHAO COVER (2026)",
+      "image": "assets/projects/turizo/apambichao/apambichao-cover.jpg",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/manuel-turizo-apambichao-album-2026.html",
+        "RELEASES/manuel-turizo-maluma-apambichao-2026.html",
+        "RELEASES/manuel-turizo-cosas-de-enamorao-2025.html",
+        "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html",
+        "RELEASES/manuel-turizo-apambichao-visualizers-2026.html"
+      ]
+    },
+    "RELEASES/miky-woodz-everything-rial-cover-2026.html": {
+      "artist": "MIKY WOODZ",
+      "title": "EVERYTHING RIAL COVER (2026)",
+      "image": "assets/projects/miky-woodz/everything-rial.png",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/morat-ya-es-mañana-cover-2025.html": {
+      "artist": "MORAT",
+      "title": "YA ES MAÑANA COVER (2025)",
+      "image": "assets/projects/morat/yem-cover.avif",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/morat-ya-es-mañana-album-2025.html",
+        "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+        "RELEASES/morat-camilo-me-toca-a-mi-2025.html",
+        "RELEASES/morat-vuelvo-a-ti-2025.html",
+        "RELEASES/morat-faltas-tu-2024.html",
+        "LIVE/morat-yem-listening-party-2025.html",
+        "LIVE/morat-latin-grammys-2025.html"
+      ]
+    },
+    "RELEASES/omar-montes-lagrimas-de-un-maleante-cover-2024.html": {
+      "artist": "ABHIR",
+      "title": "ELEFANTES CABALGANDO (2023)",
+      "image": "assets/projects/lagrimas-de-un-maleante-cover.jpg",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/quevedo-buenas-noches-cover-2024.html": {
+      "artist": "QUEVEDO",
+      "title": "BUENAS NOCHES COVER (2024)",
+      "image": "assets/projects/quevedo/bn/buenas-noches-cover.png",
+      "categories": [
+        "releases",
+        "cover"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-album-2024.html",
+        "RELEASES/quevedo-duro-2024.html",
+        "RELEASES/quevedo-kassandra-2024.html",
+        "RELEASES/quevedo-aitana-gran-via-2025.html",
+        "RELEASES/quevedo-la-pantera-halo-2025.html",
+        "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+        "LIVE/quevedo-buenas-noches-2024.html",
+        "LIVE/quevedo-latin-grammys-2024.html"
+      ]
+    },
+    "RELEASES/abhir-brown-boy-album-2023.html": {
+      "artist": "ABHIR",
+      "title": "BROWN BOY ALBUM (2023)",
+      "image": "assets/projects/abhir/brown-boy-cover.jpg",
+      "categories": [
+        "releases",
+        "albums"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/abhir-brown-boy-cover-2023.html",
+        "RELEASES/abhir-brown-boy-bounce-2023.html",
+        "RELEASES/abhir-brown-boy-visualizers-2023.html",
+        "LIVE/abhir-elefantes-cabalgando-2023.html"
+      ]
+    },
+    "RELEASES/delaossa-la-madruga-album-2025.html": {
+      "artist": "DELAOSSA",
+      "title": "LA MADRUGÁ ALBUM (2025)",
+      "image": "assets/projects/delaossa/madruga/la_madruga-cover.jpg",
+      "categories": [
+        "releases",
+        "albums"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/delaossa-la-madruga-cover-2025.html",
+        "RELEASES/delaossa-la-madruga-teaser-2025.html",
+        "RELEASES/delaossa-nueva-season-2025.html",
+        "RELEASES/delaossa-quevedo-still-luvin-2025.html",
+        "LIVE/delaossa-la-madrugá-2026.html"
+      ]
+    },
+    "RELEASES/eazyboi-ascari-album-2025.html": {
+      "artist": "EAZYBOI",
+      "title": "ASCARI ALBUM (2025)",
+      "image": "assets/projects/eazyboy/ascari-cover.jpeg",
+      "categories": [
+        "releases",
+        "albums"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/eazyboi-ascari-cover-2025.html",
+        "RELEASES/eazyboi-suerte-2025.html",
+        "RELEASES/eazyboi-all-night-2025.html",
+        "RELEASES/eazyboi-bruce-wayne-2025.html"
+      ]
+    },
+    "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html": {
+      "artist": "KAPO",
+      "title": "POR SI ALGUIEN NOS ESCUCHA ALBUM (2025)",
+      "image": "assets/projects/kapo/psane-cover.jpeg",
+      "categories": [
+        "releases",
+        "albums"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+        "RELEASES/kapo-feid-x-ti-2024.html",
+        "RELEASES/kapo-korazong-2025.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-visualizers-2025.html",
+        "LIVE/kapo-los-40-2025.html"
+      ]
+    },
+    "RELEASES/manuel-turizo-apambichao-album-2026.html": {
+      "artist": "MANUEL TURIZO",
+      "title": "APAMABICHAO ALBUM (2026)",
+      "image": "assets/projects/turizo/apambichao/apambichao-cover.jpg",
+      "categories": [
+        "releases",
+        "albums"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/manuel-turizo-apambichao-cover-2026.html",
+        "RELEASES/manuel-turizo-maluma-apambichao-2026.html",
+        "RELEASES/manuel-turizo-cosas-de-enamorao-2025.html",
+        "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html",
+        "RELEASES/manuel-turizo-apambichao-visualizers-2026.html"
+      ]
+    },
+    "RELEASES/morat-ya-es-mañana-album-2025.html": {
+      "artist": "MORAT",
+      "title": "YA ES MAÑANA ALBUM (2025)",
+      "image": "assets/projects/morat/yem-cover.avif",
+      "categories": [
+        "releases",
+        "albums"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/morat-ya-es-mañana-cover-2025.html",
+        "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+        "RELEASES/morat-camilo-me-toca-a-mi-2025.html",
+        "RELEASES/morat-vuelvo-a-ti-2025.html",
+        "RELEASES/morat-faltas-tu-2024.html",
+        "LIVE/morat-yem-listening-party-2025.html",
+        "LIVE/morat-latin-grammys-2025.html"
+      ]
+    },
+    "RELEASES/quevedo-buenas-noches-album-2024.html": {
+      "artist": "QUEVEDO",
+      "title": "BUENAS NOCHES ALBUM (2024)",
+      "image": "assets/projects/quevedo/bn/buenas-noches-cover.png",
+      "categories": [
+        "releases",
+        "albums"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/quevedo-buenas-noches-cover-2024.html",
+        "RELEASES/quevedo-duro-2024.html",
+        "RELEASES/quevedo-kassandra-2024.html",
+        "RELEASES/quevedo-aitana-gran-via-2025.html",
+        "RELEASES/quevedo-la-pantera-halo-2025.html",
+        "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+        "LIVE/quevedo-buenas-noches-2024.html",
+        "LIVE/quevedo-latin-grammys-2024.html"
+      ]
+    },
+    "RELEASES/eazyboi-ascari-cover-2025.html": {
+      "artist": "EAZYBOI",
+      "title": "ASCARI COVER (2025)",
+      "image": "assets/projects/eazyboy/ascari-cover.jpeg",
+      "categories": [
+        "releases"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/eazyboi-ascari-album-2025.html",
+        "RELEASES/eazyboi-suerte-2025.html",
+        "RELEASES/eazyboi-all-night-2025.html",
+        "RELEASES/eazyboi-bruce-wayne-2025.html"
+      ]
+    },
+    "RELEASES/grupo-frontera-gabito-ballesteros-pienso-en-ella-2024.html": {
+      "artist": "GRUPO FRONTERA, GABITO BALLESTEROS",
+      "title": "PIENSO EN ELLA (2024)",
+      "image": "assets/projects/grupo-frontera/pienso-en-ella-2.png",
+      "categories": [
+        "releases"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": []
+    },
+    "RELEASES/kapo-korazong-2025.html": {
+      "artist": "KAPO",
+      "title": "KORAZONG (2025)",
+      "image": "assets/projects/kapo/korazong-1.jpg",
+      "categories": [
+        "releases"
+      ],
+      "description": "",
+      "role": "",
+      "credits": [],
+      "related": [
+        "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+        "RELEASES/kapo-feid-x-ti-2024.html",
+        "RELEASES/kapo-por-si-alguien-nos-escucha-visualizers-2025.html",
+        "LIVE/kapo-los-40-2025.html"
+      ]
+    }
+  },
+  "selections": {
+    "live": [
+      "LIVE/delaossa-la-madrugá-2026.html",
+      "LIVE/morat-latin-grammys-2025.html",
+      "LIVE/yung-beef-eddlb-2024.html",
+      "LIVE/manuel-turizo-201-2025.html",
+      "LIVE/quevedo-buenas-noches-2024.html"
+    ],
+    "releases": [
+      "RELEASES/delaossa-la-madruga-album-2025.html",
+      "RELEASES/kapo-playa-fria-2026.html",
+      "RELEASES/space-hammu-odiosos-ocho-2025.html",
+      "RELEASES/morat-ya-es-mañana-album-2025.html"
+    ],
+    "show": [
+      "LIVE/delaossa-la-madrugá-2026.html",
+      "LIVE/yung-beef-eddlb-2024.html",
+      "LIVE/manuel-turizo-201-2025.html",
+      "LIVE/morat-yem-listening-party-2025.html",
+      "LIVE/quevedo-buenas-noches-2024.html",
+      "LIVE/la-mafia-del-amor-live-show-2024.html",
+      "LIVE/quevedo-comeback-2024.html",
+      "LIVE/abhir-elefantes-cabalgando-2023.html"
+    ],
+    "broadcast": [
+      "LIVE/morat-latin-grammys-2025.html",
+      "LIVE/kapo-los-40-2025.html",
+      "LIVE/quevedo-latin-grammys-2024.html",
+      "LIVE/grupo-frontera-latin-grammys-2024.html",
+      "LIVE/quevedo-la-velada-2023.html"
+    ],
+    "album": [
+      "RELEASES/abhir-brown-boy-album-2023.html",
+      "RELEASES/delaossa-la-madruga-album-2025.html",
+      "RELEASES/eazyboi-ascari-album-2025.html",
+      "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html",
+      "RELEASES/manuel-turizo-apambichao-album-2026.html",
+      "RELEASES/morat-ya-es-mañana-album-2025.html",
+      "RELEASES/quevedo-buenas-noches-album-2024.html"
+    ],
+    "music-video": [
+      "RELEASES/delaossa-quevedo-still-luvin-2025.html",
+      "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+      "RELEASES/alvaro-de-luna-hasta-el-amanecer-2026.html",
+      "RELEASES/kapo-kriminal-2026.html",
+      "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html"
+    ],
+    "cover": [
+      "RELEASES/abhir-brown-boy-cover-2023.html",
+      "RELEASES/cultura-profetica-en-bucle-cover-2026.html",
+      "RELEASES/delaossa-la-madruga-cover-2025.html",
+      "RELEASES/delaossa-playa-virginia-cover-2022.html",
+      "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+      "RELEASES/manuel-turizo-apambichao-cover-2026.html",
+      "RELEASES/morat-ya-es-mañana-cover-2025.html",
+      "RELEASES/omar-montes-lagrimas-de-un-maleante-cover-2024.html",
+      "RELEASES/quevedo-buenas-noches-cover-2024.html"
+    ],
+    "home": [
+      "LIVE/delaossa-la-madrugá-2026.html",
+      "LIVE/yung-beef-eddlb-2024.html",
+      "LIVE/morat-latin-grammys-2025.html",
+      "RELEASES/delaossa-la-madruga-album-2025.html",
+      "RELEASES/kapo-playa-fria-2026.html",
+      "RELEASES/space-hammu-odiosos-ocho-2025.html"
+    ],
+    "work": [
+      "LIVE/delaossa-la-madrugá-2026.html",
+      "LIVE/morat-latin-grammys-2025.html",
+      "LIVE/yung-beef-eddlb-2024.html",
+      "LIVE/manuel-turizo-201-2025.html",
+      "LIVE/quevedo-buenas-noches-2024.html",
+      "RELEASES/delaossa-la-madruga-album-2025.html",
+      "RELEASES/kapo-playa-fria-2026.html",
+      "RELEASES/space-hammu-odiosos-ocho-2025.html",
+      "RELEASES/morat-ya-es-mañana-album-2025.html"
+    ]
+  },
+  "universes": {
+    "RELEASES/abhir-brown-boy-album-2023.html": [
+      "RELEASES/abhir-brown-boy-cover-2023.html",
+      "RELEASES/abhir-brown-boy-bounce-2023.html",
+      "RELEASES/abhir-brown-boy-visualizers-2023.html",
+      "LIVE/abhir-elefantes-cabalgando-2023.html"
+    ],
+    "RELEASES/delaossa-la-madruga-album-2025.html": [
+      "RELEASES/delaossa-la-madruga-cover-2025.html",
+      "RELEASES/delaossa-la-madruga-teaser-2025.html",
+      "RELEASES/delaossa-nueva-season-2025.html",
+      "RELEASES/delaossa-quevedo-still-luvin-2025.html",
+      "LIVE/delaossa-la-madrugá-2026.html"
+    ],
+    "RELEASES/eazyboi-ascari-album-2025.html": [
+      "RELEASES/eazyboi-ascari-cover-2025.html",
+      "RELEASES/eazyboi-suerte-2025.html",
+      "RELEASES/eazyboi-all-night-2025.html",
+      "RELEASES/eazyboi-bruce-wayne-2025.html"
+    ],
+    "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html": [
+      "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+      "RELEASES/kapo-feid-x-ti-2024.html",
+      "RELEASES/kapo-korazong-2025.html",
+      "RELEASES/kapo-por-si-alguien-nos-escucha-visualizers-2025.html",
+      "LIVE/kapo-los-40-2025.html"
+    ],
+    "RELEASES/manuel-turizo-apambichao-album-2026.html": [
+      "RELEASES/manuel-turizo-apambichao-cover-2026.html",
+      "RELEASES/manuel-turizo-maluma-apambichao-2026.html",
+      "RELEASES/manuel-turizo-cosas-de-enamorao-2025.html",
+      "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html",
+      "RELEASES/manuel-turizo-apambichao-visualizers-2026.html"
+    ],
+    "RELEASES/morat-ya-es-mañana-album-2025.html": [
+      "RELEASES/morat-ya-es-mañana-cover-2025.html",
+      "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
+      "RELEASES/morat-camilo-me-toca-a-mi-2025.html",
+      "RELEASES/morat-vuelvo-a-ti-2025.html",
+      "RELEASES/morat-faltas-tu-2024.html",
+      "LIVE/morat-yem-listening-party-2025.html",
+      "LIVE/morat-latin-grammys-2025.html"
+    ],
+    "RELEASES/quevedo-buenas-noches-album-2024.html": [
+      "RELEASES/quevedo-buenas-noches-cover-2024.html",
+      "RELEASES/quevedo-duro-2024.html",
+      "RELEASES/quevedo-kassandra-2024.html",
+      "RELEASES/quevedo-aitana-gran-via-2025.html",
+      "RELEASES/quevedo-la-pantera-halo-2025.html",
+      "RELEASES/quevedo-buenas-noches-visualizers-2024.html",
+      "LIVE/quevedo-buenas-noches-2024.html",
+      "LIVE/quevedo-latin-grammys-2024.html"
+    ]
+  }
+}

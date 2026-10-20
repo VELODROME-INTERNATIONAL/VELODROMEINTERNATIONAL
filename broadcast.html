@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Vélodrome — Live projects">
-  <title>Live — Vélodrome</title>
+  <title>Broadcast — Vélodrome</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,65 +17,35 @@
   <!-- HEADER -->
 
   <header class="site-header" id="site-header">
-
-    <nav class="header-left" aria-label="Navegación principal">
-
-      <div class="header-dropdown">
-        <a href="live.html" class="header-link active" aria-current="page">Live</a>
-
-        <div class="header-submenu">
-          <a href="live.html?filter=shows">Show</a>
-          <a href="live.html?filter=broadcast">Broadcast</a>
-        </div>
+  <nav class="header-left" aria-label="Navegación principal">
+    <div class="header-dropdown">
+      <a href="work.html" class="header-link active">Work</a>
+      <div class="header-submenu">
+        <a href="live.html">Live</a><a href="releases.html">Releases</a>
       </div>
-
-      <div class="header-dropdown">
-        <a href="releases.html" class="header-link">Releases</a>
-
-        <div class="header-submenu">
-          <a href="releases.html?filter=albums">Album</a>
-          <a href="releases.html?filter=music-video">Music video</a>
-          <a href="releases.html?filter=cover">Cover</a>
-        </div>
-      </div>
-
-    </nav>
-
-    <a href="home.html" class="header-logo" aria-label="Página de inicio">Vélodrome</a>
-
-    <nav class="header-right" aria-label="Navegación secundaria">
-      <a href="archive.html" class="header-link">Archive</a>
-      <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false">Info</button>
-    </nav>
-
-  </header>
+    </div>
+    <a href="about.html" class="header-link">About</a>
+  </nav>
+  <a href="home.html" class="header-logo" aria-label="Vélodrome — inicio">Vélodrome</a>
+  <nav class="header-right" aria-label="Archivo y contacto">
+    <a href="archive.html" class="header-link">Archive</a>
+    <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false" aria-controls="info-panel">Contact</button>
+  </nav>
+</header>
 
 
   <!-- PANEL INFO -->
 
-  <section class="info-panel" id="info-panel" aria-hidden="true">
-
-    <div class="info-block">
-      <p>Contact<br>For more information,<br>please contact</p>
-      <a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a>
-    </div>
-
-    <div class="info-block info-connect">
-      <p>Connect</p>
-      <a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/?hl=es" target="_blank" rel="noopener">Instagram</a>
-    </div>
-
-    <button class="info-close" id="close-info" type="button" aria-label="Cerrar">
-      <span></span>
-      <span></span>
-    </button>
-
-  </section>
+  <section class="info-panel" id="info-panel" aria-label="Contacto" aria-hidden="true">
+  <div class="info-block"><p>Hablemos de tu próximo proyecto.</p><a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a></div>
+  <div class="info-block info-connect"><p>Connect</p><a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+  <button class="info-close" id="close-info" type="button" aria-label="Cerrar contacto"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+</section>
 
 <div class="category-intro">
-  <h1 class="category-title">BROADCAST</h1>
+  <h1 class="category-title">BROADCAST</h1><nav class="work-categories" aria-label="Categorías de Work"><a href="work.html">All work</a><a href="live.html" aria-current="page">Live</a><a href="releases.html">Releases</a></nav><nav class="work-subcategories" aria-label="Tipos de proyecto"><a href="live.html">All live</a><a href="show.html">Show</a><a href="broadcast.html" aria-current="page">Broadcast</a></nav>
 </div>
- 
+
   <!-- PROYECTOS LIVE -->
 
   <main class="projects-grid category-projects">
@@ -117,7 +87,7 @@
         <p class="project-name">LATIN GRAMMYS (2024)</p>
       </div>
     </a>
-    
+
     <a class="project-card category-project-card"
       href="LIVE/grupo-frontera-latin-grammys-2024.html?view=category&from=live"
       data-category="broadcast">
@@ -141,7 +111,7 @@
         <p class="project-name">LA VELADA DEL AÑO (2023)</p>
       </div>
     </a>
-    
+
   </main>
 
   <!-- FOOTER -->

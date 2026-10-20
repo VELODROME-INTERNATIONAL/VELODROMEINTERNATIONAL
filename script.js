@@ -16,6 +16,8 @@
   function init() {
     /* RUTAS DEL HEADER */
     const routes = {
+      work: "work.html",
+      about: "about.html",
       live: "live.html",
       show: "show.html",
       shows: "show.html",
@@ -60,7 +62,8 @@
 
       if (isMainPage) {
         const exact = route === currentFile;
-        const parent = route === parentPages[currentFile];
+        const parent = route === parentPages[currentFile]
+          || (route === "work.html" && ["live.html", "show.html", "broadcast.html", "releases.html", "album.html", "music-video.html", "cover.html"].includes(currentFile));
 
         link.classList.toggle("active", exact || parent);
         link.removeAttribute("aria-current");
@@ -106,18 +109,23 @@
     const infoPanel = document.getElementById("info-panel");
     const infoOpen = document.getElementById("open-info");
     const infoClose = document.getElementById("close-info");
+    const contactTriggers = [...document.querySelectorAll("#open-info, [data-contact]")];
+    let contactOrigin;
 
     function setInfo(open) {
-      if (!infoPanel || !infoOpen) return;
+      if (!infoPanel) return;
 
       infoPanel.classList.toggle("is-open", open);
       infoPanel.setAttribute("aria-hidden", String(!open));
-      infoOpen.setAttribute("aria-expanded", String(open));
+      contactTriggers.forEach(button => button.setAttribute("aria-expanded", String(open)));
+      if (open) infoClose?.focus();
+      else if (contactOrigin) { contactOrigin.focus(); contactOrigin = null; }
     }
 
-    infoOpen?.addEventListener("click", () => {
+    contactTriggers.forEach(button => button.addEventListener("click", () => {
+      contactOrigin = button;
       setInfo(!infoPanel?.classList.contains("is-open"));
-    });
+    }));
     infoClose?.addEventListener("click", () => setInfo(false));
 
     /* CONTROL GENERAL DE SONIDO */
@@ -323,6 +331,8 @@
 
       /* DESTINO DE LA X */
       const returnPages = {
+        home: "home.html",
+        work: "work.html",
         archive: "archive.html",
         live: "live.html",
         show: "show.html",
