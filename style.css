@@ -1392,11 +1392,22 @@ html[data-project-view="archive"] .project-credits {
 .section-kicker { margin: 0 0 28px; font-size: 13px; font-weight: 400; }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
 .section-heading h2 { margin: 0; font: inherit; font-size: 13px; }
-.home-statement { padding: clamp(80px, 11vw, 180px) var(--pad); }
-.home-statement h1, .editorial-intro h1 { max-width: 1250px; margin: 0 0 32px; font-size: clamp(30px, 4.8vw, 88px); font-weight: 400; line-height: 1.02; letter-spacing: -.045em; }
-.home-statement { padding: clamp(100px, 12vw, 220px) clamp(16px, 9vw, 190px) clamp(110px, 13vw, 240px); }
-.home-statement h1 { max-width: 1650px; margin-bottom: 38px; font-size: clamp(38px, 4.25vw, 90px); font-weight: 850; line-height: .99; letter-spacing: -.055em; text-transform: none; }
-.selected-section { padding: 0 var(--pad) clamp(80px, 10vw, 160px); }
+.editorial-intro h1 { max-width: 1250px; margin: 0 0 32px; font-size: clamp(30px, 4.8vw, 88px); font-weight: 400; line-height: 1.02; letter-spacing: -.045em; }
+/* La home avanza por pantallas; la frase ocupa una pantalla blanca completa. */
+.home-document { scroll-snap-type: y mandatory; }
+.home-page #home-intro, .home-page main > section, .home-page > .footer { scroll-snap-align: start; }
+.home-statement {
+  min-height: 100svh;
+  padding: calc(var(--header-height) + 40px) clamp(16px, 9vw, 190px) 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: #fff;
+}
+.home-statement h1 { max-width: 1650px; margin: 0 0 38px; font-size: clamp(38px, 4.25vw, 90px); font-weight: 850; line-height: .99; letter-spacing: -.055em; text-transform: none; }
+.home-page .site-header.is-scrolled { background: #fff; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.selected-section { padding: calc(var(--header-height) + 24px) var(--pad) clamp(80px, 10vw, 160px); }
 .selected-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 64px 24px; }
 .selected-card { display: block; min-width: 0; }
 .selected-image { aspect-ratio: 16 / 9; overflow: hidden; background: #f4f4f4; }
@@ -1484,6 +1495,6 @@ html[data-project-view="archive"] .project-page .project-images { height: calc(1
 }
 
 @media (max-width: 700px) {
-  .home-statement { padding: 110px 16px 125px; }
+  .home-statement { padding: calc(var(--header-height) + 48px) 16px 70px; }
   .home-statement h1 { font-size: clamp(36px, 8.5vw, 58px); line-height: 1.02; }
 }
