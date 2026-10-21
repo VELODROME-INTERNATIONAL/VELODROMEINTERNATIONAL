@@ -1394,6 +1394,8 @@ html[data-project-view="archive"] .project-credits {
 .section-heading h2 { margin: 0; font: inherit; font-size: 13px; }
 .home-statement { padding: clamp(80px, 11vw, 180px) var(--pad); }
 .home-statement h1, .editorial-intro h1 { max-width: 1250px; margin: 0 0 32px; font-size: clamp(30px, 4.8vw, 88px); font-weight: 400; line-height: 1.02; letter-spacing: -.045em; }
+.home-statement { padding: clamp(100px, 12vw, 220px) clamp(16px, 9vw, 190px) clamp(110px, 13vw, 240px); }
+.home-statement h1 { max-width: 1650px; margin-bottom: 38px; font-size: clamp(38px, 4.25vw, 90px); font-weight: 850; line-height: .99; letter-spacing: -.055em; text-transform: none; }
 .selected-section { padding: 0 var(--pad) clamp(80px, 10vw, 160px); }
 .selected-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 64px 24px; }
 .selected-card { display: block; min-width: 0; }
@@ -1479,4 +1481,9 @@ html[data-project-view="archive"] .project-page .project-images { height: calc(1
   .section-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
   .selected-details h3 { font-size: 17px; }
   .selected-details p { font-size: 14px; }
+}
+
+@media (max-width: 700px) {
+  .home-statement { padding: 110px 16px 125px; }
+  .home-statement h1 { font-size: clamp(36px, 8.5vw, 58px); line-height: 1.02; }
 }
