@@ -929,40 +929,38 @@ html[data-project-view="archive"] .project-page .archive-thumb:focus-visible {
   outline-offset: -2px;
 }
 
-/* CATEGORÍA: FILAS GENERADAS POR JAVASCRIPT */
-
+/* CATEGORÍA: GALERÍA DE DOS COLUMNAS */
 html[data-project-view="category"] .project-page .project-images {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  align-items: start;
   width: 100%;
   padding: 0 var(--pad);
 }
 
-html[data-project-view="category"] .project-page .project-image-row {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 16px;
+html[data-project-view="category"] .project-page .project-media {
+  min-width: 0;
   width: 100%;
-}
-
-html[data-project-view="category"] .project-page .project-image-row .project-media {
-  flex: 0 0 auto;
-  width: var(--photo-width);
-  height: var(--row-height);
   margin: 0;
   padding: 0;
-  border: 0;
   background: var(--white);
 }
 
-html[data-project-view="category"] .project-page .project-image-row .project-media img {
+html[data-project-view="category"] .project-page .project-media img {
   display: block;
   width: 100%;
-  height: 100%;
-  max-width: none;
+  height: auto;
+  max-height: calc(100svh - var(--header-height));
   object-fit: contain;
+  object-position: left top;
+}
+
+@media (max-width: 700px) {
+  html[data-project-view="category"] .project-page .project-images {
+    grid-template-columns: 1fr;
+    padding-inline: 16px;
+  }
 }
 
 /* PÁGINA INDIVIDUAL DE UN ÁLBUM */
