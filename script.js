@@ -574,10 +574,9 @@
 
 // Portada: una cinta continua con las imágenes del archivo.
 (() => {
-  function iniciarPortada() {
-    const viewport = document.getElementById("home-reel");
-    const track = document.getElementById("home-reel-track");
-    if (!viewport || !track) return;
+  function iniciarPortada(viewport) {
+    const track = viewport.querySelector(".home-reel-track");
+    if (!track) return;
 
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
     let images = [];
@@ -740,7 +739,11 @@
     loadImages();
   }
 
+  function iniciarCintas() {
+    document.querySelectorAll(".home-reel").forEach(iniciarPortada);
+  }
+
   if (document.readyState === "loading")
-    document.addEventListener("DOMContentLoaded", iniciarPortada, { once: true });
-  else iniciarPortada();
+    document.addEventListener("DOMContentLoaded", iniciarCintas, { once: true });
+  else iniciarCintas();
 })();
