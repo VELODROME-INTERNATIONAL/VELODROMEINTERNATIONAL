@@ -1,24 +1,151 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Vélodrome — Dirección creativa para artistas, música y cultura."><title>About — Vélodrome</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
-<body class="about-page"><header class="site-header" id="site-header">
-  <nav class="header-left" aria-label="Navegación principal">
-    <div class="header-dropdown">
-      <a href="work.html" class="header-link">Work</a>
-      <div class="header-submenu">
-        <a href="live.html">Live</a><a href="releases.html">Releases</a>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vélodrome — Dirección creativa para artistas, música y cultura.">
+  <title>About — Vélodrome</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="about-page">
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <nav class="header-left" aria-label="Navegación principal">
+      <div class="header-dropdown">
+        <a href="work.html" class="header-link">Work</a>
+
+        <div class="header-submenu">
+          <a href="live.html">Live</a>
+          <a href="releases.html">Releases</a>
+        </div>
       </div>
+
+      <a href="about.html" class="header-link active" aria-current="page">About</a>
+    </nav>
+
+    <a href="home.html" class="header-logo" aria-label="Vélodrome — inicio">
+      Vélodrome
+    </a>
+
+    <nav class="header-right" aria-label="Archivo y contacto">
+      <a href="archive.html" class="header-link">Archive</a>
+      <button
+        class="header-link info-toggle"
+        id="open-info"
+        type="button"
+        aria-expanded="false"
+        aria-controls="info-panel"
+      >
+        Contact
+      </button>
+    </nav>
+  </header>
+
+  <!-- PANEL DE CONTACTO -->
+  <section class="info-panel" id="info-panel" aria-label="Contacto" aria-hidden="true">
+    <div class="info-block">
+      <p>Hablemos de tu próximo proyecto.</p>
+      <a href="mailto:hola@velodromeinternational.com">
+        hola@velodromeinternational.com
+      </a>
     </div>
-    <a href="about.html" class="header-link active" aria-current="page">About</a>
-  </nav>
-  <a href="home.html" class="header-logo" aria-label="Vélodrome — inicio">Vélodrome</a>
-  <nav class="header-right" aria-label="Archivo y contacto">
-    <a href="archive.html" class="header-link">Archive</a>
-    <button class="header-link info-toggle" id="open-info" type="button" aria-expanded="false" aria-controls="info-panel">Contact</button>
-  </nav>
-</header><section class="info-panel" id="info-panel" aria-label="Contacto" aria-hidden="true">
-  <div class="info-block"><p>Hablemos de tu próximo proyecto.</p><a href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a></div>
-  <div class="info-block info-connect"><p>Connect</p><a href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
-  <button class="info-close" id="close-info" type="button" aria-label="Cerrar contacto"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
-</section><main><section class="editorial-intro about-intro"><p class="section-kicker"></p><h1>Dirección creativa para<br>artistas, música y cultura.</h1><p class="editorial-copy">Vélodrome es un estudio creativo que trabaja en la intersección de la música, la imagen y el directo. Desarrollamos conceptos y los llevamos a shows, piezas audiovisuales e identidades visuales.</p></section>
-<section class="about-section"><h2>Qué hacemos</h2><div class="about-services"><article><h3>Dirección creativa</h3><p>Concepto, narrativa y universo visual para un proyecto artístico.</p></article><article><h3>Live</h3><p>Conceptualización de shows y dirección de arte para experiencias en vivo.</p></article><article><h3>Audiovisual</h3><p>Concepto y dirección de arte para videoclips y piezas de lanzamiento.</p></article><article><h3>Identidad y diseño</h3><p>Identidades visuales, álbumes, portadas y merch.</p></article></div></section>
-  <section class="contact-section" aria-labelledby="contact-title"><p class="section-kicker">Contact</p><h2 id="contact-title">Hablemos de tu<br>próximo proyecto.</h2><a class="text-link contact-email" href="mailto:hola@velodromeinternational.com">hola@velodromeinternational.com</a><button class="text-link" type="button" data-contact aria-controls="info-panel" aria-expanded="false">Correo y redes ↗</button></section></main><footer class="footer"><p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p><img class="footer-logo" src="assets/brand/logo.png" alt="Vélodrome" loading="lazy"></footer></body></html>
+
+    <div class="info-block info-connect">
+      <p>Connect</p>
+      <a
+        href="https://www.instagram.com/v.e.l.o.d.r.o.m.e/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+    </div>
+
+    <button class="info-close" id="close-info" type="button" aria-label="Cerrar contacto">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </section>
+
+  <main>
+    <!-- PRESENTACIÓN -->
+    <section class="editorial-intro about-intro">
+      <p class="section-kicker"></p>
+
+      <h1>IDENTITY PATHS<br>FOR ARTISTS, BRANDS AND CULTURAL PROJECTS</h1>
+
+      <p class="editorial-copy">
+        VÉLODROME IS A CREATIVE DIRECTION OFFICE THAT GIVES IDEAS A WORLD OF THEIR OWN. 
+        WE WORK TO FIND WHAT MAKES EACH PROJECT DISTINCT, AND THEN BUILD A LANGUAGE AROUND IT.
+        FROM LIVE EXPERIENCES AND MOVING IMAGE TO VISUAL IDENTITY, EVERY PART BELONGS TO THE SAME WORLD.
+      </p>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="about-section">
+      <h2>WHAT WE DO</h2>
+
+      <div class="about-services">
+        <article>
+          <h3>CREATIVE DIRECTION</h3>
+          <p>EVERY PROJECT BEGINS WITH A POINT OF VIEW. WE FIND THE IDEA AT ITS CORE AND SHAPE A WORLD AROUND IT:
+            ITS STORY, VISUAL LANGUAGE AND THE FEELING IT LEAVES BEHIND. ONE VISION THAT GIVES EVERY EXPRESSION OF
+            THE PROJECT A REASON TO BELONG.</p>
+        </article>
+
+        <article>
+          <h3>LIVE</h3>
+          <p>A LIVE EXPERIENCE SHOULD STAY WITH YOU AFTER YOU LEAVE. WE TURN IDEAS INTO SPACES, MOMENTS AND MOVEMENT,
+            FROM ARTIST SHOWS TO EVENTS AND BRAND EXPERIENCES. EVERY ELEMENT PLAYS A PART IN THE SAME STORY, AND THE 
+            AUDIENCE BECOMES PART OF IT TOO.</p>
+        </article>
+
+        <article>
+          <h3>AUDIOVISUAL</h3>
+          <p>MOVING IMAGE LETS A WORLD REVEAL ITSELF OVER TIME. WE DEVELOP CONCEPTS FOR MUSIC VIDEOS, VISUALIZERS AND 
+            OTHER AUDIOVISUAL PIECES, GIVING EACH ONE ITS OWN RHYTHM, ATMOSPHERE AND POINT OF VIEW WHILE KEEPING IT CONNECTED 
+            TO THE WIDER PROJECT.</p>
+        </article>
+
+        <article>
+          <h3>VISUAL IDENTITY</h3>
+          <p>AN IDENTITY IS MORE THAN A RECOGNIZABLE LOOK. IT’S A LANGUAGE A PROJECT CAN SPEAK IN MANY PLACES AND STILL 
+            SOUND LIKE ITSELF. WE DESIGN VISUAL SYSTEMS FOR ARTISTS, BRANDS AND CULTURAL PROJECTS THAT HOLD TOGETHER ACROSS 
+            ARTWORKS, CAMPAIGNS, MERCH AND BEYOND.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-section" aria-labelledby="contact-title">
+      <p class="section-kicker">CONTACT</p>
+      <h2 id="contact-title">GOT AN IDEA?<br>LET'S TAKE IT SOMEWHERE</h2>
+
+      <a
+        class="text-link contact-email"
+        href="mailto:hola@velodromeinternational.com"
+      >
+        hola@velodromeinternational.com
+      </a>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-copyright">©2026 VÉLODROME. ALL RIGHTS RESERVED</p>
+    <img
+      class="footer-logo"
+      src="assets/brand/logo.png"
+      alt="Vélodrome"
+      loading="lazy"
+    >
+  </footer>
+</body>
+</html>
