@@ -1374,25 +1374,26 @@
   "selections": {
     "live": [
       "LIVE/delaossa-la-madrugá-2026.html",
-      "LIVE/morat-latin-grammys-2025.html",
       "LIVE/yung-beef-eddlb-2024.html",
       "LIVE/manuel-turizo-201-2025.html",
+      "LIVE/morat-latin-grammys-2025.html",
+      "LIVE/kapo-los-40-2025.html",
       "LIVE/quevedo-buenas-noches-2024.html"
     ],
     "releases": [
       "RELEASES/delaossa-la-madruga-album-2025.html",
       "RELEASES/kapo-playa-fria-2026.html",
       "RELEASES/space-hammu-odiosos-ocho-2025.html",
-      "RELEASES/morat-ya-es-mañana-album-2025.html"
+      "RELEASES/morat-ya-es-mañana-album-2025.html",
+      "RELEASES/manuel-turizo-maluma-apambichao-2026.html",
+      "RELEASES/quevedo-columbia-2023.html"
     ],
     "show": [
       "LIVE/delaossa-la-madrugá-2026.html",
       "LIVE/yung-beef-eddlb-2024.html",
       "LIVE/manuel-turizo-201-2025.html",
-      "LIVE/morat-yem-listening-party-2025.html",
       "LIVE/quevedo-buenas-noches-2024.html",
-      "LIVE/la-mafia-del-amor-live-show-2024.html",
-      "LIVE/quevedo-comeback-2024.html",
+      "LIVE/pxxr-gvng-live-show-2026.html",
       "LIVE/abhir-elefantes-cabalgando-2023.html"
     ],
     "broadcast": [
@@ -1403,31 +1404,28 @@
       "LIVE/quevedo-la-velada-2023.html"
     ],
     "album": [
-      "RELEASES/abhir-brown-boy-album-2023.html",
       "RELEASES/delaossa-la-madruga-album-2025.html",
-      "RELEASES/eazyboi-ascari-album-2025.html",
-      "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html",
-      "RELEASES/manuel-turizo-apambichao-album-2026.html",
+      "RELEASES/quevedo-buenas-noches-album-2024.html",
       "RELEASES/morat-ya-es-mañana-album-2025.html",
-      "RELEASES/quevedo-buenas-noches-album-2024.html"
+      "RELEASES/manuel-turizo-apambichao-album-2026.html",
+      "RELEASES/kapo-por-si-alguien-nos-escucha-album-2025.html",
+      "RELEASES/abhir-brown-boy-album-2023.html"
     ],
     "music-video": [
       "RELEASES/delaossa-quevedo-still-luvin-2025.html",
-      "RELEASES/morat-jay-wheeler-sin-ti-2025.html",
-      "RELEASES/alvaro-de-luna-hasta-el-amanecer-2026.html",
       "RELEASES/kapo-kriminal-2026.html",
-      "RELEASES/manuel-turizo-por-un-pendejo-no-se-llora-2026.html"
+      "RELEASES/quevedo-columbia-2023.html",
+      "RELEASES/manuel-turizo-maluma-apambichao-2026.html",
+      "RELEASES/space-hammu-odiosos-ocho-2025.html",
+      "RELEASES/morat-jay-wheeler-sin-ti-2025.html"
     ],
     "cover": [
-      "RELEASES/abhir-brown-boy-cover-2023.html",
-      "RELEASES/cultura-profetica-en-bucle-cover-2026.html",
       "RELEASES/delaossa-la-madruga-cover-2025.html",
-      "RELEASES/delaossa-playa-virginia-cover-2022.html",
-      "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+      "RELEASES/quevedo-buenas-noches-cover-2024.html",
       "RELEASES/manuel-turizo-apambichao-cover-2026.html",
-      "RELEASES/morat-ya-es-mañana-cover-2025.html",
-      "RELEASES/omar-montes-lagrimas-de-un-maleante-cover-2024.html",
-      "RELEASES/quevedo-buenas-noches-cover-2024.html"
+      "RELEASES/kapo-por-si-alguien-nos-escucha-cover-2025.html",
+      "RELEASES/abhir-brown-boy-cover-2023.html",
+      "RELEASES/morat-ya-es-mañana-cover-2025.html"
     ],
     "home": [
       "LIVE/delaossa-la-madrugá-2026.html",
