@@ -363,6 +363,8 @@
 
       /* Compatibilidad con la galería antigua.
          La galería actual se inicia desde el HTML de cada proyecto. */
+      if (view === "category") initPairedProjectRows();
+
       if (view === "archive" && !document.querySelector(".archive-viewer")) {
         const images = [...document.querySelectorAll(".project-media")];
 
@@ -377,6 +379,74 @@
       }
 
     }
+  }
+
+  /* Filas de dos imágenes, con la anchura de cada una según su proporción. */
+  function initPairedProjectRows() {
+    const gallery = document.querySelector(".project-page .project-images");
+    if (!gallery || gallery.dataset.rowsReady) return;
+
+    const items = [...gallery.children].filter(item =>
+      item.matches(".project-media") && item.querySelector("img")
+    );
+    if (!items.length) return;
+    gallery.dataset.rowsReady = "true";
+
+    const rows = [];
+    for (let index = 0; index < items.length; index += 2) {
+      const group = items.slice(index, index + 2);
+      const row = document.createElement("div");
+      row.className = "project-image-row";
+      row.append(...group);
+      gallery.append(row);
+      rows.push({ row, group });
+    }
+
+    let frame;
+    function resizeRows() {
+      const mobile = matchMedia("(max-width: 700px)").matches;
+      const headerHeight = document.querySelector(".project-site-header")?.getBoundingClientRect().height || 0;
+      const maxHeight = Math.max(1, window.innerHeight - headerHeight);
+
+      rows.forEach(({ row, group }) => {
+        if (mobile) {
+          group.forEach(item => {
+            item.style.removeProperty("width");
+            item.style.removeProperty("height");
+          });
+          return;
+        }
+
+        const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+        const availableWidth = Math.max(1, row.clientWidth - gap * (group.length - 1));
+        const ratios = group.map(item => {
+          const image = item.querySelector("img");
+          const width = image.naturalWidth || Number(image.getAttribute("width"));
+          const height = image.naturalHeight || Number(image.getAttribute("height"));
+          return width > 0 && height > 0 ? width / height : 1;
+        });
+        const height = Math.min(maxHeight, availableWidth / ratios.reduce((sum, ratio) => sum + ratio, 0));
+
+        group.forEach((item, index) => {
+          item.style.width = `${height * ratios[index]}px`;
+          item.style.height = `${height}px`;
+        });
+      });
+    }
+
+    function scheduleResize() {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(resizeRows);
+    }
+
+    items.forEach(item => {
+      const image = item.querySelector("img");
+      image.addEventListener("load", scheduleResize);
+      image.addEventListener("error", scheduleResize);
+    });
+
+    window.addEventListener("resize", scheduleResize, { passive: true });
+    scheduleResize();
   }
 
   if (document.readyState === "loading") {
