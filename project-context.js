@@ -67,7 +67,7 @@
       const related = (project.related || []).filter(path => projects[path]);
       if (related.length && !universes[pagePath]) {
         const section = element('section', 'related-projects');
-        section.append(element('h2', 'section-kicker', 'En el mismo universo'));
+        section.append(element('h2', 'section-kicker', 'In the same universe'));
         const grid = element('div', 'related-grid');
         related.forEach(path => {
           const item = projects[path];
