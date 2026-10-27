@@ -1446,6 +1446,13 @@ html[data-project-view="archive"] .project-credits {
 .about-section p { margin: 0; max-width: 650px; font-size: clamp(16px, 1.4vw, 24px); line-height: 1.4; text-transform: none; }
 .about-copy > p { margin-bottom: 65px; }
 
+/* ABOUT: franja de imágenes y servicios en negativo */
+.about-page .about-reel { width: 100%; height: 20px; background: #fff; }
+.about-page .about-reel .home-reel-track { gap: 4px; }
+.about-page .about-section { color: #fff; background: #000; }
+.about-page .about-section p { font-size: clamp(13px, 1.05vw, 18px); line-height: 1.45; }
+
+
 /* Project context: confirmed copy lives in project-content.json. */
 .project-story { flex: 0 0 auto; padding: 65px var(--pad) 45px; }
 .project-story-heading { display: grid; grid-template-columns: minmax(0, 21%) 1fr; gap: 16px; }
