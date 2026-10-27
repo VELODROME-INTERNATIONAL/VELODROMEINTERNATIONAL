@@ -519,7 +519,7 @@ body.showreel-open { overflow: hidden; }
 
 .footer {
   width: 100%;
-  min-height: 300px;
+  min-height: 170px;
   padding: var(--pad);
   display: flex;
   align-items: flex-end;
@@ -809,7 +809,7 @@ body.showreel-open { overflow: hidden; }
 
 .view-category .project-images {
   width: 100%;
-  padding: 0 var(--pad) clamp(100px, 10vw, 180px);
+  padding: 0 var(--pad) clamp(40px, 5vw, 80px);
 }
 
 .view-category .project-media {
@@ -828,7 +828,7 @@ body.showreel-open { overflow: hidden; }
   object-fit: contain;
 }
 
-.project-footer { margin-top: clamp(80px, 10vw, 180px); }
+.project-footer { margin-top: clamp(32px, 4vw, 64px); }
 
 /* ARCHIVE: GALERÍA ACTUAL DENTRO DE UNA PANTALLA */
 
@@ -1243,7 +1243,7 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
   }
 
   .view-archive .project-media.is-selected { aspect-ratio: 4 / 3; }
-  .view-category .project-images { padding: 0 16px 80px; }
+  .view-category .project-images { padding: 0 16px 40px; }
   .view-category .project-media { margin-bottom: 16px; }
 
   html[data-project-view="archive"] .project-page .project-header {
@@ -1282,7 +1282,7 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
   /* Footer */
 
   .footer {
-    min-height: 300px;
+    min-height: 140px;
     padding: 20px;
   }
 
@@ -1543,7 +1543,7 @@ html[data-project-view="archive"] .project-credits {
 .related-card { display: block; min-width: 0; }
 .related-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: 12px; }
 .related-card span { font-size: 13px; line-height: 1.3; }
-.project-pagination { flex: 0 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 70px var(--pad); }
+.project-pagination { flex: 0 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px var(--pad); }
 .project-pagination a { display: flex; flex-direction: column; gap: 6px; font-size: clamp(13px, 1.1vw, 21px); line-height: 1.3; }
 .project-pagination a:last-child { text-align: right; }
 .pagination-label { display: block; font-size: 12px; margin-bottom: 18px; }
