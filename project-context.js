@@ -95,7 +95,7 @@
       if (index !== -1 && sequence.length > 1) {
         const nav = element('nav', 'project-pagination');
         nav.setAttribute('aria-label', 'Más proyectos');
-        [[-1, '← Proyecto anterior'], [1, 'Siguiente proyecto →']].forEach(([offset, label]) => {
+        [[-1, '← Previous project'], [1, 'Next project →']].forEach(([offset, label]) => {
           const path = sequence[(index + offset + sequence.length) % sequence.length];
           const item = projects[path];
           if (!item) return;
