@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vélodrome — Proyectos live, shows y broadcast.">
+  <meta name="description" content="Vélodrome — Proyectos de álbumes, videoclips y portadas.">
   <title>Cover — Vélodrome</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
   <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="work-collection-page">
 
   <!-- HEADER -->
   <header class="site-header" id="site-header">
@@ -39,15 +39,25 @@
   <button class="info-close" id="close-info" type="button" aria-label="Cerrar contacto"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
 </section>
 
-  <!-- TÍTULO -->
-  <div class="category-intro">
-    <h1 class="category-title" id="live-title">COVER</h1><nav class="work-categories" aria-label="Categorías de Work"><a href="work.html">All work</a><a href="live.html">Live</a><a href="releases.html" aria-current="page">Releases</a></nav><nav class="work-subcategories" aria-label="Tipos de proyecto"><a href="releases.html">All releases</a><a href="album.html">Album</a><a href="music-video.html">Music video</a><a href="cover.html" aria-current="page">Cover</a></nav>
-  </div>
+  <!-- INTRODUCCIÓN Y CATEGORÍAS -->
+  <section class="category-intro">
+    <h1 class="category-title visually-hidden" id="cover-title">COVER</h1>
+    <div class="category-title-spacer" aria-hidden="true"></div>
 
+    <nav class="work-categories" aria-label="Categorías de Work">
+      <a href="live.html">Live</a>
+      <a href="releases.html" aria-current="page">Releases</a>
+    </nav>
 
+    <nav class="work-subcategories" aria-label="Tipos de proyecto">
+      <a href="album.html">Album</a>
+      <a href="music-video.html">Music video</a>
+      <a href="cover.html" aria-current="page">Cover</a>
+    </nav>
+  </section>
 
   <!-- PROYECTOS -->
-  <main class="projects-grid category-projects" aria-labelledby="live-title">
+  <main class="projects-grid category-projects" aria-labelledby="cover-title">
 
     <!-- PROYECTOS -->
 <a class="project-card category-project-card"
