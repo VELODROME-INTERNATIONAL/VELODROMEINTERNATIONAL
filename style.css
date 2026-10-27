@@ -325,40 +325,46 @@ body.home-page .site-header:has(.header-dropdown:focus-within) {
 
 .showreel-preview:hover video { transform: scale(1.015); }
 
-/* HOME DIVIDIDA */
-
-#home-intro.home-split {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+/* HOME: CINTA HORIZONTAL DE PROYECTOS */
+#home-intro.home-reel-hero {
+  display: flex;
   width: 100%;
   height: 100svh;
   min-height: 0;
   margin: 0;
   padding: 0;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  background: var(--white);
+  background: #fff;
 }
 
-.home-half {
-  position: relative;
-  min-width: 0;
-  height: 100%;
-  overflow: hidden;
-  background: var(--white);
-}
-
-.home-half img {
-  position: absolute;
-  inset: 0;
+.home-reel {
   width: 100%;
-  max-width: none;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 500ms ease;
+  height: clamp(220px, 52svh, 620px);
+  overflow: hidden;
 }
 
-.home-half img.is-visible { opacity: 1; }
+.home-reel-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  height: 100%;
+  will-change: transform;
+}
+
+.home-reel-item {
+  flex: none;
+  height: 100%;
+}
+
+.home-reel-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 /* SHOWREEL AMPLIADO */
 
@@ -1110,11 +1116,14 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
     padding: 30px 16px;
   }
 
-  #home-intro.home-split {
+  #home-intro.home-reel-hero {
     height: 100svh;
     min-height: 0;
     padding: 0;
   }
+
+  .home-reel { height: clamp(190px, 48svh, 420px); }
+  .home-reel-track { gap: 8px; }
 
   .showreel-preview,
   .showreel-preview.collage-preview,
