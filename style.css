@@ -341,7 +341,7 @@ body.home-page .site-header:has(.header-dropdown:focus-within) {
 
 .home-reel {
   width: 100%;
-  height: clamp(220px, 52svh, 620px);
+  height: clamp(200px, 43svh, 520px);
   overflow: hidden;
 }
 
@@ -1122,7 +1122,7 @@ html[data-project-view="category"] .project-page .project-image-row .project-med
     padding: 0;
   }
 
-  .home-reel { height: clamp(190px, 48svh, 420px); }
+  .home-reel { height: clamp(170px, 40svh, 340px); }
   .home-reel-track { gap: 8px; }
 
   .showreel-preview,
