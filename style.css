@@ -1448,6 +1448,23 @@ html[data-project-view="archive"] .project-credits {
   line-height: 1.02;
   letter-spacing: -.045em;
 }
+/* Conserva el ritmo de la cabecera sin mostrar el título grande. */
+.work-collection-page .category-title.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.work-collection-page .category-title-spacer {
+  height: 1.02em;
+  margin-bottom: 32px;
+  font-size: clamp(30px, 4.8vw, 88px);
+}
 .work-collection-page .category-projects {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
