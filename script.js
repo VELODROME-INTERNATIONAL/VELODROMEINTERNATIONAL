@@ -590,6 +590,7 @@
 
     const gap = () => parseFloat(getComputedStyle(track).gap) || 0;
     const itemWidth = image => {
+      if (viewport.classList.contains("about-reel")) return viewport.clientHeight;
       const ratio = Math.min(2.2, Math.max(.55, image.naturalWidth / image.naturalHeight));
       return Math.round(viewport.clientHeight * ratio);
     };
