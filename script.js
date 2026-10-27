@@ -666,10 +666,61 @@
         const response = await fetch(new URL("archive.html", document.baseURI));
         if (!response.ok) throw new Error(`Archive: ${response.status}`);
         const archive = new DOMParser().parseFromString(await response.text(), "text/html");
-        images = [...new Set([...archive.querySelectorAll(".archive-card .archive-image img")]
-          .map(image => image.getAttribute("src"))
-          .filter(Boolean)
-          .map(src => new URL(src, response.url).href))];
+        const cards = [...archive.querySelectorAll(".archive-card")];
+        const seen = new Set();
+        const entries = cards.map(card => {
+          const src = card.querySelector(".archive-image img")?.getAttribute("src");
+          if (!src) return null;
+          const url = new URL(src, response.url).href;
+          if (seen.has(url)) return null;
+          seen.add(url);
+          return { url, category: card.dataset.category || "" };
+        }).filter(Boolean);
+
+        // Apertura curada: contrastes de luz, escala y color, alternando disciplinas.
+        const openingPaths = [
+          "assets/projects/delaossa/show-madruga-cover.jpg",
+          "assets/projects/turizo/apambichao/apambichao-1.jpg",
+          "assets/projects/abhir/show-abhir-1.jpg",
+          "assets/projects/delaossa/patos/patos-1.jpg",
+          "assets/projects/morat/latin-grammys-2025-1.jpg",
+          "assets/projects/quevedo/columbia/columbia-2023-1.jpg",
+          "assets/projects/eddlb/show_eddlb_3.jpg",
+          "assets/projects/kapo/bombon-1.jpg"
+        ];
+        const openingURLs = openingPaths.map(path => new URL(path, response.url).href);
+        const opening = openingURLs.filter(url => seen.has(url));
+        const featured = new Set(opening);
+
+        function shuffle(items) {
+          for (let i = items.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [items[i], items[j]] = [items[j], items[i]];
+          }
+          return items;
+        }
+
+        const remaining = entries.filter(entry => !featured.has(entry.url));
+        const live = shuffle(remaining.filter(entry => entry.category.includes("live")).map(entry => entry.url));
+        const groups = [
+          shuffle(remaining.filter(entry => entry.category.includes("music-video")).map(entry => entry.url)),
+          shuffle(remaining.filter(entry => entry.category.includes("cover")).map(entry => entry.url)),
+          shuffle(remaining.filter(entry => entry.category.includes("albums")).map(entry => entry.url))
+        ];
+        const releases = [];
+        while (groups.some(group => group.length)) {
+          groups.forEach(group => { if (group.length) releases.push(group.pop()); });
+        }
+
+        // Alternar Live y Releases hasta agotar todo el archivo, reutilizando
+        // algún show si hace falta para evitar una cola de videoclips seguidos.
+        const mixed = [];
+        for (let i = 0; i < releases.length; i++) {
+          if (live.length) mixed.push(live[i % live.length]);
+          mixed.push(releases[i]);
+        }
+        if (!releases.length) mixed.push(...live);
+        images = [...opening, ...mixed];
         if (!images.length) return;
         await fill();
         start();
