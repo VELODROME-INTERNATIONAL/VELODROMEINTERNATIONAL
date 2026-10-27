@@ -572,122 +572,124 @@
 })();
 
 
-// Portada: fotos del archivo en dos mitades que cambian de forma alternada.
+// Portada: una cinta continua con las imágenes del archivo.
 (() => {
   function iniciarPortada() {
-    const left = document.getElementById("home-left");
-    const right = document.getElementById("home-right");
-    if (!left || !right) return;
+    const viewport = document.getElementById("home-reel");
+    const track = document.getElementById("home-reel-track");
+    if (!viewport || !track) return;
 
-    const panels = [left, right];
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
     let images = [];
-    let remaining = [];
-    let last = "";
-    let side = 0;
-    let timer;
-    let generation = 0;
+    let nextIndex = 0;
+    let offset = 0;
+    let loading = false;
+    let running = false;
+    let raf = 0;
+    let lastTime = 0;
+    let startedAt = 0;
 
-    function nextSource() {
-      if (!remaining.length) {
-        remaining = [...images];
-        for (let i = remaining.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
-        }
-        if (remaining.length > 1 && remaining[remaining.length - 1] === last) {
-          [remaining[0], remaining[remaining.length - 1]] =
-            [remaining[remaining.length - 1], remaining[0]];
-        }
+    const gap = () => parseFloat(getComputedStyle(track).gap) || 0;
+    const itemWidth = image => {
+      const ratio = Math.min(2.2, Math.max(.55, image.naturalWidth / image.naturalHeight));
+      return Math.round(viewport.clientHeight * ratio);
+    };
+
+    async function appendNext() {
+      if (!images.length) return false;
+      for (let tried = 0; tried < images.length; tried++) {
+        const src = images[nextIndex++ % images.length];
+        const image = new Image();
+        image.alt = "";
+        image.decoding = "async";
+        try {
+          await new Promise((resolve, reject) => {
+            image.onload = resolve;
+            image.onerror = reject;
+            image.src = src;
+          });
+        } catch { continue; }
+
+        const item = document.createElement("div");
+        item.className = "home-reel-item";
+        item.style.width = itemWidth(image) + "px";
+        item.append(image);
+        track.append(item);
+        return true;
       }
-      last = remaining.pop();
-      return last;
+      return false;
     }
 
-    function show(panel, source, done) {
-      const photo = new Image();
-      photo.alt = "";
-      photo.decoding = "async";
-      photo.onload = () => {
-        panel.append(photo);
-        requestAnimationFrame(() => photo.classList.add("is-visible"));
-        const previous = [...panel.querySelectorAll("img")].filter(img => img !== photo);
-        previous.forEach(img => {
-          img.classList.remove("is-visible");
-          img.addEventListener("transitionend", () => img.remove(), { once: true });
-          setTimeout(() => img.remove(), 750);
-        });
-        done(true);
-      };
-      photo.onerror = () => done(false);
-      photo.src = source;
+    async function fill() {
+      if (loading) return;
+      loading = true;
+      try {
+        while (track.scrollWidth - offset < viewport.clientWidth * 2 + viewport.clientHeight) {
+          if (!await appendNext()) break;
+        }
+      } finally { loading = false; }
     }
 
-    function schedule() {
-      clearTimeout(timer);
-      if (!reducedMotion.matches && !document.hidden) {
-        timer = setTimeout(step, 1250);
+    function frame(now) {
+      if (!running) return;
+      const delta = Math.min(50, now - lastTime);
+      lastTime = now;
+      const ramp = Math.max(0, 1 - (now - startedAt) / 850);
+      const speed = 110 + 1550 * ramp * ramp * ramp;
+      offset += speed * delta / 1000;
+
+      let first = track.firstElementChild;
+      while (first && offset >= first.offsetWidth + gap()) {
+        offset -= first.offsetWidth + gap();
+        first.remove();
+        first = track.firstElementChild;
       }
+      track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+      if (track.scrollWidth - offset < viewport.clientWidth * 1.5) fill();
+      raf = requestAnimationFrame(frame);
     }
 
-    function step() {
-      if (document.hidden || reducedMotion.matches) return;
-      const target = panels[side];
-      side = 1 - side;
-      let retries = 0;
-      const tryPhoto = () => {
-        if (retries++ >= images.length) return schedule();
-        show(target, nextSource(), loaded => loaded ? schedule() : tryPhoto());
-      };
-      tryPhoto();
+    function start() {
+      if (running || reducedMotion.matches || document.hidden || !track.children.length) return;
+      running = true;
+      lastTime = startedAt = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
+
+    function stop() {
+      running = false;
+      cancelAnimationFrame(raf);
     }
 
     async function loadImages() {
-      const ticket = ++generation;
       try {
         const response = await fetch(new URL("archive.html", document.baseURI));
         if (!response.ok) throw new Error(`Archive: ${response.status}`);
-        const documentArchive = new DOMParser().parseFromString(
-          await response.text(), "text/html"
-        );
-        const candidates = [...new Set(
-          [...documentArchive.querySelectorAll(".archive-card .archive-image img")]
-            .map(img => img.getAttribute("src"))
-            .filter(Boolean)
-            .map(src => new URL(src, response.url).href)
-        )];
-        if (ticket !== generation || !candidates.length) return;
-        images = candidates;
-
-        let initial = 0;
-        const fill = () => {
-          if (initial === panels.length) return schedule();
-          let retries = 0;
-          const tryPhoto = () => {
-            if (retries++ >= images.length) return;
-            show(panels[initial], nextSource(), loaded => {
-              if (loaded) { initial++; fill(); }
-              else tryPhoto();
-            });
-          };
-          tryPhoto();
-        };
-        fill();
+        const archive = new DOMParser().parseFromString(await response.text(), "text/html");
+        images = [...new Set([...archive.querySelectorAll(".archive-card .archive-image img")]
+          .map(image => image.getAttribute("src"))
+          .filter(Boolean)
+          .map(src => new URL(src, response.url).href))];
+        if (!images.length) return;
+        await fill();
+        start();
       } catch (error) {
         console.error("No se pudieron cargar las imágenes de la portada:", error);
       }
     }
 
-    document.addEventListener("visibilitychange", () => {
-      clearTimeout(timer);
-      if (!document.hidden && panels.every(panel => panel.querySelector("img"))) schedule();
-    });
+    document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+    reducedMotion.addEventListener("change", () => reducedMotion.matches ? stop() : start());
+    window.addEventListener("resize", () => {
+      track.querySelectorAll(".home-reel-item").forEach(item => {
+        item.style.width = itemWidth(item.querySelector("img")) + "px";
+      });
+      fill();
+    }, { passive: true });
     loadImages();
   }
 
-  if (document.readyState === "loading") {
+  if (document.readyState === "loading")
     document.addEventListener("DOMContentLoaded", iniciarPortada, { once: true });
-  } else {
-    iniciarPortada();
-  }
+  else iniciarPortada();
 })();
