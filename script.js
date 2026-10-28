@@ -14,6 +14,18 @@
   document.head.append(favicon);
 
   function init() {
+    /* Mantener el orden Work · Archive / About · Contact también en las fichas de proyecto. */
+    document.querySelectorAll(".site-header").forEach(header => {
+      const left = header.querySelector(".header-left");
+      const right = header.querySelector(".header-right");
+      const about = left?.querySelector('a[href$="about.html"]');
+      const archive = right?.querySelector('a[href$="archive.html"]');
+      if (!about || !archive) return;
+      about.replaceWith(archive);
+      right.insertBefore(about, right.firstElementChild);
+      right.setAttribute("aria-label", "Información y contacto");
+    });
+
     /* RUTAS DEL HEADER */
     const routes = {
       work: "work.html",
